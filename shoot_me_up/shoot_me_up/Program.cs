@@ -12,6 +12,7 @@ namespace shoot_me_up
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new Form1());
+           
         }
     }
 }
