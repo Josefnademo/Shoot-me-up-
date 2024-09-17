@@ -8,5 +8,9 @@ namespace shoot_me_up
 {
     internal class Missile
     {
+
+
+
+
     }
 }

@@ -51,11 +51,11 @@ namespace shoot_me_up
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
                 //barrier not to pass a gamescreen LEFT
-                if (pictureBoxShip.Left >= 100)
+                if (pictureBoxShip.Left >= 50)
                 {
 
                     //Move PictureBox on left(2px)
-                    pictureBoxShip.Left -= 100;
+                    pictureBoxShip.Left -= 50;
                 }
             }
             else if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)

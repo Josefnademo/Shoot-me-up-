@@ -37,11 +37,13 @@
             label1 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)HP).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // HP
@@ -101,17 +103,28 @@
             // 
             // timer1
             // 
-            timer1.Interval = 25;
+            timer1.Interval = 10;
             // 
             // pictureBox3
             // 
+            pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(474, 116);
+            pictureBox3.Location = new Point(553, 116);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(83, 84);
             pictureBox3.TabIndex = 5;
             pictureBox3.TabStop = false;
             pictureBox3.Click += pictureBox3_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.BackgroundImage = (Image)resources.GetObject("pictureBox4.BackgroundImage");
+            pictureBox4.Location = new Point(540, 580);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(46, 76);
+            pictureBox4.TabIndex = 6;
+            pictureBox4.TabStop = false;
             // 
             // playGame
             // 
@@ -119,6 +132,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1372, 778);
+            Controls.Add(pictureBox4);
             Controls.Add(pictureBox3);
             Controls.Add(label1);
             Controls.Add(pictureBoxShip);
@@ -133,6 +147,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShip).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -146,5 +161,6 @@
         private Label label1;
         private System.Windows.Forms.Timer timer1;
         private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
     }
 }

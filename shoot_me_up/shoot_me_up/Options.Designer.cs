@@ -34,6 +34,7 @@
             button2 = new Button();
             button3 = new Button();
             label2 = new Label();
+            button4 = new Button();
             SuspendLayout();
             // 
             // label1
@@ -90,6 +91,7 @@
             button3.TabIndex = 3;
             button3.Text = "LOUDEEEER!";
             button3.UseVisualStyleBackColor = false;
+            button3.Click += button3_Click;
             // 
             // label2
             // 
@@ -101,12 +103,27 @@
             label2.TabIndex = 4;
             label2.Text = "Sound Options";
             // 
+            // button4
+            // 
+            button4.BackColor = Color.Transparent;
+            button4.BackgroundImage = (Image)resources.GetObject("button4.BackgroundImage");
+            button4.Font = new Font("Cooper Black", 48F, FontStyle.Regular, GraphicsUnit.Point);
+            button4.ForeColor = Color.FloralWhite;
+            button4.Location = new Point(426, 417);
+            button4.Name = "button4";
+            button4.Size = new Size(325, 130);
+            button4.TabIndex = 5;
+            button4.Text = "Music";
+            button4.UseVisualStyleBackColor = false;
+            button4.Click += button4_Click;
+            // 
             // Options
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1372, 778);
+            Controls.Add(button4);
             Controls.Add(label2);
             Controls.Add(button3);
             Controls.Add(button2);
@@ -126,5 +143,6 @@
         private Button button2;
         private Button button3;
         private Label label2;
+        private Button button4;
     }
 }
