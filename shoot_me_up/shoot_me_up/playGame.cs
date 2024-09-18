@@ -13,11 +13,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+
 
 namespace shoot_me_up
 {
     public partial class playGame : Form
     {
+/*
+        private PictureBox missle;
+        private Timer missileTimer;
+        private PictureBox enemy;*/
+
         /*int playerSpped = 15;
         int enemySpeed = 5;
         int score = 0;
@@ -40,6 +47,9 @@ namespace shoot_me_up
 
             // Subscribe/Use to the KeyDown event
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
+
+            pictureBox4.Click += new EventHandler(pictureBox4_Click);
+
         }
 
 
@@ -72,6 +82,11 @@ namespace shoot_me_up
             {
                 //Move PictureBox on center
                 pictureBoxShip.Left = 694;
+            }
+
+            if(e.KeyCode == Keys.R)
+            {
+
             }
 
         }
@@ -115,6 +130,30 @@ namespace shoot_me_up
         {
 
         }
-        
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playGame_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+            // Chemin vers votre vidéo
+            string videoPath = @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\images\NeverGonnaGiveYouUp.mp4";
+
+            // Ouvrir avec Windows Media Player
+            Process.Start(new ProcessStartInfo
+            {
+                FileName = "wmplayer.exe", // Spécifiez Windows Media Player
+                Arguments = "\"" + videoPath + "\"", // Spécifiez le chemin du fichier vidéo
+                UseShellExecute = false // Assurez-vous de ne pas utiliser ShellExecute ici
+            });
+        }
     }
 }
