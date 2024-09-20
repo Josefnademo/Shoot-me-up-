@@ -3,6 +3,7 @@
 //Place  : ETML
 //Descr. : Deplacement of Spaceship...
 
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,6 +11,7 @@ using System.Data;
 using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,22 +22,28 @@ namespace shoot_me_up
 {
     public partial class playGame : Form
     {
+<<<<<<< Updated upstream
 /*
         private PictureBox missle;
         private Timer missileTimer;
         private PictureBox enemy;*/
 
         /*int playerSpped = 15;
+=======
+
+
+        bool goLeft, goRight;
+        int playerSpeed = 15;
+        public int hp = 3;
+>>>>>>> Stashed changes
         int enemySpeed = 5;
         int score = 0;
         int enemyBullTimer = 250;
 
-
-        PictureBox[] enemyInvadersArray;
+        PictureBox[] enemyArray;
 
         bool shooting;
         bool GmaeOver;
-        */
 
 
         public playGame()
@@ -47,13 +55,22 @@ namespace shoot_me_up
 
             // Subscribe/Use to the KeyDown event
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
+<<<<<<< Updated upstream
 
             pictureBox4.Click += new EventHandler(pictureBox4_Click);
+=======
+            /* this.KeyUp += new KeyEventHandler(playGame_KeyUp);
+
+            // Initialize the game timer
+             Timer gameTimer = new Timer();
+             gameTimer.Interval = 20; // 20 ms for smoother movement
+             gameTimer.Tick += new EventHandler(MainGameTimerEvent);
+             gameTimer.Start();*/
+>>>>>>> Stashed changes
 
         }
 
-
-        // The method that will be called when the key is pressed
+        // The method that will be called when some key is pressed
         private void playGame_KeyDown(object sender, KeyEventArgs e)
         {
 
@@ -78,17 +95,50 @@ namespace shoot_me_up
                 }
             }
 
-            else if (e.KeyCode == Keys.Up)
+            if (e.KeyCode == Keys.Up)
             {
                 //Move PictureBox on center
                 pictureBoxShip.Left = 694;
             }
 
+<<<<<<< Updated upstream
             if(e.KeyCode == Keys.R)
             {
 
             }
 
+=======
+            /*
+                        if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
+                        {
+                            goLeft = true;
+                        }
+                        if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
+                        {
+                            goRight = true;
+                        }*/
+
+            // shoot with bullet 
+            if (e.KeyCode == Keys.Space && shooting == false)
+            {
+                shooting = true;
+
+            }
+
+            if (e.KeyCode == Keys.Escape)
+            {
+
+
+                // Create an instance of the second form
+                Pause PauseMenu = new Pause();
+
+                // Show the second form
+                PauseMenu.Show();
+
+            }
+
+
+>>>>>>> Stashed changes
         }
 
         private void playGame_Load(object sender, EventArgs e)
@@ -131,11 +181,20 @@ namespace shoot_me_up
 
         }
 
+<<<<<<< Updated upstream
+=======
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+>>>>>>> Stashed changes
         private void timer1_Tick(object sender, EventArgs e)
         {
 
         }
 
+<<<<<<< Updated upstream
         private void playGame_Load_2(object sender, EventArgs e)
         {
 
@@ -155,5 +214,11 @@ namespace shoot_me_up
                 UseShellExecute = false // Assurez-vous de ne pas utiliser ShellExecute ici
             });
         }
+=======
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+>>>>>>> Stashed changes
     }
 }

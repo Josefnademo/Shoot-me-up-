@@ -10,6 +10,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -18,6 +19,9 @@ namespace shoot_me_up
 {
     public partial class Options : Form
     {
+        //music of gameround
+        SoundPlayer player = new SoundPlayer(@"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Radiohead-No-Surprises.wav");
+
         // Переменная для хранения уровня громкости
         int SystemSound = 50; // Начальный уровень громкости (от 0 до 100)
         public Options()
@@ -76,6 +80,8 @@ namespace shoot_me_up
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
+         
             /*using System;
 using System.Media;
 using System.Windows.Forms;
@@ -108,6 +114,16 @@ namespace MusicIntegrationApp
     }
 }
 */
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

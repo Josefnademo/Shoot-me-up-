@@ -16,5 +16,17 @@ namespace shoot_me_up
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the second form
+            Form1 Form2 = new Form1();
+
+            // Show the second form
+            Form2.Show();
+
+            // Close the first form (optional, if new)
+            this.Hide();
+        }
     }
 }

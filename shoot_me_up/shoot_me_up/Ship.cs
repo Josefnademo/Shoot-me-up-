@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace shoot_me_up
-{
+{/*
     internal class Ship         //Class ship
     {
         //position du vaisseau
@@ -21,5 +21,5 @@ namespace shoot_me_up
 
 
 
-    }
+    }*/
 }

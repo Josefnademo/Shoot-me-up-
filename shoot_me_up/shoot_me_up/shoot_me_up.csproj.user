@@ -7,6 +7,9 @@
     <Compile Update="Options.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Pause.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="playGame.cs">
       <SubType>Form</SubType>
     </Compile>

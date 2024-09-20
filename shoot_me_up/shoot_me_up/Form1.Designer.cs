@@ -39,7 +39,7 @@
             button1.BackColor = SystemColors.WindowText;
             button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
             button1.Font = new Font("Cooper Black", 55F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(453, 366);
+            button1.Location = new Point(496, 366);
             button1.Name = "button1";
             button1.Size = new Size(377, 160);
             button1.TabIndex = 0;
@@ -53,12 +53,13 @@
             button_score.BackgroundImage = (Image)resources.GetObject("button_score.BackgroundImage");
             button_score.Font = new Font("Cooper Black", 55F, FontStyle.Regular, GraphicsUnit.Point);
             button_score.ForeColor = Color.MistyRose;
-            button_score.Location = new Point(849, 550);
+            button_score.Location = new Point(937, 549);
             button_score.Name = "button_score";
             button_score.Size = new Size(368, 160);
             button_score.TabIndex = 1;
             button_score.Text = "SCORE";
             button_score.UseVisualStyleBackColor = true;
+            button_score.Click += button_score_Click;
             // 
             // button3
             // 
@@ -87,6 +88,7 @@
             ForeColor = Color.MediumPurple;
             Name = "Form1";
             Text = "shoot-me-up";
+            Load += Form1_Load_1;
             ResumeLayout(false);
         }
 

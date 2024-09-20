@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(playGame));
+<<<<<<< Updated upstream
             this.HP = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -45,6 +46,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.SuspendLayout();
+=======
+            HP = new PictureBox();
+            pictureBox1 = new PictureBox();
+            pictureBox2 = new PictureBox();
+            pictureBoxShip = new PictureBox();
+            label1 = new Label();
+            GameTimer = new System.Windows.Forms.Timer(components);
+            pictureBox3 = new PictureBox();
+            SpaceshipTimer = new System.Windows.Forms.Timer(components);
+            label2 = new Label();
+            ((System.ComponentModel.ISupportInitialize)HP).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShip).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            SuspendLayout();
+>>>>>>> Stashed changes
             // 
             // HP
             // 
@@ -68,6 +86,7 @@
             // 
             // pictureBox2
             // 
+<<<<<<< Updated upstream
             this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
             this.pictureBox2.Location = new System.Drawing.Point(112, 2);
@@ -75,6 +94,16 @@
             this.pictureBox2.Size = new System.Drawing.Size(61, 80);
             this.pictureBox2.TabIndex = 2;
             this.pictureBox2.TabStop = false;
+=======
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(112, 2);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(61, 80);
+            pictureBox2.TabIndex = 2;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click_1;
+>>>>>>> Stashed changes
             // 
             // pictureBoxShip
             // 
@@ -98,10 +127,15 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Score:0";
             // 
-            // timer1
+            // GameTimer
             // 
+<<<<<<< Updated upstream
             this.timer1.Interval = 1000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+=======
+            GameTimer.Interval = 10;
+            GameTimer.Tick += timer1_Tick;
+>>>>>>> Stashed changes
             // 
             // pictureBox3
             // 
@@ -113,8 +147,9 @@
             this.pictureBox3.TabIndex = 5;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox4
+            // SpaceshipTimer
             // 
+<<<<<<< Updated upstream
             this.pictureBox4.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox4.BackgroundImage")));
             this.pictureBox4.Location = new System.Drawing.Point(1327, 703);
@@ -149,6 +184,45 @@
             this.ResumeLayout(false);
             this.PerformLayout();
 
+=======
+            SpaceshipTimer.Interval = 2;
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.BackColor = Color.Transparent;
+            label2.ForeColor = Color.LightSalmon;
+            label2.Location = new Point(21, 713);
+            label2.Name = "label2";
+            label2.Size = new Size(152, 15);
+            label2.TabIndex = 7;
+            label2.Text = "click Esc to pause the game";
+            label2.Click += label2_Click;
+            // 
+            // playGame
+            // 
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1372, 778);
+            Controls.Add(label2);
+            Controls.Add(pictureBox3);
+            Controls.Add(label1);
+            Controls.Add(pictureBoxShip);
+            Controls.Add(pictureBox2);
+            Controls.Add(pictureBox1);
+            Controls.Add(HP);
+            Name = "playGame";
+            Text = "playGame";
+            Load += playGame_Load_1;
+            ((System.ComponentModel.ISupportInitialize)HP).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxShip).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
+>>>>>>> Stashed changes
         }
 
         #endregion
@@ -158,8 +232,9 @@
         private PictureBox pictureBox2;
         private PictureBox pictureBoxShip;
         private Label label1;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer GameTimer;
         private PictureBox pictureBox3;
-        private PictureBox pictureBox4;
+        private System.Windows.Forms.Timer SpaceshipTimer;
+        private Label label2;
     }
 }
