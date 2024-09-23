@@ -39,11 +39,14 @@
             pictureBox3 = new PictureBox();
             SpaceshipTimer = new System.Windows.Forms.Timer(components);
             label2 = new Label();
+            timer1 = new System.Windows.Forms.Timer(components);
+            pictureBox4 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)HP).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             SuspendLayout();
             // 
             // HP
@@ -104,7 +107,7 @@
             // 
             // GameTimer
             // 
-            GameTimer.Interval = 10;
+            GameTimer.Interval = 2001;
             GameTimer.Tick += timer1_Tick;
             // 
             // pictureBox3
@@ -120,13 +123,14 @@
             // 
             // SpaceshipTimer
             // 
-            SpaceshipTimer.Interval = 2;
+            SpaceshipTimer.Interval = 2000;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
             label2.ForeColor = Color.LightSalmon;
+            label2.LiveSetting = System.Windows.Forms.Automation.AutomationLiveSetting.Assertive;
             label2.Location = new Point(21, 713);
             label2.Name = "label2";
             label2.Size = new Size(152, 15);
@@ -134,12 +138,29 @@
             label2.Text = "click Esc to pause the game";
             label2.Click += label2_Click;
             // 
+            // timer1
+            // 
+            timer1.Interval = 2000;
+            timer1.Tick += timer1_Tick;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(1295, 68);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(65, 65);
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
             // playGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1372, 778);
+            Controls.Add(pictureBox4);
             Controls.Add(label2);
             Controls.Add(pictureBox3);
             Controls.Add(label1);
@@ -155,6 +176,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShip).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -170,5 +192,7 @@
         private PictureBox pictureBox3;
         private System.Windows.Forms.Timer SpaceshipTimer;
         private Label label2;
+        private System.Windows.Forms.Timer timer1;
+        private PictureBox pictureBox4;
     }
 }

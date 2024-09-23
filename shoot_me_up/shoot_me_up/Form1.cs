@@ -12,32 +12,12 @@ namespace shoot_me_up
         //music of gameround
         SoundPlayer player = new SoundPlayer(@"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Radiohead-No-Surprises.wav");
 
-
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void button2_Click(object sender, EventArgs e)      //score button
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)      //score play
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)         //background of manu
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)      //score options
-        {
-
-        }
-
+        //PlayGame form opener 
         private void button1_Click_1(object sender, EventArgs e)
         {
             // Create an instance of the second form
@@ -48,12 +28,12 @@ namespace shoot_me_up
 
             // Close the first form (optional, if new)
             this.Hide();
-
+            
             //Start the music when button PLAY is pressed
             player.Play();
 
             // Subscription to the close event of the playGame form
-            playGame.FormClosed += (s, args) =>               //=>: This is part of the lambda expression, which says that the code specified after the => arrow will be executed
+            playGame.FormClosed += (s, args) =>         //=>: This is part of the lambda expression, which says that the code specified after the => arrow will be executed
             {
                 // Stop the music when the playGame form is closed
                 player.Stop();
@@ -65,6 +45,7 @@ namespace shoot_me_up
 
         }
 
+        //Options button
         private void button3_Click_1(object sender, EventArgs e)
         {
             // Create an instance of the second form
@@ -82,6 +63,7 @@ namespace shoot_me_up
 
         }
 
+        //score options
         private void button_score_Click(object sender, EventArgs e)
         {
             // Create an instance of the second form

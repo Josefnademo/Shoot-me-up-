@@ -14,6 +14,7 @@ using System.Linq;
 using System.Media;
 using System.Text;
 using System.Threading.Tasks;
+using System.Timers;
 using System.Windows.Forms;
 
 namespace shoot_me_up
@@ -32,7 +33,7 @@ namespace shoot_me_up
         PictureBox[] enemyArray;
 
         bool shooting;
-        bool GmaeOver;
+        bool GameOver;
 
 
         public playGame()
@@ -44,13 +45,6 @@ namespace shoot_me_up
 
             // Subscribe/Use to the KeyDown event
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
-            /* this.KeyUp += new KeyEventHandler(playGame_KeyUp);
-
-            // Initialize the game timer
-             Timer gameTimer = new Timer();
-             gameTimer.Interval = 20; // 20 ms for smoother movement
-             gameTimer.Tick += new EventHandler(MainGameTimerEvent);
-             gameTimer.Start();*/
 
         }
 
@@ -164,12 +158,34 @@ namespace shoot_me_up
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            // Останавливаем таймер
+            timer1.Stop();
+
+            // Скрываем метку
+            label2.Hide();
+
 
         }
 
+
         private void label2_Click(object sender, EventArgs e)
         {
+            // Проверяем, если таймер равен 0 (то есть время истекло)
+            if (timer1.Interval == 0)
+            {
+                // Скрываем метку (Label)
+                label2.Hide();
+            }
+        }
 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            if (PauseMenu!=) {
+                // Create an instance of the second form
+                Pause PauseMenu = new Pause();
+
+                // Show the second form
+                PauseMenu.Show(); }
         }
     }
 }

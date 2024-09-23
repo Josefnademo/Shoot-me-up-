@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Text;
 using System.Linq;
 using System.Media;
 using System.Numerics;
@@ -42,10 +43,10 @@ namespace shoot_me_up
         private void button1_Click(object sender, EventArgs e)
         {
             // Create an instance of the second form
-            Form1 Form1 = new Form1();
+            Form1 Menu = new Form1();
 
             // Show the second form
-            Form1.Show();
+            Menu.Show();
 
             // Close the first form (optional, if new)
             this.Hide();
@@ -57,7 +58,7 @@ namespace shoot_me_up
             if (SystemSound > 10 && SystemSound <= 100)
             {
                 SystemSound += 10;
-                SetVolume(SystemSound);
+                
             }
         }
 
@@ -66,54 +67,13 @@ namespace shoot_me_up
             if (SystemSound >= 0 && SystemSound < 100)
             {
                 SystemSound -= 10;
-                SetVolume(SystemSound);
+               
             }
-        }
-        private void SetVolume(int volume)
-        {
-            // Здесь должна быть логика установки громкости в зависимости от того,
-            // какой плеер или аудиосистема используется в вашем приложении.
-            // Например, с использованием сторонней библиотеки вроде NAudio.
-
-            Console.WriteLine("Громкость установлена на: " + volume + "%");
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
             
-         
-            /*using System;
-using System.Media;
-using System.Windows.Forms;
-
-namespace MusicIntegrationApp
-{
-    public partial class Form1 : Form
-    {
-        private SoundPlayer player;
-
-        public Form1()
-        {
-            InitializeComponent();
-
-            // Инициализация SoundPlayer с путем к файлу
-            player = new SoundPlayer(@"C:\path\to\your\musicfile.wav");
-        }
-
-        private void playButton_Click(object sender, EventArgs e)
-        {
-            // Воспроизвести музыку
-            player.Play();
-        }
-
-        private void stopButton_Click(object sender, EventArgs e)
-        {
-            // Остановить воспроизведение музыки
-            player.Stop();
-        }
-    }
-}
-*/
         }
 
         private void label1_Click(object sender, EventArgs e)

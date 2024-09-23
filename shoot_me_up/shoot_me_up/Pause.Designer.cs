@@ -38,9 +38,11 @@
             // 
             button1.BackColor = Color.Transparent;
             button1.Font = new Font("Cooper Black", 27.75F, FontStyle.Italic, GraphicsUnit.Point);
+            button1.ForeColor = SystemColors.ControlLightLight;
+            button1.Image = (Image)resources.GetObject("button1.Image");
             button1.Location = new Point(411, 327);
             button1.Name = "button1";
-            button1.Size = new Size(270, 130);
+            button1.Size = new Size(280, 130);
             button1.TabIndex = 0;
             button1.Text = "MENU";
             button1.UseVisualStyleBackColor = false;
@@ -48,8 +50,9 @@
             // 
             // button2
             // 
-            button2.BackgroundImage = (Image)resources.GetObject("button2.BackgroundImage");
             button2.Font = new Font("Cooper Black", 26.25F, FontStyle.Italic, GraphicsUnit.Point);
+            button2.ForeColor = Color.Plum;
+            button2.Image = (Image)resources.GetObject("button2.Image");
             button2.Location = new Point(401, 171);
             button2.Name = "button2";
             button2.Size = new Size(300, 150);
@@ -60,10 +63,12 @@
             // 
             // button3
             // 
+            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
             button3.Font = new Font("Cooper Black", 26.25F, FontStyle.Italic, GraphicsUnit.Point);
+            button3.ForeColor = Color.Plum;
             button3.Location = new Point(411, 463);
             button3.Name = "button3";
-            button3.Size = new Size(270, 130);
+            button3.Size = new Size(280, 130);
             button3.TabIndex = 2;
             button3.Text = "Music (0w0)";
             button3.UseVisualStyleBackColor = true;
