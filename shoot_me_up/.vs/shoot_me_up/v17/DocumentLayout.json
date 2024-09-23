@@ -19,11 +19,11 @@
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\shoot_me_up\\shoot_me_up\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\shoot_me_up\\shoot_me_up\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\shoot_me_up\\shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\shoot_me_up\\shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
@@ -35,11 +35,11 @@
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\options.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\shoot_me_up\\shoot_me_up\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\shoot_me_up\\shoot_me_up\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\shoot_me_up\\shoot_me_up\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\shoot_me_up\\shoot_me_up\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
@@ -82,8 +82,7 @@
               "RelativeToolTip": "shoot_me_up\\Form1.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T12:32:03.314Z",
-              "IsPinned": true,
-              "EditorCaption": " [Conception]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -96,8 +95,7 @@
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAGAAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T12:32:12.353Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -123,8 +121,7 @@
               "ViewState": "AQIAAJAAAAAAAAAAAAAvwKsAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T12:31:43.189Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -136,8 +133,7 @@
               "RelativeToolTip": "shoot_me_up\\Options.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T13:52:48.519Z",
-              "IsPinned": true,
-              "EditorCaption": " [Conception]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -150,8 +146,7 @@
               "ViewState": "AQIAAAgAAAAAAAAAAAASwBoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-20T12:20:34.852Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -163,8 +158,7 @@
               "RelativeToolTip": "shoot_me_up\\Pause.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-20T12:15:58.219Z",
-              "IsPinned": true,
-              "EditorCaption": " [Conception]"
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -177,8 +171,7 @@
               "ViewState": "AQIAAD8AAAAAAAAAAAAhwFkAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-20T12:22:28.1Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
@@ -190,8 +183,7 @@
               "RelativeToolTip": "shoot_me_up\\Score.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAhwAwAAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-20T13:58:57.187Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-20T13:58:57.187Z"
             },
             {
               "$type": "Document",
@@ -202,8 +194,7 @@
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\shoot_me_up\\shoot_me_up\\Score.cs [Conception]",
               "RelativeToolTip": "shoot_me_up\\Score.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-17T14:55:00.033Z",
-              "EditorCaption": " [Conception]"
+              "WhenOpened": "2024-09-17T14:55:00.033Z"
             },
             {
               "$type": "Document",
@@ -215,8 +206,7 @@
               "RelativeToolTip": "shoot_me_up\\Program.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAlAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T12:37:56.165Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T12:37:56.165Z"
             },
             {
               "$type": "Document",
@@ -228,8 +218,7 @@
               "RelativeToolTip": "shoot_me_up\\Missile.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T12:37:57.307Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T12:37:57.307Z"
             },
             {
               "$type": "Document",
@@ -241,8 +230,7 @@
               "RelativeToolTip": "shoot_me_up\\Enemy.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T12:37:58.737Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T12:37:58.737Z"
             },
             {
               "$type": "Document",
@@ -254,8 +242,7 @@
               "RelativeToolTip": "shoot_me_up\\Ship.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T12:37:55.222Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T12:37:55.222Z"
             },
             {
               "$type": "Document",
@@ -267,8 +254,7 @@
               "RelativeToolTip": "shoot_me_up\\Keyboard.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T12:37:58.09Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T12:37:58.09Z"
             }
           ]
         }

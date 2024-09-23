@@ -15,27 +15,16 @@ using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Diagnostics;
-
 
 namespace shoot_me_up
 {
     public partial class playGame : Form
     {
-<<<<<<< Updated upstream
-/*
-        private PictureBox missle;
-        private Timer missileTimer;
-        private PictureBox enemy;*/
-
-        /*int playerSpped = 15;
-=======
 
 
         bool goLeft, goRight;
         int playerSpeed = 15;
         public int hp = 3;
->>>>>>> Stashed changes
         int enemySpeed = 5;
         int score = 0;
         int enemyBullTimer = 250;
@@ -55,10 +44,6 @@ namespace shoot_me_up
 
             // Subscribe/Use to the KeyDown event
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
-<<<<<<< Updated upstream
-
-            pictureBox4.Click += new EventHandler(pictureBox4_Click);
-=======
             /* this.KeyUp += new KeyEventHandler(playGame_KeyUp);
 
             // Initialize the game timer
@@ -66,7 +51,6 @@ namespace shoot_me_up
              gameTimer.Interval = 20; // 20 ms for smoother movement
              gameTimer.Tick += new EventHandler(MainGameTimerEvent);
              gameTimer.Start();*/
->>>>>>> Stashed changes
 
         }
 
@@ -101,13 +85,6 @@ namespace shoot_me_up
                 pictureBoxShip.Left = 694;
             }
 
-<<<<<<< Updated upstream
-            if(e.KeyCode == Keys.R)
-            {
-
-            }
-
-=======
             /*
                         if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
                         {
@@ -138,7 +115,6 @@ namespace shoot_me_up
             }
 
 
->>>>>>> Stashed changes
         }
 
         private void playGame_Load(object sender, EventArgs e)
@@ -181,44 +157,19 @@ namespace shoot_me_up
 
         }
 
-<<<<<<< Updated upstream
-=======
         private void pictureBox2_Click_1(object sender, EventArgs e)
         {
 
         }
 
->>>>>>> Stashed changes
         private void timer1_Tick(object sender, EventArgs e)
         {
 
         }
 
-<<<<<<< Updated upstream
-        private void playGame_Load_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-
-            // Chemin vers votre vidéo
-            string videoPath = @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\images\NeverGonnaGiveYouUp.mp4";
-
-            // Ouvrir avec Windows Media Player
-            Process.Start(new ProcessStartInfo
-            {
-                FileName = "wmplayer.exe", // Spécifiez Windows Media Player
-                Arguments = "\"" + videoPath + "\"", // Spécifiez le chemin du fichier vidéo
-                UseShellExecute = false // Assurez-vous de ne pas utiliser ShellExecute ici
-            });
-        }
-=======
         private void label2_Click(object sender, EventArgs e)
         {
 
         }
->>>>>>> Stashed changes
     }
 }
