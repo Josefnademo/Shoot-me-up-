@@ -18,7 +18,7 @@ namespace shoot_me_up
         }
 
         //PlayGame form opener 
-        private void button1_Click_1(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             // Create an instance of the second form
             playGame playGame = new playGame();
@@ -28,7 +28,7 @@ namespace shoot_me_up
 
             // Close the first form (optional, if new)
             this.Hide();
-            
+
             //Start the music when button PLAY is pressed
             player.Play();
 
@@ -40,31 +40,8 @@ namespace shoot_me_up
             };
         }
 
-        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-
-        }
-
-        //Options button
-        private void button3_Click_1(object sender, EventArgs e)
-        {
-            // Create an instance of the second form
-            Options Options = new Options();
-
-            // Show the second form
-            Options.Show();
-
-            // Close the first form (optional, if new)
-            this.Hide();
-        }
-
-        private void Form1_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
         //score options
-        private void button_score_Click(object sender, EventArgs e)
+        private void button_score_Click_1(object sender, EventArgs e)
         {
             // Create an instance of the second form
             Score Score = new Score();
@@ -74,6 +51,25 @@ namespace shoot_me_up
 
             // Close the first form (optional, if new)
             this.Hide();
+        }
+
+        //Options button
+        private void button3_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the second form
+            Options Options = new Options();
+
+            // Show the second form
+            Options.Show();
+
+            // Close the first form (optional, if new)
+            this.Hide();
+        
+    }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

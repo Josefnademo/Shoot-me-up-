@@ -21,7 +21,7 @@ namespace shoot_me_up
 {
     public partial class playGame : Form
     {
-
+        private Pause PauseMenu;
 
         bool goLeft, goRight;
         int playerSpeed = 15;
@@ -98,18 +98,45 @@ namespace shoot_me_up
 
             if (e.KeyCode == Keys.Escape)
             {
+                if (PauseMenu == null)
+                {
+                    // Create an instance of the second form
+                    PauseMenu = new Pause();
 
+                    // Subscribe to the FormClosed event to reset PauseMenu when it's closed //assigning the PauseMenu variable a null value.
+                    PauseMenu.FormClosed += (s, args) => PauseMenu = null;
 
-                // Create an instance of the second form
-                Pause PauseMenu = new Pause();
+                    // Show the second form
+                    PauseMenu.Show();
+                }
+                else
+                {
+                    PauseMenu.Close();
+                }
+            }
+        }
 
-                // Show the second form
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+
+            if (PauseMenu == null)
+            {
+                // Create a new instance of the PauseMenu form
+                PauseMenu = new Pause();
+
+                // Subscribe to the FormClosed event to reset PauseMenu when it's closed //assigning the PauseMenu variable a null value.
+                PauseMenu.FormClosed += (s, args) => PauseMenu = null;    
+
+                // Show the PauseMenu form
                 PauseMenu.Show();
-
+            }
+            else
+            {
+                PauseMenu.Close();
             }
 
-
         }
+
 
         private void playGame_Load(object sender, EventArgs e)
         {
@@ -158,15 +185,16 @@ namespace shoot_me_up
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            // Останавливаем таймер
-            timer1.Stop();
-
-            // Скрываем метку
-            label2.Hide();
-
-
+            if (timer1.Interval == 0)
+            {
+                label2.Hide();
+            }
         }
 
+        private void pictureBox2_Click_2(object sender, EventArgs e)
+        {
+
+        }
 
         private void label2_Click(object sender, EventArgs e)
         {
@@ -178,14 +206,8 @@ namespace shoot_me_up
             }
         }
 
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
-            if (PauseMenu!=) {
-                // Create an instance of the second form
-                Pause PauseMenu = new Pause();
+       
 
-                // Show the second form
-                PauseMenu.Show(); }
-        }
+        
     }
 }
