@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +14,15 @@ namespace shoot_me_up
 {
     public partial class Score : Form
     {
+
         public Score()
         {
             InitializeComponent();
+
+            //Music of score
+            Form1.player = new SoundPlayer(Form1.musicList[2]);
+            Form1.player.PlayLooping();
+            
         }
 
         private void button1_Click(object sender, EventArgs e)

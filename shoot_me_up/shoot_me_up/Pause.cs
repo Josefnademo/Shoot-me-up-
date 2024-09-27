@@ -13,29 +13,40 @@ namespace shoot_me_up
 {
     public partial class Pause : Form
     {
-        //music of gameround
-        SoundPlayer player = new SoundPlayer(@"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Radiohead-No-Surprises.wav");
-
+        public static bool musicPlaying = true; //variable wich will track the state of music.
         private playGame playGame1;
-       
+
         public Pause()
-         {
-             InitializeComponent();
-         }
+        {
+            InitializeComponent();
 
-         private void Pause_Load(object sender, EventArgs e)
-         {
+        }
 
-         }
+        private void Pause_Load(object sender, EventArgs e)
+        {
 
-         private void button3_Click(object sender, EventArgs e)
+        }
+
+        //Method plays the music when button is pressed and stop it when it's not
+        public static void ToggleMusic()
+        { 
+            if (musicPlaying)
+            {
+                Form1.player.Stop(); // Music stops
+                musicPlaying = false;
+            }
+            else
+            {
+                Form1.player.PlayLooping(); // Music playing in the loop
+                musicPlaying = true;
+            }
+        }
+
+        //Button plays music, works with method "ToggleMusic"
+        private void button3_Click(object sender, EventArgs e)
          {
-             if (player != default)
-             {
-                  player.Stop();
-             }
-             else { player.Play(); }
-         }
+         ToggleMusic();
+        }
 
          private void button2_Click(object sender, EventArgs e)
          {
@@ -62,7 +73,7 @@ namespace shoot_me_up
              }
             }
 
-        }
+         }
 
          private void button4_Click(object sender, EventArgs e)
          {

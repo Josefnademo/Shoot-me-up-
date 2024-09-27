@@ -20,28 +20,18 @@ namespace shoot_me_up
 {
     public partial class Options : Form
     {
-        //music of gameround
-        SoundPlayer player = new SoundPlayer(@"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Radiohead-No-Surprises.wav");
-
+       
         // Переменная для хранения уровня громкости
         int SystemSound = 50; // Начальный уровень громкости (от 0 до 100)
+
         public Options()
         {
             InitializeComponent();
         }
 
-        private void Options_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button_score_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button1_Click(object sender, EventArgs e)
         {
+
             // Create an instance of the second form
             Form1 Menu = new Form1();
 
@@ -58,7 +48,6 @@ namespace shoot_me_up
             if (SystemSound > 10 && SystemSound <= 100)
             {
                 SystemSound += 10;
-                
             }
         }
 
@@ -67,13 +56,22 @@ namespace shoot_me_up
             if (SystemSound >= 0 && SystemSound < 100)
             {
                 SystemSound -= 10;
-               
             }
         }
 
+        //stop and turn on music, use methode of class Pause
         private void button4_Click(object sender, EventArgs e)
         {
-            
+            Pause.ToggleMusic();
+        }
+
+        private void Options_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void button_score_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label1_Click(object sender, EventArgs e)
