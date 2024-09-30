@@ -1,19 +1,20 @@
 ﻿//Author: Yosef Nademo
-//Date   : 13.09.2024
+//Date   : 30.09.2024
 //Place  : ETML
 //Descr. : Main menu of game "SHOOT ME UP!", with buttons:Optioins,Play,Score and logo of game. 
 
 using System.Media;
+using System.Windows.Forms;
 
 namespace shoot_me_up
 {
     public partial class Form1 : Form
     {
-       
 
+        public static bool musicPlaying = true; //variable wich will track the state of music.
 
         //arrey of all music
-        public static string[] musicList = 
+        public static string[] musicList =
         { @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Radiohead-No-Surprises.wav",
           @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Messages-from-the-stars1.wav",
           @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\a minute lofi.wav"
@@ -29,9 +30,10 @@ namespace shoot_me_up
             InitializeComponent();
 
             //Music of score
-            if (musicPlaying) { 
-            Form1.player = new SoundPlayer(Form1.musicList[1]);
-            Form1.player.PlayLooping();
+            if (musicPlaying)
+            {
+                Form1.player = new SoundPlayer(Form1.musicList[1]);
+                Form1.player.PlayLooping();
                 musicPlaying = false;
             }
         }
@@ -53,7 +55,7 @@ namespace shoot_me_up
             this.Hide();
 
             //music of game round
-            player =new SoundPlayer(musicList[0]);
+            player = new SoundPlayer(musicList[0]);
 
             //Start the music when button PLAY is pressed and play it in the loop
             player.PlayLooping();
@@ -90,12 +92,22 @@ namespace shoot_me_up
 
             // Close the first form (optional, if new)
             this.Hide();
+
+        }
+
         
-    }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            /*  for (int i=0; i<= Application.OpenForms.Count(); i++)
+              {
+                  form.Close();
+              }*/
+            /*  foreach (Form form in Application.OpenForms)
+              {
+                  form.Close();
+              }*/
+           
         }
     }
 }

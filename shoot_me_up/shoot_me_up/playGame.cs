@@ -1,5 +1,5 @@
 ﻿//Author: Yosef Nademo
-//Date   : 13.09.2024
+//Date   : 30.09.2024
 //Place  : ETML
 //Descr. : Deplacement of Spaceship...
 
@@ -23,6 +23,7 @@ namespace shoot_me_up
     {
         private Pause PauseMenu;
 
+
         bool goLeft, goRight;
         int playerSpeed = 15;
         public int hp = 3;
@@ -35,42 +36,56 @@ namespace shoot_me_up
         bool shooting;
         bool GameOver;
 
+        private System.Windows.Forms.Timer movementTimer;
+
 
         public playGame()
         {
             InitializeComponent();
+
+            // Подготавливаем таймер для плавного перемещения
+            movementTimer = new System.Windows.Forms.Timer();
+            movementTimer.Interval = 2; // Интервал срабатывания таймера (2 мс)
+            movementTimer.Tick += MovementTimer_Tick; // Привязываем метод, который будет вызываться при каждом тике таймера
+            movementTimer.Start(); // Запускаем таймер
+
+
 
             // Defines the form to handle keystrokes
             this.KeyPreview = true;
 
             // Subscribe/Use to the KeyDown event
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
-
+           
         }
+
+        // Метод, который будет вызываться при каждом тике таймера (каждые 20 мс)
+        private void MovementTimer_Tick(object sender, EventArgs e)
+        {
+            if (goLeft && pictureBoxShip.Left > 0)
+            {
+                pictureBoxShip.Left -= playerSpeed;
+            }
+            if (goRight && pictureBoxShip.Right < this.ClientSize.Width)
+            {
+                pictureBoxShip.Left += playerSpeed;
+            }
+        }
+
 
         // The method that will be called when some key is pressed
         private void playGame_KeyDown(object sender, KeyEventArgs e)
         {
 
-            // Check if the left arrow or A was pressed
+            // Check if the "left arrow" or "A" was pressed
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
-                //barrier not to pass a gamescreen LEFT
-                if (pictureBoxShip.Left >= 50)
-                {
-
-                    //Move PictureBox on left(2px)
-                    pictureBoxShip.Left -= 50;
-                }
+                    goLeft = true;
             }
             else if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
-            {
-                //barrier not to pass a gamescreen RIGHT
-                if (pictureBoxShip.Left <= 1288)
-                {
-                    //Move PictureBox on right(2px)
-                    pictureBoxShip.Left += 110;
-                }
+            { 
+                    goRight = true;
+                
             }
 
             if (e.KeyCode == Keys.Up)
@@ -79,21 +94,10 @@ namespace shoot_me_up
                 pictureBoxShip.Left = 694;
             }
 
-            /*
-                        if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
-                        {
-                            goLeft = true;
-                        }
-                        if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
-                        {
-                            goRight = true;
-                        }*/
-
             // shoot with bullet 
             if (e.KeyCode == Keys.Space && shooting == false)
             {
                 shooting = true;
-
             }
 
             if (e.KeyCode == Keys.Escape)
@@ -125,7 +129,7 @@ namespace shoot_me_up
                 PauseMenu = new Pause();
 
                 // Subscribe to the FormClosed event to reset PauseMenu when it's closed //assigning the PauseMenu variable a null value.
-                PauseMenu.FormClosed += (s, args) => PauseMenu = null;    
+                PauseMenu.FormClosed += (s, args) => PauseMenu = null;
 
                 // Show the PauseMenu form
                 PauseMenu.Show();
@@ -134,80 +138,39 @@ namespace shoot_me_up
             {
                 PauseMenu.Close();
             }
-
         }
 
 
-        private void playGame_Load(object sender, EventArgs e)
+        private void label2_Click_1(object sender, EventArgs e)
         {
-
-        }
-
-        private void playGame_Load_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void progressBar1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxShip_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox2_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            if (timer1.Interval == 0)
+            if (timer1 == default)
             {
                 label2.Hide();
             }
         }
-
         private void pictureBox2_Click_2(object sender, EventArgs e)
         {
 
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void pictureBoxShip_Click_1(object sender, EventArgs e)
         {
-            // Проверяем, если таймер равен 0 (то есть время истекло)
-            if (timer1.Interval == 0)
-            {
-                // Скрываем метку (Label)
-                label2.Hide();
-            }
+
         }
 
-       
+        private void pictureBox1_Click_1(object sender, EventArgs e)
+        {
 
-        
+        }
+
+        private void HP_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

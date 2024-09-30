@@ -1,5 +1,5 @@
 ﻿//Author: Yosef Nademo
-//Date   : 13.09.2024
+//Date   : 30.09.2024
 //Place  : ETML
 //Descr. : Options menu of game "SHOOT ME UP!", with buttons:+Sound,-Sonud,Label of Sound options and logo of Options menu. 
 
@@ -15,6 +15,7 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace shoot_me_up
 {
@@ -39,7 +40,7 @@ namespace shoot_me_up
             Menu.Show();
 
             // Close the first form (optional, if new)
-            this.Hide();
+            this.Close();
 
         }
 
