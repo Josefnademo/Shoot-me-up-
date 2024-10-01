@@ -85,6 +85,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "Pause";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Pause";
             Load += Pause_Load;
             ResumeLayout(false);

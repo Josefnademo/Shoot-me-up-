@@ -22,6 +22,7 @@ namespace shoot_me_up
             //Music of score
             Form1.player = new SoundPlayer(Form1.musicList[2]);
             Form1.player.PlayLooping();
+
             
         }
 

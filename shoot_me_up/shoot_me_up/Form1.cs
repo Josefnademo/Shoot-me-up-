@@ -17,13 +17,12 @@ namespace shoot_me_up
         public static string[] musicList =
         { @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Radiohead-No-Surprises.wav",
           @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Messages-from-the-stars1.wav",
-          @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\a minute lofi.wav"
+          @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\a minute lofi.wav",
+         @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Doja_Cat_Ft_SZA_-_Kiss_Me_More.wav"
         };
 
         //Player declaration, *static* pour que player puisse utiliser par tout
         public static SoundPlayer player;
-
-
 
         public Form1()
         {
@@ -34,7 +33,13 @@ namespace shoot_me_up
             {
                 Form1.player = new SoundPlayer(Form1.musicList[1]);
                 Form1.player.PlayLooping();
-                musicPlaying = false;
+                musicPlaying = true;
+            }
+            else
+            {
+                Form1.player = new SoundPlayer(Form1.musicList[1]);
+                Form1.player.PlayLooping();
+                musicPlaying = true;
             }
         }
 
@@ -68,7 +73,7 @@ namespace shoot_me_up
             };
         }
 
-        //score options
+        //score options opener
         private void button_score_Click_1(object sender, EventArgs e)
         {
             // Create an instance of the second form
@@ -81,7 +86,7 @@ namespace shoot_me_up
             this.Hide();
         }
 
-        //Options button
+        //Options button opener
         private void button3_Click(object sender, EventArgs e)
         {
             // Create an instance of the second form
@@ -95,19 +100,28 @@ namespace shoot_me_up
 
         }
 
-        
-
+        //button to Stop/Exit program
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-            /*  for (int i=0; i<= Application.OpenForms.Count(); i++)
-              {
-                  form.Close();
-              }*/
-            /*  foreach (Form form in Application.OpenForms)
-              {
-                  form.Close();
-              }*/
-           
+            Application.Exit();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        // Skins form opener
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the second form
+            Skins Skins1 = new Skins();
+
+            // Show the second form
+            Skins1.Show();
+
+            // Close the first form (optional, if new)
+            this.Hide();
         }
     }
 }

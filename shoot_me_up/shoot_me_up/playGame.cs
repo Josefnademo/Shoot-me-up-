@@ -56,7 +56,7 @@ namespace shoot_me_up
 
             // Subscribe/Use to the KeyDown event
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
-           
+
         }
 
         // Метод, который будет вызываться при каждом тике таймера (каждые 20 мс)
@@ -80,12 +80,12 @@ namespace shoot_me_up
             // Check if the "left arrow" or "A" was pressed
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
-                    goLeft = true;
+                goLeft = true;
             }
             else if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
-            { 
-                    goRight = true;
-                
+            {
+                goRight = true;
+
             }
 
             if (e.KeyCode == Keys.Up)
@@ -169,6 +169,11 @@ namespace shoot_me_up
         }
 
         private void timer1_Tick_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playGame_Load(object sender, EventArgs e)
         {
 
         }

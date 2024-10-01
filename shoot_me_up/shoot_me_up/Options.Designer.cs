@@ -80,7 +80,7 @@
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Cooper Black", 36F, FontStyle.Italic, GraphicsUnit.Point);
-            label2.Location = new Point(64, 355);
+            label2.Location = new Point(59, 368);
             label2.Name = "label2";
             label2.Size = new Size(672, 55);
             label2.TabIndex = 4;
@@ -113,6 +113,7 @@
             Controls.Add(button2);
             Controls.Add(button1);
             Name = "Options";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Options";
             Load += Options_Load;
             ResumeLayout(false);

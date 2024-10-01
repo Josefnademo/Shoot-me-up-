@@ -65,15 +65,16 @@ namespace shoot_me_up
              // Close the first form (optional, if new)
              this.Close();
 
-            // Close the playGame form (if available). And use for loop to avoid additional opened windows.  ..I had a problem with multiple windows of playGame form,but now idon't,but i want to leav it here just to be sure that's gonna work in anny case :)  
-            for (int i = 0; i < Application.OpenForms.Count; i++) { 
-             if (Application.OpenForms[i] is playGame playGameInstance)
-             {
-                playGameInstance.Close();
-             }
-            }
+            /*// Close the playGame form (if available). And use for loop to avoid additional opened windows.  ..I had a problem with multiple windows of playGame form,but now idon't,but i want to leav it here just to be sure that's gonna work in anny case :)  
+            for (int i = 0; i < Application.OpenForms.Count; i++)
+            {
+                if (Application.OpenForms[i] is playGame playGameInstance)
+                {
+                    playGameInstance.Close();
+                }
+            }*/
 
-         }
+        }
 
          private void button4_Click(object sender, EventArgs e)
          {

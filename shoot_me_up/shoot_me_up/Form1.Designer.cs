@@ -33,6 +33,7 @@
             button_score = new Button();
             button3 = new Button();
             pictureBox1 = new PictureBox();
+            button2 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
             // 
@@ -86,6 +87,19 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
+            // button2
+            // 
+            button2.Font = new Font("Cooper Black", 48F, FontStyle.Italic, GraphicsUnit.Point);
+            button2.ForeColor = Color.IndianRed;
+            button2.Image = (Image)resources.GetObject("button2.Image");
+            button2.Location = new Point(496, 606);
+            button2.Name = "button2";
+            button2.Size = new Size(377, 160);
+            button2.TabIndex = 5;
+            button2.Text = "SKINS";
+            button2.UseVisualStyleBackColor = true;
+            button2.Click += button2_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 14F);
@@ -93,6 +107,7 @@
             BackColor = Color.IndianRed;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1372, 778);
+            Controls.Add(button2);
             Controls.Add(pictureBox1);
             Controls.Add(button3);
             Controls.Add(button_score);
@@ -100,7 +115,9 @@
             Font = new Font("Cooper Black", 9F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.MediumPurple;
             Name = "Form1";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "shoot-me-up";
+            Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -111,5 +128,6 @@
         private Button button_score;
         private Button button3;
         private PictureBox pictureBox1;
+        private Button button2;
     }
 }

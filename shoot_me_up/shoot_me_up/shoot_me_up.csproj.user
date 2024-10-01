@@ -16,5 +16,8 @@
     <Compile Update="Score.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Skins.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -168,7 +168,9 @@
             Controls.Add(pictureBox1);
             Controls.Add(HP);
             Name = "playGame";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "playGame";
+            Load += playGame_Load;
             ((System.ComponentModel.ISupportInitialize)HP).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
