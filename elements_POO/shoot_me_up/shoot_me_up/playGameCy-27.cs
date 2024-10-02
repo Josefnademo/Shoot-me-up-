@@ -115,8 +115,6 @@ namespace shoot_me_up
             }
         }
 
-       
-
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             if (PauseMenu == null)
@@ -134,6 +132,11 @@ namespace shoot_me_up
             {
                 PauseMenu.Close();
             }
+        }
+
+        private void pictureBox5_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void label2_Click_1(object sender, EventArgs e)

@@ -49,7 +49,9 @@ namespace shoot_me_up
             movementTimer.Tick += MovementTimer_Tick; // Привязываем метод, который будет вызываться при каждом тике таймера
             movementTimer.Start(); // Запускаем таймер
 
-
+            //Start the music of game round when button PLAY is pressed and play it in the loop
+            Form1.player = new SoundPlayer(Form1.musicList[0]);
+            Form1.player.PlayLooping();
 
             // Defines the form to handle keystrokes
             this.KeyPreview = true;

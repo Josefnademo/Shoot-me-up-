@@ -16,13 +16,14 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-
 namespace shoot_me_up
 {
     public partial class Options : Form
     {
        
-        // Переменная для хранения уровня громкости
+        public static Form1 Menu = new Form1(); // Create an instance of the Form1
+
+                               // Переменная для хранения уровня громкости
         int SystemSound = 50; // Начальный уровень громкости (от 0 до 100)
 
         public Options()
@@ -30,18 +31,20 @@ namespace shoot_me_up
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //button to go back to menu
+        private void button1_Click_1(object sender, EventArgs e)
         {
-
-            // Create an instance of the second form
-            Form1 Menu = new Form1();
-
             // Show the second form
             Menu.Show();
 
             // Close the first form (optional, if new)
             this.Close();
+        }
 
+        //button to stop and turn on music, use methode of class Pause
+        private void button4_Click_1(object sender, EventArgs e)
+        {
+            Pause.ToggleMusic(); //Form1.musicPlaying= false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -60,16 +63,6 @@ namespace shoot_me_up
             }
         }
 
-        //stop and turn on music, use methode of class Pause
-        private void button4_Click(object sender, EventArgs e)
-        {
-            Pause.ToggleMusic(); Form1.musicPlaying = false;
-        }
-
-        private void Options_Load(object sender, EventArgs e)
-        {
-
-        }
         private void button_score_Click(object sender, EventArgs e)
         {
 
@@ -84,5 +77,7 @@ namespace shoot_me_up
         {
 
         }
+
+       
     }
 }

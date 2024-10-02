@@ -88,6 +88,7 @@
             this.pictureBox5.Size = new System.Drawing.Size(140, 57);
             this.pictureBox5.TabIndex = 4;
             this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click_1);
             // 
             // Skins
             // 

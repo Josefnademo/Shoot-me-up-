@@ -13,7 +13,6 @@ namespace shoot_me_up
 {
     public partial class Pause : Form
     {
-        public static bool musicPlaying = true; //variable wich will track the state of music.
         private playGame playGame1;
 
         public playGameCy_27 playGameCy_27Instance;
@@ -31,15 +30,15 @@ namespace shoot_me_up
         //Method plays the music when button is pressed and stop it when it's not
         public static void ToggleMusic()
         { 
-            if (musicPlaying)
+            if (Form1.musicPlaying)
             {
                 Form1.player.Stop(); // Music stops
-                musicPlaying = false;
+                Form1.musicPlaying = false;
             }
             else
             {
                 Form1.player.PlayLooping(); // Music playing in the loop
-                musicPlaying = true;
+                Form1.musicPlaying = true;
             }
         }
 
@@ -57,28 +56,23 @@ namespace shoot_me_up
 
          private void button1_Click(object sender, EventArgs e)
          {
-             // Create an instance of the second form
+             // Create an instance of the second form and show it
              Form1 Menu = new Form1();
-
-             // Show the second form
              Menu.Show();
 
-           
-            // Close the playGame form (if available). And use for loop to avoid additional opened windows.  ..I had a problem with multiple windows of playGame form
-            // ,but now idon't,but i want to leav it here just to be sure that's gonna work in anny case :)  
-           /* for (int i = 0; i < Application.OpenForms.Count; i++)
+            // Loop through all open forms
+            for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
             {
-                if (Application.OpenForms[i] is playGame playGameInstance)
-                {
-                    playGameInstance.Close();
-                }
-                if (Application.OpenForms[i] is playGame playGameCy_27Instance)
-                {
-                    playGameCy_27Instance.Close();
-                }
-            }*/
+                // We get the form from the list of open ones
+                var openForm = Application.OpenForms[i];
 
-            // Close the first form (optional, if new)
+                // We check if the form is not Menu or Pause, then we close it
+                if (!(openForm is Form1) && !(openForm is Pause))
+                {
+                    openForm.Close();
+                }
+            }
+            // close form (Pause)
             this.Close();
          }
 

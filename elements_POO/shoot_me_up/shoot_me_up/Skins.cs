@@ -49,24 +49,11 @@ namespace shoot_me_up
 
         }
 
-        private void pictureBox5_Click(object sender, EventArgs e)
-        {
-            // Create an instance of the second form
-            Form1 Menu = new Form1();
-
-            // Show the second form
-            Menu.Show();
-
-            // Close the first form (optional, if new)
-            this.Close();
-           
-        }
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
 
         }
-
+        //Cy-27 level
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             // Create an instance of the second form
@@ -74,6 +61,18 @@ namespace shoot_me_up
 
             // Show the second form
             level_Cy27.Show();
+
+            // Close the first form (optional, if new)
+            this.Close();
+        }
+        //back button
+        private void pictureBox5_Click_1(object sender, EventArgs e)
+        {
+            // Create an instance of the second form
+            Form1 Menu = new Form1();
+
+            // Show the second form
+            Menu.Show();
 
             // Close the first form (optional, if new)
             this.Close();
