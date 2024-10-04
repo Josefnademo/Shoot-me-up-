@@ -90,7 +90,7 @@
             pictureBoxShip.Image = (Image)resources.GetObject("pictureBoxShip.Image");
             pictureBoxShip.Location = new Point(678, 638);
             pictureBoxShip.Name = "pictureBoxShip";
-            pictureBoxShip.Size = new Size(34, 90);
+            pictureBoxShip.Size = new Size(34, 92);
             pictureBoxShip.TabIndex = 3;
             pictureBoxShip.TabStop = false;
             pictureBoxShip.Click += pictureBoxShip_Click_1;
@@ -109,13 +109,14 @@
             // 
             // GameTimer
             // 
+            GameTimer.Enabled = true;
             GameTimer.Interval = 2;
             // 
             // pictureBox3
             // 
             pictureBox3.BackColor = Color.Transparent;
             pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
-            pictureBox3.Location = new Point(287, 12);
+            pictureBox3.Location = new Point(280, 132);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(83, 84);
             pictureBox3.TabIndex = 5;
@@ -123,7 +124,9 @@
             // 
             // SpaceshipTimer
             // 
-            SpaceshipTimer.Interval = 2;
+            SpaceshipTimer.Enabled = true;
+            SpaceshipTimer.Interval = 1;
+            SpaceshipTimer.Tick += SpaceshipTimer_Tick;
             // 
             // label2
             // 
@@ -141,7 +144,8 @@
             // 
             // timer1
             // 
-            timer1.Interval = 1000;
+            timer1.Enabled = true;
+            timer1.Interval = 5000;
             timer1.Tick += timer1_Tick_1;
             // 
             // pictureBox4
@@ -159,9 +163,9 @@
             // 
             pictureBox5.BackColor = Color.Transparent;
             pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(751, 434);
+            pictureBox5.Location = new Point(901, 276);
             pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(300, 98);
+            pictureBox5.Size = new Size(30, 115);
             pictureBox5.TabIndex = 9;
             pictureBox5.TabStop = false;
             // 

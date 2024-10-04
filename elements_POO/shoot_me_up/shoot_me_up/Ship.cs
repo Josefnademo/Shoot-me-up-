@@ -5,7 +5,36 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace shoot_me_up
-{/*
+{
+    class Ship
+    {
+        //public int _y = uiElement.Location.Y;
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
     internal class Ship         //Class ship
     {
         //position du vaisseau

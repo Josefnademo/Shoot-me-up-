@@ -13,22 +13,24 @@ namespace shoot_me_up
 {
     public partial class playGameCy_27 : Form
     {
-       
         private Pause PauseMenu;
 
-
-        bool goLeft, goRight;
-        int playerSpeed = 15;
-        public int hp = 3;
-        int enemySpeed = 5;
-        int score = 0;
-        int enemyBullTimer = 250;
-
-        PictureBox[] enemyArray;
-
-        bool shooting;
+        /// </Gameover window>
         bool GameOver;
 
+        /// </Player>
+        private bool moveLeft, moveRight;
+        int shipSpeed = 15;
+        public int hp = 3;
+        bool shooting;
+
+
+        /// </Enemy>
+        int enemySpeed = 5;
+        int score = 0;
+        PictureBox[] enemyArray;
+
+        /// </Timer>
         private System.Windows.Forms.Timer movementTimer;
 
 
@@ -36,34 +38,28 @@ namespace shoot_me_up
         {
             InitializeComponent();
 
-            // Подготавливаем таймер для плавного перемещения
-            movementTimer = new System.Windows.Forms.Timer();
-            movementTimer.Interval = 2; // Интервал срабатывания таймера (2 мс)
-            movementTimer.Tick += MovementTimer_Tick; // Привязываем метод, который будет вызываться при каждом тике таймера
-            movementTimer.Start(); // Запускаем таймер
-
-            //Music of score
-            Form1.player = new SoundPlayer(Form1.musicList[4]);
+            //Start the music of game round when button PLAY is pressed and play it in the loop
+            Form1.player = new SoundPlayer(Form1.musicList[0]);
             Form1.player.PlayLooping();
 
             // Defines the form to handle keystrokes
             this.KeyPreview = true;
 
-            // Subscribe/Use to the KeyDown event
+            // Subscribe/Use  to the KeyDown and KeyUp events
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
+            this.KeyUp += new KeyEventHandler(playGame_KeyUp);
 
         }
-
-        // Метод, который будет вызываться при каждом тике таймера (каждые 20 мс)
-        private void MovementTimer_Tick(object sender, EventArgs e)
+        // Traitement du mouvement du navire vers la gauche et la droite
+        private void SpaceshipTimer_Tick(object sender, EventArgs e)
         {
-            if (goLeft && pictureBoxShip.Left > 0)
+            if (moveLeft && pictureBoxShip.Location.X > 0) // Restriction pour la bordure gauche
             {
-                pictureBoxShip.Left -= playerSpeed;
+                pictureBoxShip.Location = new Point(pictureBoxShip.Location.X - shipSpeed, pictureBoxShip.Location.Y);
             }
-            if (goRight && pictureBoxShip.Right < this.ClientSize.Width)
+            if (moveRight && pictureBoxShip.Location.X + pictureBoxShip.Width < this.ClientSize.Width) // Limite pour la bordure droite
             {
-                pictureBoxShip.Left += playerSpeed;
+                pictureBoxShip.Location = new Point(pictureBoxShip.Location.X + shipSpeed, pictureBoxShip.Location.Y);
             }
         }
 
@@ -75,26 +71,33 @@ namespace shoot_me_up
             // Check if the "left arrow" or "A" was pressed
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
-                goLeft = true;
+                moveLeft = true;
+
+
             }
             else if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
             {
-                goRight = true;
+                moveRight = true;
 
             }
+            //
 
+            // teleport on center
             if (e.KeyCode == Keys.Up)
             {
-                //Move PictureBox on center
-                pictureBoxShip.Left =960;
+                //Move PictureBox on center of Form
+                pictureBoxShip.Left = this.ClientSize.Width / 2;
             }
+            //
 
             // shoot with bullet 
             if (e.KeyCode == Keys.Space && shooting == false)
             {
                 shooting = true;
             }
+            //
 
+            //shooting
             if (e.KeyCode == Keys.Escape)
             {
                 if (PauseMenu == null)
@@ -113,7 +116,22 @@ namespace shoot_me_up
                     PauseMenu.Close();
                 }
             }
+            //
         }
+
+        // Gère la libération de la clé
+        private void playGame_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
+            {
+                moveLeft = false;
+            }
+            else if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
+            {
+                moveRight = false;
+            }
+        }
+        //
 
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -141,10 +159,18 @@ namespace shoot_me_up
 
         private void label2_Click_1(object sender, EventArgs e)
         {
-            if (timer1 == default)
-            {
-                label2.Hide();
-            }
+
+        }
+        //hide label "Esc to pause"
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            label2.Hide();
+            timer1.Stop();
+        }
+
+        private void pictureBoxShip_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
