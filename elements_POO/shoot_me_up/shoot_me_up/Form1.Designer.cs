@@ -29,52 +29,17 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            button1 = new Button();
-            button_score = new Button();
-            button3 = new Button();
             pictureBox1 = new PictureBox();
-            button2 = new Button();
+            pictureBox2 = new PictureBox();
+            pictureBox3 = new PictureBox();
+            pictureBox4 = new PictureBox();
+            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
-            // 
-            // button1
-            // 
-            button1.BackColor = SystemColors.WindowText;
-            button1.BackgroundImage = (Image)resources.GetObject("button1.BackgroundImage");
-            button1.Font = new Font("Cooper Black", 55F, FontStyle.Regular, GraphicsUnit.Point);
-            button1.Location = new Point(496, 366);
-            button1.Name = "button1";
-            button1.Size = new Size(377, 160);
-            button1.TabIndex = 0;
-            button1.Text = "PLAY";
-            button1.UseVisualStyleBackColor = false;
-            button1.Click += button1_Click;
-            // 
-            // button_score
-            // 
-            button_score.BackgroundImage = (Image)resources.GetObject("button_score.BackgroundImage");
-            button_score.Font = new Font("Cooper Black", 55F, FontStyle.Regular, GraphicsUnit.Point);
-            button_score.ForeColor = Color.MistyRose;
-            button_score.Location = new Point(937, 549);
-            button_score.Name = "button_score";
-            button_score.Size = new Size(368, 160);
-            button_score.TabIndex = 1;
-            button_score.Text = "SCORE";
-            button_score.UseVisualStyleBackColor = true;
-            button_score.Click += button_score_Click_1;
-            // 
-            // button3
-            // 
-            button3.BackgroundImage = (Image)resources.GetObject("button3.BackgroundImage");
-            button3.Font = new Font("Cooper Black", 50F, FontStyle.Regular, GraphicsUnit.Point);
-            button3.ForeColor = Color.MistyRose;
-            button3.Location = new Point(71, 550);
-            button3.Name = "button3";
-            button3.Size = new Size(368, 160);
-            button3.TabIndex = 2;
-            button3.Text = "OPTIONS";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
             // 
             // pictureBox1
             // 
@@ -87,18 +52,49 @@
             pictureBox1.TabStop = false;
             pictureBox1.Click += pictureBox1_Click;
             // 
-            // button2
+            // pictureBox2
             // 
-            button2.Font = new Font("Cooper Black", 48F, FontStyle.Italic, GraphicsUnit.Point);
-            button2.ForeColor = Color.IndianRed;
-            button2.Image = (Image)resources.GetObject("button2.Image");
-            button2.Location = new Point(496, 606);
-            button2.Name = "button2";
-            button2.Size = new Size(377, 160);
-            button2.TabIndex = 5;
-            button2.Text = "SKINS";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            pictureBox2.BackColor = Color.Transparent;
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(496, 448);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(377, 160);
+            pictureBox2.TabIndex = 6;
+            pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click;
+            // 
+            // pictureBox3
+            // 
+            pictureBox3.BackColor = Color.Transparent;
+            pictureBox3.Image = (Image)resources.GetObject("pictureBox3.Image");
+            pictureBox3.Location = new Point(934, 538);
+            pictureBox3.Name = "pictureBox3";
+            pictureBox3.Size = new Size(378, 160);
+            pictureBox3.TabIndex = 7;
+            pictureBox3.TabStop = false;
+            pictureBox3.Click += pictureBox3_Click;
+            // 
+            // pictureBox4
+            // 
+            pictureBox4.BackColor = Color.Transparent;
+            pictureBox4.Image = (Image)resources.GetObject("pictureBox4.Image");
+            pictureBox4.Location = new Point(492, 623);
+            pictureBox4.Name = "pictureBox4";
+            pictureBox4.Size = new Size(381, 162);
+            pictureBox4.TabIndex = 8;
+            pictureBox4.TabStop = false;
+            pictureBox4.Click += pictureBox4_Click;
+            // 
+            // pictureBox5
+            // 
+            pictureBox5.BackColor = Color.Transparent;
+            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
+            pictureBox5.Location = new Point(53, 538);
+            pictureBox5.Name = "pictureBox5";
+            pictureBox5.Size = new Size(383, 160);
+            pictureBox5.TabIndex = 9;
+            pictureBox5.TabStop = false;
+            pictureBox5.Click += pictureBox5_Click;
             // 
             // Form1
             // 
@@ -106,12 +102,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.IndianRed;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1372, 778);
-            Controls.Add(button2);
+            ClientSize = new Size(1372, 817);
+            Controls.Add(pictureBox5);
+            Controls.Add(pictureBox4);
+            Controls.Add(pictureBox3);
+            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
-            Controls.Add(button3);
-            Controls.Add(button_score);
-            Controls.Add(button1);
             Font = new Font("Cooper Black", 9F, FontStyle.Regular, GraphicsUnit.Point);
             ForeColor = Color.MediumPurple;
             Name = "Form1";
@@ -119,15 +115,18 @@
             Text = "shoot-me-up";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Button button1;
-        private Button button_score;
-        private Button button3;
         private PictureBox pictureBox1;
-        private Button button2;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private PictureBox pictureBox4;
+        private PictureBox pictureBox5;
     }
 }

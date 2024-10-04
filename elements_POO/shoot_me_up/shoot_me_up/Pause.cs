@@ -29,7 +29,7 @@ namespace shoot_me_up
 
         //Method plays the music when button is pressed and stop it when it's not
         public static void ToggleMusic()
-        { 
+        {
             if (Form1.musicPlaying)
             {
                 Form1.player.Stop(); // Music stops
@@ -43,22 +43,22 @@ namespace shoot_me_up
         }
 
         //Button plays music, works with method "ToggleMusic"
-        private void button3_Click(object sender, EventArgs e)
-         {
-         ToggleMusic();
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            ToggleMusic();
         }
 
-         private void button2_Click(object sender, EventArgs e)
-         {
-             //Continue the game
-             this.Close();
-         }
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            //Continue the game
+            this.Close();
+        }
 
-         private void button1_Click(object sender, EventArgs e)
-         {
-             // Create an instance of the second form and show it
-             Form1 Menu = new Form1();
-             Menu.Show();
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the second form and show it
+            Form1 Menu = new Form1();
+            Menu.Show();
 
             // Loop through all open forms
             for (int i = Application.OpenForms.Count - 1; i >= 0; i--)
@@ -74,11 +74,12 @@ namespace shoot_me_up
             }
             // close form (Pause)
             this.Close();
-         }
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
 
-         private void button4_Click(object sender, EventArgs e)
-         {
+        }
 
-         }
+
     }
 }

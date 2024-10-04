@@ -30,16 +30,15 @@ namespace shoot_me_up
             InitializeComponent();
 
             //*Music checking* if "musicPLaying" is turned off,so music doesn't playing
-            if (musicPlaying !=false)
+            if (musicPlaying != false)
             {
                 player = new SoundPlayer(Form1.musicList[1]);
                 player.PlayLooping();
                 musicPlaying = true;
             }
         }
-
         //PlayGame form opener 
-        private void button1_Click(object sender, EventArgs e)
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             //stop music of menu
             player.Stop();
@@ -53,17 +52,22 @@ namespace shoot_me_up
             // Close the first form (optional, if new)
             this.Hide();
         }
-
-        //score options opener
-        private void button_score_Click_1(object sender, EventArgs e)
-        { 
+        // Skins form opener
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            Skins Skins1 = new Skins();
+            Skins1.Show();
+            this.Hide();
+        }
+        // Score form opener
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
             Score Score = new Score();
             Score.Show();
             this.Hide();
         }
-
-        //Options button opener
-        private void button3_Click(object sender, EventArgs e)
+        // Optioons form opener
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             Options Options = new Options();
             Options.Show();
@@ -74,14 +78,6 @@ namespace shoot_me_up
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        // Skins form opener
-        private void button2_Click(object sender, EventArgs e)
-        {
-            Skins Skins1 = new Skins();
-            Skins1.Show();
-            this.Hide();
         }
 
         private void Form1_Load(object sender, EventArgs e)

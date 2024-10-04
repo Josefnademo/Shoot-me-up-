@@ -24,7 +24,8 @@ namespace shoot_me_up
             Form1.player.PlayLooping();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        //back to menu button
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
             // Create an instance of the second form
             Form1 Form2 = new Form1();
