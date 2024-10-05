@@ -4,28 +4,40 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace shoot_me_up
 {
     internal class Missile
     {
+        
 
-        //arrey of all music
-        public static string[] missileImage =
-        { @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\images\programing_img\bullets\blue_blas.png",
-          @""
+        public static string basePath = AppDomain.CurrentDomain.BaseDirectory;                                                               //get the Path of current program
+        public static string musicPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\images\programing_img\bullets"));       //combine the Path of current program and music folder and give it as full path
+        public static string[] missileImage =                                                                                                //arrey of all music
+        { 
+          Path.Combine(musicPath,"blue_blas.png"),
+          Path.Combine(musicPath,"fire_hand.png"),
+          Path.Combine(musicPath,"neptun.png"),
+          Path.Combine(musicPath,"Radiohead-No-Surprises.wav")
         };
 
-        //Creation and positioning of missile
-        public static PictureBox CreateMissile(int xPosition , int yPosition)
+        //// Create and position a rocket given a unique image
+        public static PictureBox CreateMissile(int xPosition, int yPosition, string missileImagePath)
         {
-            PictureBox missile = new PictureBox();
-            missile.Image = Image.FromFile(missileImage[0]); // choose the image of missile
-            missile.SizeMode = PictureBoxSizeMode.AutoSize; // Adjust the size of image
-            missile.Tag = "missile"; // Set the tag for identification
-            missile.Left = xPosition; //  X position
-            missile.Top = yPosition;  //  Y position
-            return missile;
+            PictureBox missile = new PictureBox
+            {
+                SizeMode = PictureBoxSizeMode.AutoSize, // Adjust the size of image
+                Tag = "missile", // Set the tag for identification
+                Left = xPosition, //  X position
+                Top = yPosition //  Y position     
+            };
+            using (Image img = Image.FromFile(missileImagePath)) // Загружаем уникальное изображение ракеты
+            {
+                missile.Image = new Bitmap(img); // Создаем новый Bitmap из загруженного изображения
+            }
+
+            return missile; 
         }
     }
 }

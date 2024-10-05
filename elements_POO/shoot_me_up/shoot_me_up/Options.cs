@@ -15,20 +15,22 @@ using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using AudioSwitcher.AudioApi.CoreAudio;            // Library for working with audio of system
 
 namespace shoot_me_up
 {
     public partial class Options : Form
     {
-       
-        public static Form1 Menu = new Form1(); // Create an instance of the Form1
 
-                               // Переменная для хранения уровня громкости
-        int SystemSound = 50; // Начальный уровень громкости (от 0 до 100)
+        public static Form1 Menu = new Form1();         // Create an instance of the Form1
+        private CoreAudioDevice defaultPlaybackDevice;  // Create an instance of the class to work with audio devices
 
         public Options()
         {
             InitializeComponent();
+
+            // Get the default device (speakers, headphones, etc.)
+            defaultPlaybackDevice = new CoreAudioController().DefaultPlaybackDevice;
         }
 
         //button to go back to menu
@@ -42,24 +44,32 @@ namespace shoot_me_up
         }
 
         //button to stop and turn on music, use methode of class Pause
-        private void button4_Click_1(object sender, EventArgs e)
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
             Pause.ToggleMusic(); //Form1.musicPlaying= false;
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //diminuate the volume button
+        private void pictureBox1_Click(object sender, EventArgs e)
         {
-            if (SystemSound > 10 && SystemSound <= 100)
+            if (defaultPlaybackDevice.Volume >= 5 && defaultPlaybackDevice.Volume <= 100)
             {
-                SystemSound += 10;
+                // Get the current volume
+                int currentVolume = (int)defaultPlaybackDevice.Volume;
+                // Decrease volume by 5
+                defaultPlaybackDevice.Volume = currentVolume - 5;
             }
         }
-
-        private void button3_Click(object sender, EventArgs e)
+        //Increase the volume button
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
-            if (SystemSound >= 0 && SystemSound < 100)
+            
+            if (defaultPlaybackDevice.Volume >= 0 && defaultPlaybackDevice.Volume < 100)
             {
-                SystemSound -= 10;
+                // Get the current volume
+                int currentVolume = (int)defaultPlaybackDevice.Volume;
+                // Increase volume by 5
+                defaultPlaybackDevice.Volume = currentVolume + 5;
             }
         }
 
@@ -77,7 +87,5 @@ namespace shoot_me_up
         {
 
         }
-
-       
     }
 }

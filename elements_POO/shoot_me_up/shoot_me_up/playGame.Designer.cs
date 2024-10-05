@@ -41,14 +41,12 @@
             label2 = new Label();
             timer1 = new System.Windows.Forms.Timer(components);
             pictureBox4 = new PictureBox();
-            pictureBox5 = new PictureBox();
             ((System.ComponentModel.ISupportInitialize)HP).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShip).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             SuspendLayout();
             // 
             // HP
@@ -110,7 +108,7 @@
             // GameTimer
             // 
             GameTimer.Enabled = true;
-            GameTimer.Interval = 2;
+            GameTimer.Interval = 1;
             // 
             // pictureBox3
             // 
@@ -159,23 +157,12 @@
             pictureBox4.TabStop = false;
             pictureBox4.Click += pictureBox4_Click_1;
             // 
-            // pictureBox5
-            // 
-            pictureBox5.BackColor = Color.Transparent;
-            pictureBox5.Image = (Image)resources.GetObject("pictureBox5.Image");
-            pictureBox5.Location = new Point(901, 276);
-            pictureBox5.Name = "pictureBox5";
-            pictureBox5.Size = new Size(30, 115);
-            pictureBox5.TabIndex = 9;
-            pictureBox5.TabStop = false;
-            // 
             // playGame
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1372, 771);
-            Controls.Add(pictureBox5);
             Controls.Add(pictureBox4);
             Controls.Add(label2);
             Controls.Add(pictureBox3);
@@ -194,7 +181,6 @@
             ((System.ComponentModel.ISupportInitialize)pictureBoxShip).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -212,6 +198,5 @@
         private Label label2;
         private PictureBox pictureBox4;
         public System.Windows.Forms.Timer timer1;
-        private PictureBox pictureBox5;
     }
 }

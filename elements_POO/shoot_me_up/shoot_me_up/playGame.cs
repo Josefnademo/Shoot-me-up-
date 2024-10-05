@@ -12,17 +12,18 @@ using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
+using System.IO;
 
 namespace shoot_me_up
 {
     public partial class playGame : Form
     {
         private Pause PauseMenu;
-        private Missile MissileForm;
         private System.Windows.Forms.Timer missileTimer;
 
         /// </Gameover window>
@@ -43,10 +44,10 @@ namespace shoot_me_up
         /// </Timer>
         private System.Windows.Forms.Timer movementTimer;
 
-
         public playGame()
         {
             InitializeComponent();
+            this.DoubleBuffered = true; // Enable double buffering. This helps avoid flickering and improves graphics performance.
 
             //Start the music of game round when button PLAY is pressed and play it in the loop
             Form1.player = new SoundPlayer(Form1.musicList[0]);
@@ -59,13 +60,20 @@ namespace shoot_me_up
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
             this.KeyUp += new KeyEventHandler(playGame_KeyUp);
 
+            // Initialize the timer for ship movement
+            movementTimer = new System.Windows.Forms.Timer();
+            movementTimer.Interval = 20; // Interval
+            movementTimer.Tick += new EventHandler(SpaceshipTimer_Tick);
+            movementTimer.Start(); // launch the timer of ship
+
             // Initialize the timer for missile movement
             missileTimer = new System.Windows.Forms.Timer(); // Specify the correct timer class
             missileTimer.Interval = 20; // Adjust interval as needed
             missileTimer.Tick += new EventHandler(MoveMissiles);
-
+            
         }
-        // Traitement du mouvement du navire vers la gauche et la droite
+
+        // Processing of ship movement to left and right
         protected void SpaceshipTimer_Tick(object sender, EventArgs e)
         {
             if (moveLeft && pictureBoxShip.Location.X > 0) // Restriction pour la bordure gauche
@@ -76,29 +84,55 @@ namespace shoot_me_up
             {
                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X + shipSpeed, pictureBoxShip.Location.Y);
             }
-
         }
+        //
 
+        //movement of rocket
         protected void FireMissile()
         {
             int missileY = pictureBoxShip.Location.Y - 20; // Spawn above the spaceship
-            int missileX = pictureBoxShip.Location.X + (pictureBoxShip.Width / 2) ; // Center the missile on the ship
-            PictureBox missile = Missile.CreateMissile(missileX, missileY);
-            missile.Tag = "missile"; // Set the tag for identification
-            this.Controls.Add(missile);
+            int missileX = pictureBoxShip.Location.X + (pictureBoxShip.Width / 2); // Center the missile on the ship
 
+            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") <15) //max 15 racket
+            {
+                //create object with 3 variables and data  assigned to them
+                PictureBox missile = Missile.CreateMissile(missileX, missileY, Missile.missileImage[0]);
+
+                missile.Tag = "missile";    // Set the tag for identification
+                this.Controls.Add(missile); //add missile
+            }
             // Start the missile timer if it's not already running
             if (!missileTimer.Enabled)
             {
-                missileTimer.Start();
+                missileTimer.Start();//start timer
             }
         }
+        //
 
+        //deplacement missile
+        private void MoveMissiles(object sender, EventArgs e)
+        {
+            foreach (Control control in this.Controls)
+            {
+                if (control is PictureBox missile && missile.Tag?.ToString() == "missile") //The ?. operator (null-conditional operator) is used to safely access the ToString() method.
+                                                                                           //If Tag is null, it won’t throw an exception, and the expression will evaluate to null
+                {
+                    missile.Top -= 10; // Move the missile upwards
+
+                    // Remove the missile if it goes off-screen
+                    if (missile.Top < 0)
+                    {
+                        this.Controls.Remove(missile);
+                        missile.Dispose();
+                    }
+                }
+            }
+        }
+        //
 
         // The method that will be called when some key is pressed
         private void playGame_KeyDown(object sender, KeyEventArgs e)
         {
-
             // Check if the "left arrow" or "A" was pressed
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
@@ -146,42 +180,7 @@ namespace shoot_me_up
             }
             //
         }
-        //deplacement missile
-        private void MoveMissiles(object sender, EventArgs e)
-        {
-            foreach (Control control in this.Controls)
-            {
-                if (control is PictureBox missile && missile.Tag?.ToString() == "missile") //The ?. operator (null-conditional operator) is used to safely access the ToString() method.
-                                                                                           //If Tag is null, it won’t throw an exception, and the expression will evaluate to null
-                {
-                    missile.Top -= 10; // Move the missile upwards
 
-                    // Remove the missile if it goes off-screen
-                    if (missile.Top < 0)
-                    {
-                        this.Controls.Remove(missile);
-                        missile.Dispose();
-                    }
-                }
-            }
-        }
-        //
-
-        //pause form ACTIVATOR
-        private void pictureBox4_Click_1(object sender, EventArgs e)
-        {
-
-            if (PauseMenu == null)
-            {
-                PauseMenu = new Pause();
-                PauseMenu.FormClosed += (s, args) => PauseMenu = null;
-                PauseMenu.Show();
-            }
-            else
-            {
-                PauseMenu.Close();
-            }
-        }
         // Gère la libération de la clé
         private void playGame_KeyUp(object sender, KeyEventArgs e)
         {
@@ -196,6 +195,21 @@ namespace shoot_me_up
         }
         //
 
+        //pause form ACTIVATOR
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            if (PauseMenu == null)
+            {
+                PauseMenu = new Pause();
+                PauseMenu.FormClosed += (s, args) => PauseMenu = null;
+                PauseMenu.Show();
+            }
+            else
+            {
+                PauseMenu.Close();
+            }
+        }
+
         //hide label "Esc to pause"
         private void timer1_Tick_1(object sender, EventArgs e)
         {
@@ -203,6 +217,7 @@ namespace shoot_me_up
             timer1.Stop();
         }
         //
+
         private void label2_Click_1(object sender, EventArgs e)
         {
             

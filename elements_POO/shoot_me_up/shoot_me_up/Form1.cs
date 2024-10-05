@@ -5,36 +5,43 @@
 
 using System.Media;
 using System.Windows.Forms;
+using System.IO;
 
 namespace shoot_me_up
 {
     public partial class Form1 : Form
     {
-
-        public static bool musicPlaying = true; //variable wich will track the state of music.
-
-        //arrey of all music
-        public static string[] musicList =
-        { @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Radiohead-No-Surprises.wav",
-          @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Messages-from-the-stars1.wav",
-          @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\a minute lofi.wav",
-         @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Doja_Cat_Ft_SZA_-_Kiss_Me_More.wav",
-         @"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\music\Oy-Marichka-Chicheri.wav"
+        public static string basePath = AppDomain.CurrentDomain.BaseDirectory;                              //get the Path of current program
+        public static string musicPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\music"));       //combine the Path of current program and music folder and give it as full path
+        public static bool musicPlaying = true;                                                             //variable wich will track the state of music.
+        public static SoundPlayer player;                                                                   //Player declaration, *static* pour que player puisse utiliser par tout
+        public static string[] musicList =                                                                  //arrey of all music
+        {
+            Path.Combine(musicPath,"Radiohead-No-Surprises.wav"),
+            Path.Combine(musicPath,"Messages-from-the-stars1.wav"),
+            Path.Combine(musicPath,"a minute lofi.wav"),
+            Path.Combine(musicPath,"Doja_Cat_Ft_SZA_-_Kiss_Me_More.wav"),
+            Path.Combine(musicPath,"Oy-Marichka-Chicheri.wav")
         };
-
-        //Player declaration, *static* pour que player puisse utiliser par tout
-        public static SoundPlayer player;
 
         public Form1()
         {
             InitializeComponent();
-
+            
             //*Music checking* if "musicPLaying" is turned off,so music doesn't playing
-            if (musicPlaying != false)
+            if (musicPlaying == true)
             {
-                player = new SoundPlayer(Form1.musicList[1]);
-                player.PlayLooping();
-                musicPlaying = true;
+                // Check if the file exists **to don't stop the program
+                if (File.Exists(musicList[1])) 
+                {
+                    player = new SoundPlayer(Form1.musicList[1]);
+                    player.PlayLooping();
+                    musicPlaying = true;
+                }
+                else
+                {
+                    MessageBox.Show("Music file not found (0w0): " + musicList[1]);
+                }
             }
         }
         //PlayGame form opener 
