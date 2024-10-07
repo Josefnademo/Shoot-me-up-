@@ -199,6 +199,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "playGameCy_27";
             WindowState = FormWindowState.Maximized;
+            Load += playGameCy_27_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBoxShip).EndInit();

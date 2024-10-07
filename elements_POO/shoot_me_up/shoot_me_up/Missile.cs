@@ -10,12 +10,12 @@ namespace shoot_me_up
 {
     internal class Missile
     {
-        
+
 
         public static string basePath = AppDomain.CurrentDomain.BaseDirectory;                                                               //get the Path of current program
         public static string musicPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\images\programing_img\bullets"));       //combine the Path of current program and music folder and give it as full path
         public static string[] missileImage =                                                                                                //arrey of all music
-        { 
+        {
           Path.Combine(musicPath,"blue_blas.png"),
           Path.Combine(musicPath,"fire_hand.png"),
           Path.Combine(musicPath,"neptun.png"),
@@ -32,16 +32,15 @@ namespace shoot_me_up
                 Left = xPosition, //  X position
                 Top = yPosition //  Y position     
             };
-            using (Image img = Image.FromFile(missileImagePath)) // Загружаем уникальное изображение ракеты
+            using (Image img = Image.FromFile(missileImagePath)) // Load unique rocket picture 
             {
-                missile.Image = new Bitmap(img); // Создаем новый Bitmap из загруженного изображения
+                missile.Image = new Bitmap(img); // Create new Bitmap from downloaded image
             }
 
-            return missile; 
+            return missile;
         }
     }
 }
-
 
 /*Possible "SizeMode" values:
 Normal: The image is displayed at its natural size. If the image is larger than the PictureBox, it will be cropped.

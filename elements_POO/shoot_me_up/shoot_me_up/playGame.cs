@@ -23,17 +23,17 @@ namespace shoot_me_up
 {
     public partial class playGame : Form
     {
-        private Pause PauseMenu;
-        private System.Windows.Forms.Timer missileTimer;
+        private Pause PauseMenu;                                //Pause instance
+        private System.Windows.Forms.Timer missileTimer;        //missile timer
 
         /// </Gameover window>
         bool GameOver;
 
         /// </Player>
-        private bool moveLeft, moveRight;
-        int shipSpeed = 15;
-        public int hp = 3;
-        bool shooting;
+        private bool moveLeft, moveRight;     //variables to verify the state of left and right movement
+        public  int shipSpeed = 15;           //speed of ship
+        public static  int ShipHp = 3;        //ship's hp amount
+        bool shooting;                        //variable to verify shooting process(fire missile method) 
         
 
         /// </Enemy>
@@ -62,13 +62,13 @@ namespace shoot_me_up
 
             // Initialize the timer for ship movement
             movementTimer = new System.Windows.Forms.Timer();
-            movementTimer.Interval = 20; // Interval
+            movementTimer.Interval = 2; // Interval
             movementTimer.Tick += new EventHandler(SpaceshipTimer_Tick);
             movementTimer.Start(); // launch the timer of ship
 
             // Initialize the timer for missile movement
             missileTimer = new System.Windows.Forms.Timer(); // Specify the correct timer class
-            missileTimer.Interval = 20; // Adjust interval as needed
+            missileTimer.Interval = 2; // Adjust interval as needed
             missileTimer.Tick += new EventHandler(MoveMissiles);
             
         }
@@ -76,11 +76,11 @@ namespace shoot_me_up
         // Processing of ship movement to left and right
         protected void SpaceshipTimer_Tick(object sender, EventArgs e)
         {
-            if (moveLeft && pictureBoxShip.Location.X > 0) // Restriction pour la bordure gauche
+            if (moveLeft && pictureBoxShip.Location.X > 0) // Restriction for left bord
             {
                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X - shipSpeed, pictureBoxShip.Location.Y);
             }
-            if (moveRight && pictureBoxShip.Location.X + pictureBoxShip.Width < this.ClientSize.Width) // Limite pour la bordure droite
+            if (moveRight && pictureBoxShip.Location.X + pictureBoxShip.Width < this.ClientSize.Width) // Restriction for right bord
             {
                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X + shipSpeed, pictureBoxShip.Location.Y);
             }
@@ -93,7 +93,7 @@ namespace shoot_me_up
             int missileY = pictureBoxShip.Location.Y - 20; // Spawn above the spaceship
             int missileX = pictureBoxShip.Location.X + (pictureBoxShip.Width / 2); // Center the missile on the ship
 
-            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") <15) //max 15 racket
+            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") <25) //max 15 racket
             {
                 //create object with 3 variables and data  assigned to them
                 PictureBox missile = Missile.CreateMissile(missileX, missileY, Missile.missileImage[0]);
@@ -129,6 +129,8 @@ namespace shoot_me_up
             }
         }
         //
+
+       
 
         // The method that will be called when some key is pressed
         private void playGame_KeyDown(object sender, KeyEventArgs e)

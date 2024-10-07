@@ -190,7 +190,6 @@
         private PictureBox HP;
         private PictureBox pictureBox1;
         private PictureBox pictureBox2;
-        private PictureBox pictureBoxShip;
         private Label label1;
         private System.Windows.Forms.Timer GameTimer;
         private PictureBox pictureBox3;
@@ -198,5 +197,6 @@
         private Label label2;
         private PictureBox pictureBox4;
         public System.Windows.Forms.Timer timer1;
+        public PictureBox pictureBoxShip;
     }
 }

@@ -11,11 +11,12 @@ namespace shoot_me_up
 {
     public partial class Form1 : Form
     {
-        public static string basePath = AppDomain.CurrentDomain.BaseDirectory;                              //get the Path of current program
-        public static string musicPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\music"));       //combine the Path of current program and music folder and give it as full path
-        public static bool musicPlaying = true;                                                             //variable wich will track the state of music.
-        public static SoundPlayer player;                                                                   //Player declaration, *static* pour que player puisse utiliser par tout
-        public static string[] musicList =                                                                  //arrey of all music
+        public static string boom = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\images\boom.png")); //game over boom png
+        public static string basePath = AppDomain.CurrentDomain.BaseDirectory;                                   //get the Path of current program
+        public static string musicPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\music"));   //combine the Path of current program and music folder and give it as full path
+        public static bool musicPlaying = true;                                                                  //variable wich will track the state of music.
+        public static SoundPlayer player;                                                                        //Player declaration, *static* pour que player puisse utiliser par tout
+        public static string[] musicList =                                                                       //arrey of all music
         {
             Path.Combine(musicPath,"Radiohead-No-Surprises.wav"),
             Path.Combine(musicPath,"Messages-from-the-stars1.wav"),
@@ -40,7 +41,7 @@ namespace shoot_me_up
                 }
                 else
                 {
-                    MessageBox.Show("Music file not found (0w0): " + musicList[1]);
+                    MessageBox.Show("Music file not found (0w0): " + musicList[1]);   //if file of music isn't found messageBox apears
                 }
             }
         }

@@ -16,17 +16,19 @@ namespace shoot_me_up
 {
     public partial class playGameCy_27 : Form
     {
-        private Pause PauseMenu;
-        private System.Windows.Forms.Timer missileTimer;
+        private Pause PauseMenu;                                //Pause instance
+        private System.Windows.Forms.Timer missileTimer;        //missile timer
 
         /// </Gameover window>
         bool GameOver;
 
         /// </Player>
-        private bool moveLeft, moveRight;
-        int shipSpeed = 30;
-        public int hp = 3;
-        bool shooting;
+        private bool moveLeft, moveRight;     //variables to verify the state of left and right movement
+        int shipSpeed = 70;                   //speed of ship
+        public int hp = 3;                    //ship's hp amount
+        bool shooting;                        //variable to verify shooting process(fire missile method) 
+
+
 
 
         /// </Enemy>
@@ -56,14 +58,14 @@ namespace shoot_me_up
 
             // Initialize the timer for ship movement
             movementTimer = new System.Windows.Forms.Timer();
-            movementTimer.Interval = 20; // Interval
+            movementTimer.Interval = 2; // Interval
             movementTimer.Tick += new EventHandler(SpaceshipTimer_Tick);
             movementTimer.Start(); // launch the timer of ship
 
-            movementTimer = new System.Windows.Forms.Timer(); // Создайте новый таймер
-            movementTimer.Interval = 20; // Задайте интервал в миллисекундах
-            movementTimer.Tick += new EventHandler(SpaceshipTimer_Tick); // Подпишитесь на событие Tick
-            movementTimer.Start(); // Запустите таймер
+            // Initialize the timer for missile movement
+            missileTimer = new System.Windows.Forms.Timer(); // Specify the correct timer class
+            missileTimer.Interval = 20; // Adjust interval as needed
+            missileTimer.Tick += new EventHandler(MoveMissiles);
 
 
         }
@@ -88,8 +90,8 @@ namespace shoot_me_up
             int missileX = pictureBoxShip.Location.X + (pictureBoxShip.Width / 2); // Center the missile on the ship
 
 
-            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") < 15) //max 15 racket,   m -amount of pictureboxes,  ?.  -(null-conditional operator) 
-            { 
+            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") < 25) //max 15 racket,   m -amount of pictureboxes,  ?.  -(null-conditional operator) 
+            {
                 //create object with 3 variables and data  assigned to them
                 PictureBox missile = Missile.CreateMissile(missileX, missileY, Missile.missileImage[0]);
 
@@ -226,8 +228,13 @@ namespace shoot_me_up
         {
 
         }
-        
+
         private void pictureBoxShip_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playGameCy_27_Load(object sender, EventArgs e)
         {
 
         }
