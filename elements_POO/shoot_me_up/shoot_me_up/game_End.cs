@@ -9,13 +9,13 @@ namespace shoot_me_up
 {
     internal class game_End
     {
-        playGame palyGameInst = new playGame();
+        playGame playGameInst = new playGame();
 
         //method of diying ship
-        public static PictureBox Life(int xPosition, int yPosition, string boomPath)
+        public static PictureBox Life(PictureBox pictureBoxShip, string boomPath)
         {
-            xPosition = pictureBoxShip.Location.X;
-            xPosition = pictureBoxShip.Location.Y;
+           int xPosition = pictureBoxShip.Location.X;
+           int yPosition = pictureBoxShip.Location.Y;
             boomPath = Form1.boom;  //path of boom picture 
 
             //make an explosion if hp of ship is 0

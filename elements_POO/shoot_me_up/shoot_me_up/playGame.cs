@@ -32,9 +32,9 @@ namespace shoot_me_up
         /// </Player>
         private bool moveLeft, moveRight;     //variables to verify the state of left and right movement
         public  int shipSpeed = 15;           //speed of ship
-        public static  int ShipHp = 3;        //ship's hp amount
+        public static  int ShipHp = 0;        //ship's hp amount
         bool shooting;                        //variable to verify shooting process(fire missile method) 
-        
+        ///
 
         /// </Enemy>
         int enemySpeed = 5;

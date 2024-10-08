@@ -23,11 +23,11 @@ namespace shoot_me_up
         bool GameOver;
 
         /// </Player>
-        private bool moveLeft, moveRight;     //variables to verify the state of left and right movement
+        private bool moveLeft, moveRight, moveDown,moveUp;     //variables to verify the state of left and right movement
         int shipSpeed = 70;                   //speed of ship
-        public int hp = 3;                    //ship's hp amount
+        public int hp = 5;                    //ship's hp amount
         bool shooting;                        //variable to verify shooting process(fire missile method) 
-
+        //
 
 
 
@@ -72,14 +72,28 @@ namespace shoot_me_up
         // Traitement du mouvement du navire vers la gauche et la droite
         protected void SpaceshipTimer_Tick(object sender, EventArgs e)
         {
+            //left
             if (moveLeft && pictureBoxShip.Location.X > 0) // Restriction pour la bordure gauche
             {
                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X - shipSpeed, pictureBoxShip.Location.Y);
             }
+            //right
             if (moveRight && pictureBoxShip.Location.X + pictureBoxShip.Width < this.ClientSize.Width) // Limite pour la bordure droite
             {
                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X + shipSpeed, pictureBoxShip.Location.Y);
             }
+             //Down
+             if (moveDown && pictureBoxShip.Location.Y+ pictureBoxShip.Height < this.ClientSize.Height) // Restriction pour la bordure gauche
+             {
+                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X, pictureBoxShip.Location.Y + shipSpeed);
+
+             }
+             //Up
+             if (moveUp && pictureBoxShip.Location.Y  > 0) // Limite pour la bordure droite
+             {
+                 pictureBoxShip.Location = new Point( pictureBoxShip.Location.X, pictureBoxShip.Location.Y - shipSpeed);
+             }
+            
         }
         //
 
@@ -132,7 +146,7 @@ namespace shoot_me_up
         private void playGame_KeyDown(object sender, KeyEventArgs e)
         {
 
-            // Check if the "left arrow" or "A" was pressed
+            // Check if the "left arrow"/"right arrow" or "A"/"D" was pressed
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
                 moveLeft = true;
@@ -144,9 +158,21 @@ namespace shoot_me_up
 
             }
             //
+            // Check if the "left arrow"/"right arrow" or "A"/"D" was pressed
+            if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down)
+            {
+                moveDown = true;
 
-            // teleport on center
-            if (e.KeyCode == Keys.Up)
+            }
+            else if (e.KeyCode == Keys.W || e.KeyCode == Keys.Up)
+            {
+                moveUp = true;
+
+            }
+            //
+
+            // teleport on center(cheat with key "C")
+            if (e.KeyCode == Keys.C)
             {
                 //Move PictureBox on center of Form
                 pictureBoxShip.Left = this.ClientSize.Width / 2;
@@ -185,6 +211,7 @@ namespace shoot_me_up
         // Gère la libération de la clé
         private void playGame_KeyUp(object sender, KeyEventArgs e)
         {
+            //Left-Right
             if (e.KeyCode == Keys.A || e.KeyCode == Keys.Left)
             {
                 moveLeft = false;
@@ -192,6 +219,15 @@ namespace shoot_me_up
             else if (e.KeyCode == Keys.D || e.KeyCode == Keys.Right)
             {
                 moveRight = false;
+            }
+            //Down-Up
+            if (e.KeyCode == Keys.S || e.KeyCode == Keys.Down)
+            {
+                moveDown = false;
+            }
+            else if (e.KeyCode == Keys.W || e.KeyCode == Keys.Up)
+            {
+                moveUp = false;
             }
         }
         //

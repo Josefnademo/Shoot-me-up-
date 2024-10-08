@@ -36,5 +36,10 @@ namespace shoot_me_up
             // Close the first form (optional, if new)
             this.Hide();
         }
+
+        private void Score_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

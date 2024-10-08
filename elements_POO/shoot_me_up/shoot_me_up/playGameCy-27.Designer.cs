@@ -188,11 +188,11 @@
             Controls.Add(label2);
             Controls.Add(pictureBox3);
             Controls.Add(label1);
-            Controls.Add(pictureBoxShip);
             Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(HP);
             Controls.Add(pictureBox5);
+            Controls.Add(pictureBoxShip);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "playGameCy_27";
             ShowInTaskbar = false;

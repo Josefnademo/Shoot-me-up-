@@ -53,6 +53,7 @@
             Controls.Add(pictureBox1);
             Name = "Score";
             Text = "Score";
+            Load += Score_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }

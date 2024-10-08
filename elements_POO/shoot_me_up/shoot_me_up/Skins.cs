@@ -77,5 +77,10 @@ namespace shoot_me_up
             // Close the first form (optional, if new)
             this.Close();
         }
+
+        private void Skins_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }
