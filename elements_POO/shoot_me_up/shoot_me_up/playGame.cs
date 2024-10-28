@@ -1,7 +1,7 @@
-﻿//Author: Yosef Nademo
-//Date   : 30.09.2024
-//Place  : ETML
-//Descr. : Deplacement of Spaceship...
+﻿// Author: Yosef Nademo
+// Date   : 30.09.2024
+// Place  : ETML
+// Descr. : Deplacement of Spaceship...
 
 using Microsoft.VisualBasic.ApplicationServices;
 using System;
@@ -18,28 +18,30 @@ using System.Threading.Tasks;
 using System.Timers;
 using System.Windows.Forms;
 using System.IO;
+using static System.Windows.Forms.AxHost;
 
 namespace shoot_me_up
 {
     public partial class playGame : Form
     {
-        private Pause PauseMenu;                                //Pause instance
-        private System.Windows.Forms.Timer missileTimer;        //missile timer
+        private game_End game_End;                              // game_end instance
+        private Enemy enemy;                                    // Enemy instance
+        private Pause PauseMenu;                                // Pause instance
+        private System.Windows.Forms.Timer missileTimer;        // missile timer
 
         /// </Gameover window>
         bool GameOver;
 
         /// </Player>
-        private bool moveLeft, moveRight;     //variables to verify the state of left and right movement
-        public  int shipSpeed = 15;           //speed of ship
-        public static  int ShipHp = 0;        //ship's hp amount
-        bool shooting;                        //variable to verify shooting process(fire missile method) 
+        private bool moveLeft, moveRight;     // variables to verify the state of left and right movement
+        public int shipSpeed = 15;           // speed of ship
+        public static int ShipHp = 0;        // ship's hp amount
+        bool shooting;                        // variable to verify shooting process(fire missile method) 
         ///
 
         /// </Enemy>
-        int enemySpeed = 5;
-        int score = 0;
-        PictureBox[] enemyArray;
+        private List<Enemy> enemies; // List to hold enemies
+        private const int EnemySpacing = 100; // Space between enemies
 
         /// </Timer>
         private System.Windows.Forms.Timer movementTimer;
@@ -49,14 +51,14 @@ namespace shoot_me_up
             InitializeComponent();
             this.DoubleBuffered = true; // Enable double buffering. This helps avoid flickering and improves graphics performance.
 
-            //Start the music of game round when button PLAY is pressed and play it in the loop
+            // Start the music of game round when button PLAY is pressed and play it in the loop
             Form1.player = new SoundPlayer(Form1.musicList[0]);
             Form1.player.PlayLooping();
 
             // Defines the form to handle keystrokes
             this.KeyPreview = true;
 
-            // Subscribe/Use  to the KeyDown and KeyUp events
+            // Subscribe/Use to the KeyDown and KeyUp events
             this.KeyDown += new KeyEventHandler(playGame_KeyDown);
             this.KeyUp += new KeyEventHandler(playGame_KeyUp);
 
@@ -68,56 +70,84 @@ namespace shoot_me_up
 
             // Initialize the timer for missile movement
             missileTimer = new System.Windows.Forms.Timer(); // Specify the correct timer class
-            missileTimer.Interval = 2; // Adjust interval as needed
+            missileTimer.Interval = 20; // Adjust interval as needed
             missileTimer.Tick += new EventHandler(MoveMissiles);
-            
+
+            // Add enemies to the game
+            enemies = new List<Enemy>();
+            SpawnEnemies(); // Call the method to spawn enemies
+        }
+
+        // Add enemy to the game
+        private void SpawnEnemies()
+        {
+            int startX = 100; // Initial X position for the first enemy
+            int yPosition = 50; // Y position for the enemies
+
+            for (int i = 0; i < 2; i++) // Spawn 2 enemies
+            {
+                Enemy enemy = new Enemy();
+                enemy.Location = new Point(startX + (i * EnemySpacing), yPosition);
+                this.Controls.Add(enemy); // Add enemy to the form
+                enemies.Add(enemy); // Store reference to the enemy
+            }
         }
 
         // Processing of ship movement to left and right
         protected void SpaceshipTimer_Tick(object sender, EventArgs e)
         {
-            if (moveLeft && pictureBoxShip.Location.X > 0) // Restriction for left bord
+            if (moveLeft && pictureBoxShip.Location.X > 0) // Restriction for left border
             {
                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X - shipSpeed, pictureBoxShip.Location.Y);
             }
-            if (moveRight && pictureBoxShip.Location.X + pictureBoxShip.Width < this.ClientSize.Width) // Restriction for right bord
+            if (moveRight && pictureBoxShip.Location.X + pictureBoxShip.Width < this.ClientSize.Width) // Restriction for right border
             {
                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X + shipSpeed, pictureBoxShip.Location.Y);
             }
         }
-        //
 
-        //movement of rocket
+        // movement of rocket
         protected void FireMissile()
         {
             int missileY = pictureBoxShip.Location.Y - 20; // Spawn above the spaceship
             int missileX = pictureBoxShip.Location.X + (pictureBoxShip.Width / 2); // Center the missile on the ship
 
-            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") <25) //max 15 racket
+            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") < 25) // max 25 missiles
             {
-                //create object with 3 variables and data  assigned to them
+                // create object with 3 variables and data assigned to them
                 PictureBox missile = Missile.CreateMissile(missileX, missileY, Missile.missileImage[0]);
-
                 missile.Tag = "missile";    // Set the tag for identification
-                this.Controls.Add(missile); //add missile
+                this.Controls.Add(missile); // add missile
             }
             // Start the missile timer if it's not already running
             if (!missileTimer.Enabled)
             {
-                missileTimer.Start();//start timer
+                missileTimer.Start(); // start timer
             }
         }
-        //
 
-        //deplacement missile
+        // deplacement missile
         private void MoveMissiles(object sender, EventArgs e)
         {
             foreach (Control control in this.Controls)
             {
-                if (control is PictureBox missile && missile.Tag?.ToString() == "missile") //The ?. operator (null-conditional operator) is used to safely access the ToString() method.
-                                                                                           //If Tag is null, it won’t throw an exception, and the expression will evaluate to null
+                if (control is PictureBox missile && missile.Tag?.ToString() == "missile") // Check if control is a missile
                 {
                     missile.Top -= 10; // Move the missile upwards
+
+                    // Check for collision with enemies
+                    foreach (var enemy in enemies)
+                    {
+                        if (enemy.Bounds.IntersectsWith(missile.Bounds)) // Collision detection
+                        {
+                            // Remove missile and enemy on collision
+                            this.Controls.Remove(missile);
+                            missile.Dispose();
+                            this.Controls.Remove(enemy);
+                            enemies.Remove(enemy);
+                            break; // Exit the loop after removing enemy
+                        }
+                    }
 
                     // Remove the missile if it goes off-screen
                     if (missile.Top < 0)
@@ -128,9 +158,6 @@ namespace shoot_me_up
                 }
             }
         }
-        //
-
-       
 
         // The method that will be called when some key is pressed
         private void playGame_KeyDown(object sender, KeyEventArgs e)
@@ -144,24 +171,20 @@ namespace shoot_me_up
             {
                 moveRight = true;
             }
-            //
-
             // teleport on center
             if (e.KeyCode == Keys.Up)
             {
-                //Move PictureBox on center of Form
-                pictureBoxShip.Left = this.ClientSize.Width/2;
+                // Move PictureBox on center of Form
+                pictureBoxShip.Left = this.ClientSize.Width / 2;
             }
-            //
 
             // shoot with bullet 
             if (e.KeyCode == Keys.Space && shooting == false)
             {
-               FireMissile();
+                FireMissile();
             }
-            //
 
-            //pause form ACTIVATOR
+            // pause form ACTIVATOR
             if (e.KeyCode == Keys.Escape)
             {
                 if (PauseMenu == null)
@@ -169,7 +192,7 @@ namespace shoot_me_up
                     // Create an instance of the second form
                     PauseMenu = new Pause();
 
-                    // Subscribe to the FormClosed event to reset PauseMenu when it's closed //assigning the PauseMenu variable a null value.
+                    // Subscribe to the FormClosed event to reset PauseMenu when it's closed
                     PauseMenu.FormClosed += (s, args) => PauseMenu = null;
 
                     // Show the second form
@@ -180,7 +203,6 @@ namespace shoot_me_up
                     PauseMenu.Close();
                 }
             }
-            //
         }
 
         // Gère la libération de la clé
@@ -195,9 +217,8 @@ namespace shoot_me_up
                 moveRight = false;
             }
         }
-        //
 
-        //pause form ACTIVATOR
+        // pause form ACTIVATOR
         private void pictureBox4_Click_1(object sender, EventArgs e)
         {
             if (PauseMenu == null)
@@ -212,41 +233,18 @@ namespace shoot_me_up
             }
         }
 
-        //hide label "Esc to pause"
+        // hide label "Esc to pause"
         private void timer1_Tick_1(object sender, EventArgs e)
         {
             label2.Hide();
             timer1.Stop();
         }
-        //
 
-        private void label2_Click_1(object sender, EventArgs e)
-        {
-            
-        }
-        private void pictureBox2_Click_2(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBoxShip_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void HP_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void playGame_Load(object sender, EventArgs e)
-        {
-
-        }
+        private void label2_Click_1(object sender, EventArgs e) { }
+        private void pictureBox2_Click_2(object sender, EventArgs e) { }
+        private void pictureBoxShip_Click_1(object sender, EventArgs e) { }
+        private void pictureBox1_Click_1(object sender, EventArgs e) { }
+        private void HP_Click(object sender, EventArgs e) { }
+        private void playGame_Load(object sender, EventArgs e) { }
     }
 }

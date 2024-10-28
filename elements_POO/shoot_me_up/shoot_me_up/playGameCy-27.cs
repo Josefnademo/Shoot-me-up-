@@ -23,7 +23,7 @@ namespace shoot_me_up
         bool GameOver;
 
         /// </Player>
-        private bool moveLeft, moveRight, moveDown,moveUp;     //variables to verify the state of left and right movement
+        private bool moveLeft, moveRight, moveDown, moveUp;     //variables to verify the state of left and right movement
         int shipSpeed = 70;                   //speed of ship
         public int hp = 5;                    //ship's hp amount
         bool shooting;                        //variable to verify shooting process(fire missile method) 
@@ -58,7 +58,7 @@ namespace shoot_me_up
 
             // Initialize the timer for ship movement
             movementTimer = new System.Windows.Forms.Timer();
-            movementTimer.Interval = 2; // Interval
+            movementTimer.Interval = 1; // Interval
             movementTimer.Tick += new EventHandler(SpaceshipTimer_Tick);
             movementTimer.Start(); // launch the timer of ship
 
@@ -82,18 +82,18 @@ namespace shoot_me_up
             {
                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X + shipSpeed, pictureBoxShip.Location.Y);
             }
-             //Down
-             if (moveDown && pictureBoxShip.Location.Y+ pictureBoxShip.Height < this.ClientSize.Height) // Restriction pour la bordure gauche
-             {
-                 pictureBoxShip.Location = new Point(pictureBoxShip.Location.X, pictureBoxShip.Location.Y + shipSpeed);
+            //Down
+            if (moveDown && pictureBoxShip.Location.Y + pictureBoxShip.Height < this.ClientSize.Height) // Restriction pour la bordure gauche
+            {
+                pictureBoxShip.Location = new Point(pictureBoxShip.Location.X, pictureBoxShip.Location.Y + shipSpeed);
 
-             }
-             //Up
-             if (moveUp && pictureBoxShip.Location.Y  > 0) // Limite pour la bordure droite
-             {
-                 pictureBoxShip.Location = new Point( pictureBoxShip.Location.X, pictureBoxShip.Location.Y - shipSpeed);
-             }
-            
+            }
+            //Up
+            if (moveUp && pictureBoxShip.Location.Y > 0) // Limite pour la bordure droite
+            {
+                pictureBoxShip.Location = new Point(pictureBoxShip.Location.X, pictureBoxShip.Location.Y - shipSpeed);
+            }
+
         }
         //
 
@@ -104,7 +104,7 @@ namespace shoot_me_up
             int missileX = pictureBoxShip.Location.X + (pictureBoxShip.Width / 2); // Center the missile on the ship
 
 
-            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") < 25) //max 15 racket,   m -amount of pictureboxes,  ?.  -(null-conditional operator) 
+            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") < 25) //max 25 racket,   m -amount of pictureboxes,  ?.  -(null-conditional operator) 
             {
                 //create object with 3 variables and data  assigned to them
                 PictureBox missile = Missile.CreateMissile(missileX, missileY, Missile.missileImage[0]);
@@ -271,6 +271,11 @@ namespace shoot_me_up
         }
 
         private void playGameCy_27_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
         {
 
         }
