@@ -28,5 +28,8 @@
     <Compile Update="Skins.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="victory].cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

@@ -10,7 +10,6 @@ namespace shoot_me_up
 {
     internal class Missile
     {
-
         
             public static string basePath = AppDomain.CurrentDomain.BaseDirectory;
             public static string musicPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\images\programing_img\bullets"));
@@ -31,8 +30,9 @@ namespace shoot_me_up
                     SizeMode = PictureBoxSizeMode.AutoSize, // Adjust the size of image
                     Tag = "missile", // Set the tag for identification
                     Left = xPosition, // X position
-                    Top = yPosition // Y position     
-                };
+                    Top = yPosition, // Y position
+                    BackColor = Color.Transparent // Make background transparent for image visibility
+                 };
 
                 using (Image img = Image.FromFile(missileImagePath)) // Load unique missile picture 
                 {
@@ -41,8 +41,6 @@ namespace shoot_me_up
 
                 return missile;
             }
-
-
 
             // Method to move the missile upwards
             public static void MoveMissile(PictureBox missile)

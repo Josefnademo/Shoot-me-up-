@@ -34,8 +34,8 @@ namespace shoot_me_up
 
         /// </Player>
         private bool moveLeft, moveRight;     // variables to verify the state of left and right movement
-        public int shipSpeed = 15;           // speed of ship
-        public static int ShipHp = 0;        // ship's hp amount
+        public int shipSpeed = 15;            // speed of ship
+        public static int ShipHp = 3;         // ship's hp amount
         bool shooting;                        // variable to verify shooting process(fire missile method) 
         ///
 
@@ -76,21 +76,130 @@ namespace shoot_me_up
             // Add enemies to the game
             enemies = new List<Enemy>();
             SpawnEnemies(); // Call the method to spawn enemies
+
         }
+
 
         // Add enemy to the game
         private void SpawnEnemies()
         {
-            int startX = 100; // Initial X position for the first enemy
+            int startX = 150; // Initial X position for the first enemy
             int yPosition = 50; // Y position for the enemies
 
-            for (int i = 0; i < 2; i++) // Spawn 2 enemies
+            for (int i = 0; i < 3; i++) // Spawn 3 enemies
             {
                 Enemy enemy = new Enemy();
                 enemy.Location = new Point(startX + (i * EnemySpacing), yPosition);
                 this.Controls.Add(enemy); // Add enemy to the form
                 enemies.Add(enemy); // Store reference to the enemy
             }
+        }
+
+        // Victory condition
+        private void Victory()
+        {
+            if (enemies.Count == 0)
+            {
+                victory_ victoryForm = new victory_();
+                victoryForm.Show();
+                this.Enabled = false;
+            }
+        }
+
+        // Method to create an explosion effect
+        public static PictureBox CreateExplosion(PictureBox pictureBoxShip, string boomPath)
+        {
+            if (playGame.ShipHp > 0) return null; // Only create explosion if ShipHp is zero
+
+            PictureBox explosion = new PictureBox
+            {
+                SizeMode = PictureBoxSizeMode.AutoSize,
+                Tag = "explosion",
+                Left = pictureBoxShip.Location.X,
+                Top = pictureBoxShip.Location.Y
+            };
+
+            using (Image img = Image.FromFile(boomPath))
+            {
+                explosion.Image = new Bitmap(img);
+            }
+
+            return explosion;
+        }
+        // Method to handle end-game actions
+        private void EndGame()
+        {
+            movementTimer.Stop();
+            missileTimer.Stop();
+            MessageBox.Show("Game Over!");
+            this.Enabled = false;
+        }
+        // Game over handler with explosion effect
+        private void Game_over()
+        {
+            if (ShipHp <= 0)
+            {
+                PictureBox explosion = CreateExplosion(pictureBoxShip, Form1.boom);
+                if (explosion != null)
+                {
+                    this.Controls.Add(explosion); // Add explosion to form controls
+                }
+
+                EndGame(); // Call end game actions
+            }
+            else
+            {
+                Victory(); // Check for victory if ShipHp is not zero
+            }
+        }
+
+        
+
+
+        /*  //victory
+          private void Victory()
+          {
+              if (enemies.Count == 0)
+              {
+                  victory_ victoryForm = new victory_();
+                  this.Enabled = false;
+              }
+          }
+
+          public static PictureBox CreateExplosion(PictureBox pictureBoxShip, string boomPath)
+          {
+              if (playGame.ShipHp > 0) return null; // check hp level of ship
+
+              PictureBox explosion = new PictureBox
+              {
+                  SizeMode = PictureBoxSizeMode.AutoSize,
+                  Tag = "explosion",
+                  Left = pictureBoxShip.Location.X,
+                  Top = pictureBoxShip.Location.Y
+              };
+
+              using (Image img = Image.FromFile(boomPath))
+              {
+                  explosion.Image = new Bitmap(img);
+              }
+
+              Controls.Add(explosion);
+          }
+
+          //game end
+          private void Game_over()
+          {
+
+
+          }*/
+
+        // Method to handle end-game actions
+        private void EndGame()
+        {
+            movementTimer.Stop(); // Stop movement timer
+            missileTimer.Stop(); // Stop missile timer
+            MessageBox.Show("Game Over!"); // Show game over message
+            this.Enabled = false; // Disable the form to prevent further input
         }
 
         // Processing of ship movement to left and right

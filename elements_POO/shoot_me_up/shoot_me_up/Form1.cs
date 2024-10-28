@@ -6,6 +6,7 @@
 using System.Media;
 using System.Windows.Forms;
 using System.IO;
+using System.Diagnostics;
 
 namespace shoot_me_up
 {
@@ -28,7 +29,7 @@ namespace shoot_me_up
         public Form1()
         {
             InitializeComponent();
-            
+
             //*Music checking* if "musicPLaying" is turned off,so music doesn't playing
             if (musicPlaying == true)
             {
