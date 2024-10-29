@@ -1,0 +1,99 @@
+-- DB creation if not exists
+CREATE DATABASE IF NOT EXISTS shoot_me_up_Yosef_database;
+USE shoot_me_up_Yosef_database;
+
+-- Creation of tables
+CREATE TABLE t_score (
+   Id_SCORE INT AUTO_INCREMENT,
+   score VARCHAR(50),
+   PRIMARY KEY(Id_SCORE)
+);
+
+CREATE TABLE t_enemy (
+   Id_ENEMY INT AUTO_INCREMENT,
+   type_of_enemy VARCHAR(50),
+   HP SMALLINT NOT NULL,
+   placeY VARCHAR(5),
+   placeX VARCHAR(5),
+   PRIMARY KEY(Id_ENEMY)
+);
+
+CREATE TABLE t_sounds_music (
+   Id_SOUNDS_MUSIC INT AUTO_INCREMENT,
+   music VARCHAR(200),
+   fire VARCHAR(200),
+   PRIMARY KEY(Id_SOUNDS_MUSIC)
+);
+
+CREATE TABLE t_level_difficulty (
+   Id_LEVEL_DIFFICULTY INT AUTO_INCREMENT,
+   easy VARCHAR(50),
+   hard VARCHAR(50),
+   epic VARCHAR(50),
+   PRIMARY KEY(Id_LEVEL_DIFFICULTY),
+   UNIQUE(easy),
+   UNIQUE(hard),
+   UNIQUE(epic)
+);
+
+CREATE TABLE t_level (
+   Id_LEVEL INT AUTO_INCREMENT,
+   level_name VARCHAR(50),
+   Id_LEVEL_DIFFICULTY INT NOT NULL,
+   Id_SCORE INT,
+   PRIMARY KEY(Id_LEVEL),
+   UNIQUE(level_name),
+   FOREIGN KEY(Id_LEVEL_DIFFICULTY) REFERENCES t_level_difficulty(Id_LEVEL_DIFFICULTY),
+   FOREIGN KEY(Id_SCORE) REFERENCES t_score(Id_SCORE)
+);
+
+CREATE TABLE t_player_sprite_ (
+   Id_PLAYER INT AUTO_INCREMENT,
+   nickname VARCHAR(25) NOT NULL,
+   HP INT,
+   fire VARCHAR(30),
+   placeY VARCHAR(5),
+   placeX VARCHAR(5),
+   Id_SOUNDS_MUSIC INT NOT NULL,
+   Id_SCORE INT,
+   PRIMARY KEY(Id_PLAYER),
+   UNIQUE(Id_SOUNDS_MUSIC),
+   FOREIGN KEY(Id_SOUNDS_MUSIC) REFERENCES t_sounds_music(Id_SOUNDS_MUSIC),
+   FOREIGN KEY(Id_SCORE) REFERENCES t_score(Id_SCORE)
+);
+
+CREATE TABLE t_obstacle (
+   Id_obstacle INT AUTO_INCREMENT,
+   placeY VARCHAR(5) NOT NULL,
+   placeX VARCHAR(5) NOT NULL,
+   type_of_obstacle VARCHAR(20),
+   Id_LEVEL INT NOT NULL,
+   PRIMARY KEY(Id_obstacle),
+   FOREIGN KEY(Id_LEVEL) REFERENCES t_level(Id_LEVEL)
+);
+
+CREATE TABLE t_player_account_ (
+   Id_PLAYER_account_ INT AUTO_INCREMENT,
+   password VARCHAR(50),
+   nickname VARCHAR(50),
+   Id_PLAYER INT NOT NULL,
+   PRIMARY KEY(Id_PLAYER_account_),
+   UNIQUE(nickname),
+   FOREIGN KEY(Id_PLAYER) REFERENCES t_player_sprite_(Id_PLAYER)
+);
+
+CREATE TABLE belongs (
+   Id_LEVEL INT,
+   Id_ENEMY INT,
+   PRIMARY KEY(Id_LEVEL, Id_ENEMY),
+   FOREIGN KEY(Id_LEVEL) REFERENCES t_level(Id_LEVEL),
+   FOREIGN KEY(Id_ENEMY) REFERENCES t_enemy(Id_ENEMY)
+);
+
+CREATE TABLE have2 (
+   Id_LEVEL INT,
+   Id_SOUNDS_MUSIC INT,
+   PRIMARY KEY(Id_LEVEL, Id_SOUNDS_MUSIC),
+   FOREIGN KEY(Id_LEVEL) REFERENCES t_level(Id_LEVEL),
+   FOREIGN KEY(Id_SOUNDS_MUSIC) REFERENCES t_sounds_music(Id_SOUNDS_MUSIC)
+);
