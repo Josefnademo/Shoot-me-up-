@@ -26,14 +26,10 @@
       "LibVLCSharp/3.9.0": {
         "type": "package",
         "compile": {
-          "lib/net6.0/LibVLCSharp.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/LibVLCSharp.dll": {}
         },
         "runtime": {
-          "lib/net6.0/LibVLCSharp.dll": {
-            "related": ".xml"
-          }
+          "lib/net6.0/LibVLCSharp.dll": {}
         }
       },
       "LibVLCSharp.Forms/3.9.0": {
@@ -43,14 +39,10 @@
           "Xamarin.Forms": "3.2.0.871581"
         },
         "compile": {
-          "lib/netstandard2.0/LibVLCSharp.Forms.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/LibVLCSharp.Forms.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/LibVLCSharp.Forms.dll": {
-            "related": ".xml"
-          }
+          "lib/netstandard2.0/LibVLCSharp.Forms.dll": {}
         },
         "resource": {
           "lib/netstandard2.0/fr/LibVLCSharp.Forms.resources.dll": {
@@ -97,22 +89,14 @@
       "Xamarin.Forms/3.2.0.871581": {
         "type": "package",
         "compile": {
-          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
-            "related": ".pdb;.xml"
-          },
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {},
-          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {}
         },
         "runtime": {
-          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {
-            "related": ".pdb;.xml"
-          },
+          "lib/netstandard2.0/Xamarin.Forms.Core.dll": {},
           "lib/netstandard2.0/Xamarin.Forms.Platform.dll": {},
-          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {
-            "related": ".pdb;.xml"
-          }
+          "lib/netstandard2.0/Xamarin.Forms.Xaml.dll": {}
         },
         "build": {
           "build/netstandard2.0/_._": {}
@@ -432,7 +416,6 @@
   },
   "packageFolders": {
     "C:\\Users\\pn25kdv\\.nuget\\packages\\": {},
-    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
@@ -445,20 +428,17 @@
       "outputPath": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
         "C:\\Users\\pn25kdv\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net6.0-windows"
+        "net6.0-windows7.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -471,11 +451,6 @@
         "warnAsError": [
           "NU1605"
         ]
-      },
-      "restoreAuditProperties": {
-        "enableAudit": "true",
-        "auditLevel": "low",
-        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -505,8 +480,7 @@
           "net47",
           "net471",
           "net472",
-          "net48",
-          "net481"
+          "net48"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -518,7 +492,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.204\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.302\\RuntimeIdentifierGraph.json"
       }
     }
   },
@@ -527,7 +501,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Le package 'AudioSwitcher.AudioApi 3.0.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "message": "Le package 'AudioSwitcher.AudioApi 3.0.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "AudioSwitcher.AudioApi",
       "targetGraphs": [
         "net6.0-windows7.0"
@@ -537,7 +511,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Le package 'AudioSwitcher.AudioApi.CoreAudio 3.0.3' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "message": "Le package 'AudioSwitcher.AudioApi.CoreAudio 3.0.3' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "AudioSwitcher.AudioApi.CoreAudio",
       "targetGraphs": [
         "net6.0-windows7.0"

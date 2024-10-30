@@ -10,6 +10,7 @@ namespace shoot_me_up
     internal class game_End
     {
         playGame playGameInst = new playGame();
+        
 
         //method of diying ship
         public static PictureBox Life(PictureBox pictureBoxShip, string boomPath)
@@ -41,16 +42,9 @@ namespace shoot_me_up
             else
             {
                 // Ship is not dead, no explosion
-                return null;  // Or handle this differently based on your logic
+                return null;  
             }
         }
-        // Метод для остановки игровых процессов
-        public void EndGame()
-        {
-            playGameInstance.movementTimer.Stop();
-            playGameInstance.missileTimer.Stop();
-            MessageBox.Show("Game Over!"); // Сообщение об окончании игры
-            playGameInstance.Enabled = false;
-        }
+       
     }
 }

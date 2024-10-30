@@ -1,0 +1,15 @@
+--Création d'un utilisateur administrateur :
+
+CREATE USER 'admin'@'localhost' IDENTIFIED BY 'password';
+GRANT ALL PRIVILEGES ON *.* TO 'admin'@'localhost' WITH GRANT OPTION;
+
+
+--Création d'un utilisateur joueur :
+
+CREATE USER 'joueur'@'localhost' IDENTIFIED BY 'password';
+
+
+--Création d'un utilisateur gestionnaire :
+
+CREATE USER 'manager'@'localhost' IDENTIFIED BY 'password';
+GRANT SELECT, INSERT, UPDATE ON jeu_database.* TO 'manager'@'localhost';

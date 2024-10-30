@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "TD30UAHsXTb00eFyIJM8ObmzToeXGy+K60lD8yrWEHKgM5KOxd0BFcKbalUEtUqDxFV9PTyGg4p28GeEokMKaw==",
+  "dgSpecHash": "Aj1IALFAfEqUim2PyTQdwO0YjmPhltbjbp/Upn+5ftoPiJMzDyQ+lMYwpDnCYeTaCtlpDOocT2jbvwlcZ5wO3w==",
   "success": true,
   "projectFilePath": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\shoot_me_up.csproj",
   "expectedPackageFiles": [
@@ -18,7 +18,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Le package 'AudioSwitcher.AudioApi 3.0.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "message": "Le package 'AudioSwitcher.AudioApi 3.0.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "AudioSwitcher.AudioApi",
       "targetGraphs": [
         "net6.0-windows7.0"
@@ -28,7 +28,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Le package 'AudioSwitcher.AudioApi.CoreAudio 3.0.3' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "message": "Le package 'AudioSwitcher.AudioApi.CoreAudio 3.0.3' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
       "libraryId": "AudioSwitcher.AudioApi.CoreAudio",
       "targetGraphs": [
         "net6.0-windows7.0"

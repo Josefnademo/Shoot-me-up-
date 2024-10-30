@@ -11,16 +11,15 @@ namespace shoot_me_up
     internal class Missile
     {
         
-            public static string basePath = AppDomain.CurrentDomain.BaseDirectory;
-            public static string musicPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\images\programing_img\bullets"));
+            public static string basePath = AppDomain.CurrentDomain.BaseDirectory;                                                           //get the Path of current program
+            public static string bulletPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\images\programing_img\bullets"));  //path of missile images
 
             public static string[] missileImage = // Array of missile images
             {
-            Path.Combine(musicPath, "blue_blas.png"),
-            Path.Combine(musicPath, "fire_hand.png"),
-            Path.Combine(musicPath, "neptun.png")
-            // Remove or handle the audio file if it's not needed here
-        };
+            Path.Combine(bulletPath, "blue_blas.png"),
+            Path.Combine(bulletPath, "fire_hand.png"),
+            Path.Combine(bulletPath, "neptun.png") 
+            };
 
             // Create and position a missile given a unique image
             public static PictureBox CreateMissile(int xPosition, int yPosition, string missileImagePath)
@@ -47,7 +46,7 @@ namespace shoot_me_up
             {
                 if (missile.Top > 0) // Ensure it doesn't move off the screen
                 {
-                    missile.Top -= 10; // Adjust this value for missile speed
+                    missile.Top -= 15; // value ща missile speed
                 }
                 else
                 {

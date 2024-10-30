@@ -1,0 +1,17 @@
+1. Pourquoi certains index existent déjà sans le mot clé INDEX ?
+Certains index sont créés automatiquement avec les clés primaires (PRIMARY KEY) et les clés étrangères (FOREIGN KEY). 
+MySQL crée un index unique sur les clés primaires pour garantir l'unicité et optimise les jointures avec les clés étrangères.
+
+2. Avantages et inconvénients des index
+Avantages :
+
+Performance améliorée : Accélère les recherches et les jointures.
+Unicité garantie : Maintient l'intégrité des données.
+Inconvénients :
+
+Coût de maintenance : Ralentit les opérations d'écriture lors des mises à jour.
+Utilisation d'espace : Consomme de l'espace supplémentaire dans la base de données.
+3. Champs pertinents pour ajouter des index
+nickname dans t_player_account_ : Accélère les recherches de joueurs.
+Id_LEVEL dans les tables belongs et have2 : Améliore les performances des jointures.
+Id_ENEMY dans belongs : Accélère les requêtes sur les ennemis d'un niveau.

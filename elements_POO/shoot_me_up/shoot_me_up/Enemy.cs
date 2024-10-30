@@ -9,16 +9,16 @@ namespace shoot_me_up
     public class Enemy : PictureBox
     {    
         public static string enemyImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\imgonline-com-ua-Resize-zScTrh8xmY-Photoroom.png")); //enemy image
-         
+        private playGame gameForm;
        
         private System.Windows.Forms.Timer movementTimer;   //timer of enemies movement
         private System.Windows.Forms.Timer shootingTimer;   //timer of enemies bullets
         private bool canShoot;                              //state of enemies blasters
 
-        private int direction = 1;                   // 1 for right, -1 for left
-        private int speed = 5;                       // Horizontal speed
-        private int verticalSpeed = 20;              // Vertical speed for downward movement
-        private int moveDownDistance = 70;           // Distance to move down after hitting screen edge
+        private int direction = 1;                          // 1 for right, -1 for left
+        private int speed = 5;                              // Horizontal speed
+        private int verticalSpeed = 20;                     // Vertical speed for downward movement
+        private int moveDownDistance = 70;                  // Distance to move down after hitting screen edge
 
 
         //enemy - mesures of enemy
@@ -37,7 +37,7 @@ namespace shoot_me_up
             canShoot = true; // Initially, the enemy can shoot
 
         }
-
+        //enemy picture adding
         private void LoadEnemyImage()
         {
             using (Image enemyImage = Image.FromFile(enemyImagePath))
@@ -47,6 +47,17 @@ namespace shoot_me_up
             }
         }
 
+        //bullet picture adding
+        private void LoadBulletImage(PictureBox missile)
+        {
+            using (Image bulletImage = Image.FromFile(@"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\images\programing_img\bullets\enemy_bullet.png"))
+            {
+                missile.Image = new Bitmap(bulletImage);
+                missile.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust to fit
+            }
+        }
+
+        //timer for enemies  mouvements
         private void InitializeMovementTimer()
         {
             movementTimer = new System.Windows.Forms.Timer
@@ -57,6 +68,7 @@ namespace shoot_me_up
             movementTimer.Start();
         }
 
+        //timer for cooldown of enemies bullet
         private void InitializeShootingTimer()
         {
             shootingTimer = new System.Windows.Forms.Timer
@@ -114,46 +126,56 @@ namespace shoot_me_up
                 missile.Top += 25; // Move missile down
                 if (missile.Top >= this.Parent.ClientSize.Height)
                 {
-                    canShoot = true; // Allow the enemy to shoot again
 
                     missileTimer.Stop(); // Stop the timer
                     this.Parent.Controls.Remove(missile); // Remove the missile from the form
                     missile.Dispose(); // Dispose of the missile to free resources
+
+                    canShoot = true; // Allow the enemy to shoot again
                 }
 
-               // Check for collision with the player
+                // Check for collision with the player
                 if (missile.Bounds.IntersectsWith(((playGame)this.Parent).pictureBoxShip.Bounds))
                 {
                     // Handle the collision
                     playGame.ShipHp -= 1; // Decrease player HP
+
+                    
+
                     missileTimer.Stop(); // Stop the timer
-                    this.Parent.Controls.Remove(missile); // Remove the missile from the form
                     missile.Dispose(); // Dispose of the missile to free resources
+                    this.Parent.Controls.Remove(missile); // Remove the missile from the 
                     return; // Exit to avoid further processing
                 }
+
+
+                // Check for collision with obstacles
+                foreach (var obstacle in this.Parent.Controls.OfType<PictureBox>().Where(p => p.Tag?.ToString() == "obstacle"))
+                {
+                    if (missile.Bounds.IntersectsWith(obstacle.Bounds))
+                    {
+                        // Decrease obstacle's HP
+                        obstacle.Tag = (int.Parse(obstacle.Tag.ToString()) - 1).ToString(); // Decrease HP by 1
+
+                        // If HP reaches 0, remove the obstacle
+                        if (int.Parse(obstacle.Tag.ToString()) <= 0)
+                        {
+                            this.Parent.Controls.Remove(obstacle); // Remove obstacle
+                            obstacle.Dispose(); // Dispose of the obstacle to free resources
+                        }
+
+                        missileTimer.Stop();
+                        missile.Dispose();
+                        this.Parent.Controls.Remove(missile);
+                        return; // Exit to avoid further processing
+                    }
+                }
+
             };
             missileTimer.Start();
         }
 
-        private void LoadBulletImage(PictureBox missile)
-        {
-            using (Image bulletImage = Image.FromFile(@"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\images\programing_img\bullets\enemy_bullet.png"))
-            {
-                missile.Image = new Bitmap(bulletImage);
-                missile.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust to fit
-            }
-        }
-
-        // New method to handle collision with player bullets
-        public void CheckCollisionWithPlayerBullet(PictureBox playerBullet)
-        {
-            if (this.Bounds.IntersectsWith(playerBullet.Bounds))
-            {
-                // Remove the enemy from the form
-                this.Parent.Controls.Remove(this);
-                this.Dispose(); // Dispose of the enemy to free resources
-            }
-        }
+        //remove/kill enemy 
         public void Hit()
         {
             // Remove the enemy from the parent control

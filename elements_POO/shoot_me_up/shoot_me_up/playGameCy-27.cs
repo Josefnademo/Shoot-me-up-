@@ -16,6 +16,8 @@ namespace shoot_me_up
 {
     public partial class playGameCy_27 : Form
     {
+        private game_End game_End;                              // game_end instance
+        private Enemy enemy;                                    // Enemy instance
         private Pause PauseMenu;                                //Pause instance
         private System.Windows.Forms.Timer missileTimer;        //missile timer
 
@@ -27,14 +29,16 @@ namespace shoot_me_up
         int shipSpeed = 70;                   //speed of ship
         public int hp = 5;                    //ship's hp amount
         bool shooting;                        //variable to verify shooting process(fire missile method) 
-        //
-
+                                              //
+        public static int obstacle1 = 3;         // obstacle 1 hp amount
+        public static int obstacle2 = 3;         // obstacle 2 hp amount
+        public static int obstacle3 = 3;         // obstacle 3 hp amount
 
 
         /// </Enemy>
-        int enemySpeed = 5;
-        int score = 0;
-        PictureBox[] enemyArray;
+        private List<Enemy> enemies; // List to hold enemies
+        private const int EnemySpacing = 100; // Space between enemies
+
 
         /// </Timer>
         private System.Windows.Forms.Timer movementTimer;

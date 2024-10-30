@@ -1,0 +1,11 @@
+--Backup de la base de données
+--Pour sauvegarder votre base de données shoot_me_up_Yosef_database, utilisez :
+
+mysqldump -u username -p shoot_me_up_Yosef_database > backup_shoot_me_up.sql
+
+
+
+--Restore de la base de données
+--Pour restaurer la base de données à partir de la sauvegarde, utilisez :
+
+mysql -u username -p shoot_me_up_Yosef_database < backup_shoot_me_up.sql
