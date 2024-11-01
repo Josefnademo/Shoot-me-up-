@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shoot_me_up", "shoot_me_up\shoot_me_up.csproj", "{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "shoot_me_up", "shoot_me_up\shoot_me_up.csproj", "{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shoot_me_upTests", "shoot_me_upTests\shoot_me_upTests.csproj", "{5BFD7985-7537-4DF2-B589-E5ACE0624350}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "shoot_me_upTests1", "shoot_me_upTests1\shoot_me_upTests1.csproj", "{A5FD40C7-1D98-44B7-9D02-E4BF37E5BF11}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5BFD7985-7537-4DF2-B589-E5ACE0624350}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5BFD7985-7537-4DF2-B589-E5ACE0624350}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5BFD7985-7537-4DF2-B589-E5ACE0624350}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5BFD7985-7537-4DF2-B589-E5ACE0624350}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5FD40C7-1D98-44B7-9D02-E4BF37E5BF11}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5FD40C7-1D98-44B7-9D02-E4BF37E5BF11}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5FD40C7-1D98-44B7-9D02-E4BF37E5BF11}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5FD40C7-1D98-44B7-9D02-E4BF37E5BF11}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

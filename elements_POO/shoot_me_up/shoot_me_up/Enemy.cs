@@ -1,27 +1,78 @@
-﻿using System;
+﻿/****************************************************************************** 
+** CLASS       Enemy                                                          ** 
+**                                                                           ** 
+** Lieu       : ETML - section informatique                                   ** 
+** Auteur     : Yosef Nademo                                                  ** 
+** Date       : 01.11.2024                                                    ** 
+**                                                                           ** 
+** Modifications                                                             ** 
+**   Auteur   :                                                               ** 
+**   Version  :                                                               ** 
+**   Date     :                                                               ** 
+**   Raisons  :                                                               ** 
+**                                                                           ** 
+**                                                                           ** 
+******************************************************************************/
+
+/****************************************************************************************************** 
+** DESCRIPTION                                                                                     ** 
+** La classe Enemy représente un ennemi dans le jeu "shoot_me_up". Les ennemis apparaissent sur    ** 
+** l'écran et se déplacent vers le bas, créant un défi pour le joueur qui doit les détruire avant    ** 
+** qu'ils ne touchent le vaisseau spatial du joueur. Chaque ennemi peut avoir différentes           ** 
+** caractéristiques telles que la santé, la vitesse de déplacement, et des comportements            ** 
+** spécifiques lors de l'impact avec des missiles.                                                ** 
+**                                                                                                 ** 
+** PRINCIPALES FONCTIONNALITÉS :                                                                   ** 
+** - Gérer la position et le mouvement des ennemis sur l'écran.                                   ** 
+** - Détecter les collisions avec les missiles du joueur.                                          ** 
+** - Appliquer des dégâts aux ennemis lorsqu'ils sont touchés par un missile.                       ** 
+** - Gérer les animations ou les effets visuels lors de leur destruction.                          ** 
+**                                                                                                 ** 
+** MÉTHODES PRINCIPALES :                                                                          ** 
+** - **Shoot()** : Gère la logique de tir de l'ennemi, si applicable.                              ** 
+** - **Hit()** : Applique des dégâts à l'ennemi et vérifie si sa santé atteint zéro, le rendant    ** 
+**   inactif.                                                                                      ** 
+** - **Move()** : Met à jour la position de l'ennemi à chaque cycle de jeu, simule le mouvement    ** 
+**   vers le bas de l'écran.                                                                      ** 
+**                                                                                                 ** 
+** La classe Enemy contribue à la dynamique de jeu en fournissant des adversaires que le joueur      ** 
+** doit surmonter, rendant l'expérience de jeu plus engageante et stimulante.                       ** 
+******************************************************************************************************/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace shoot_me_up
 {
     public class Enemy : PictureBox
     {    
         public static string enemyImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\imgonline-com-ua-Resize-zScTrh8xmY-Photoroom.png")); //enemy image
-        private playGame gameForm;
-       
+        private playGame gameForm;                          //instance of playGame form
+        private Mars gameFormMars;                          //instance of Mars form
+
+
         private System.Windows.Forms.Timer movementTimer;   //timer of enemies movement
         private System.Windows.Forms.Timer shootingTimer;   //timer of enemies bullets
         private bool canShoot;                              //state of enemies blasters
 
         private int direction = 1;                          // 1 for right, -1 for left
-        private int speed = 5;                              // Horizontal speed
-        private int verticalSpeed = 20;                     // Vertical speed for downward movement
+        private int speed = 10;                             // Horizontal speed
+        private int verticalSpeed = 200;                    // Vertical speed for downward movement
         private int moveDownDistance = 70;                  // Distance to move down after hitting screen edge
 
 
-        //enemy - mesures of enemy
+        /// <summary>
+        /// Initializes a new instance of the Enemy class. 
+        /// This constructor sets the properties for the enemy, including its size, background color, and tag. 
+        /// It also loads the enemy image and initializes movement and shooting timers. 
+        /// The enemy is initially allowed to shoot.
+        /// </summary>
         public Enemy()
         {
             
@@ -37,7 +88,10 @@ namespace shoot_me_up
             canShoot = true; // Initially, the enemy can shoot
 
         }
-        //enemy picture adding
+
+        /// <summary>
+        /// Loads the enemy image from the specified path and applies it to the enemy PictureBox.
+        /// </summary>
         private void LoadEnemyImage()
         {
             using (Image enemyImage = Image.FromFile(enemyImagePath))
@@ -47,7 +101,10 @@ namespace shoot_me_up
             }
         }
 
-        //bullet picture adding
+        /// <summary>
+        /// Loads the bullet image into the specified missile PictureBox.
+        /// </summary>
+        /// <param name="missile"></param>
         private void LoadBulletImage(PictureBox missile)
         {
             using (Image bulletImage = Image.FromFile(@"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\images\programing_img\bullets\enemy_bullet.png"))
@@ -57,28 +114,42 @@ namespace shoot_me_up
             }
         }
 
-        //timer for enemies  mouvements
+        /// <summary>
+        /// Initializes the movement timer for the enemies.
+        /// This timer controls the frequency of enemy movements, 
+        /// updating their position every 10 milliseconds.
+        /// </summary>
         private void InitializeMovementTimer()
         {
             movementTimer = new System.Windows.Forms.Timer
             {
-                Interval = 10 // Change direction every second
+                Interval = 10 // make move every x msec
             };
             movementTimer.Tick += (s, e) => Move();
             movementTimer.Start();
         }
 
-        //timer for cooldown of enemies bullet
+        /// <summary>
+        /// Initializes the shooting timer for the enemy's bullet cooldown.
+        /// This timer controls the frequency of enemy shooting, allowing them to fire 
+        /// bullets every 4 seconds. The shooting mechanism is triggered in response 
+        /// to the timer's Tick event.
+        /// </summary>
         private void InitializeShootingTimer()
         {
             shootingTimer = new System.Windows.Forms.Timer
             {
-                Interval = 4000 // Shoot every 4 seconds
+                Interval = 400 // Shoot every 4 seconds
             };
             shootingTimer.Tick += (s, e) => Shoot();
             shootingTimer.Start();
         }
 
+        /// <summary>
+        /// Moves the enemy object horizontally across the screen. 
+        /// The method checks for collisions with the edges of the parent container and reverses the direction if necessary. 
+        /// When a collision with the edge occurs, the enemy also moves down by a specified distance.
+        /// </summary>
         private void Move()
         {
             if (this.Parent == null) return; // Exit if there is no parent
@@ -93,8 +164,15 @@ namespace shoot_me_up
                 direction *= -1; // Reverse direction
                 this.Top += moveDownDistance; // Move down
             }
+
         }
 
+        /// <summary>
+        /// /// Initiates the shooting action for the enemy character. 
+        /// The method checks if the enemy can shoot, creates a missile, and manages its movement.
+        /// It handles missile collision detection with the player's ship and obstacles, reducing health accordingly.
+        /// If the missile goes off-screen or hits an obstacle, it is removed from the game and disposed of.
+        /// </summary>
         public void Shoot()
         {
             if (!canShoot) return;
@@ -105,77 +183,127 @@ namespace shoot_me_up
             PictureBox missile = new PictureBox
             {
                 Tag = "enemyMissile",
-                Size = new Size(43, 113),                    // Set the size for the bullet
+                Size = new Size(43, 113), // Set the size for the bullet
                 Location = new Point(missileX, missileY),
-                BackColor = Color.Transparent                // Make background transparent for image visibility
+                BackColor = Color.Transparent // Make background transparent for image visibility
             };
 
             LoadBulletImage(missile);
 
-            // Add missile to the form
-            this.Parent.Controls.Add(missile);
+            if (missile != null)     //just to be sure that this issue won't happen again
+            {
+                this.Parent.Controls.Add(missile);
+            }
+            else
+            {
+                // Handle the case when missile is null
+                Console.WriteLine("Missile is null.");
+            }
 
             canShoot = false; // Set the flag to false, indicating the enemy cannot shoot
 
             var missileTimer = new System.Windows.Forms.Timer
-            { Interval = 2};
-
+            {
+                Interval = 2
+            };
 
             missileTimer.Tick += (s, args) =>
             {
+                if (missile == null || missileTimer == null || this.Parent == null)
+                    return; // if one of object = null, stop processing (exception)
+
                 missile.Top += 25; // Move missile down
+
+                // Check if the missile has gone off-screen
                 if (missile.Top >= this.Parent.ClientSize.Height)
                 {
-
                     missileTimer.Stop(); // Stop the timer
                     this.Parent.Controls.Remove(missile); // Remove the missile from the form
                     missile.Dispose(); // Dispose of the missile to free resources
-
                     canShoot = true; // Allow the enemy to shoot again
+                    return; // Exit the method
                 }
 
-                // Check for collision with the player
+                // Check for collision with the player ship
                 if (missile.Bounds.IntersectsWith(((playGame)this.Parent).pictureBoxShip.Bounds))
                 {
-                    // Handle the collision
-                    playGame.ShipHp -= 1; // Decrease player HP
+                    playGame.ShipHp -= 1; // Decrease player health
+                    missileTimer.Stop(); // Stop the missile timer
+                    this.Parent.Controls.Remove(missile); // Remove the missile from the form
+                    missile.Dispose(); // Dispose of the missile
 
-                    
+                   // Remove pictureBox2 (heart)
+                   
+                        this.Controls.Remove(gameForm.pictureBox2);
+                        gameForm.pictureBox2.Dispose();
+                   
 
-                    missileTimer.Stop(); // Stop the timer
-                    missile.Dispose(); // Dispose of the missile to free resources
-                    this.Parent.Controls.Remove(missile); // Remove the missile from the 
-                    return; // Exit to avoid further processing
+                    canShoot = true; // Allow the enemy to shoot again
+                    return; // Exit the method
+
                 }
-
 
                 // Check for collision with obstacles
-                foreach (var obstacle in this.Parent.Controls.OfType<PictureBox>().Where(p => p.Tag?.ToString() == "obstacle"))
+                PictureBox[] obstacles = { ((playGame)this.Parent).pictureBox7, ((playGame)this.Parent).pictureBox8, ((playGame)this.Parent).pictureBox9 };
+                for (int i = 0; i < obstacles.Length; i++)
                 {
-                    if (missile.Bounds.IntersectsWith(obstacle.Bounds))
+                    if (missile.Bounds.IntersectsWith(obstacles[i].Bounds))
                     {
-                        // Decrease obstacle's HP
-                        obstacle.Tag = (int.Parse(obstacle.Tag.ToString()) - 1).ToString(); // Decrease HP by 1
+                        // Reduce the HP of the obstacle
+                        if (i == 0) // pictureBox7
+                            playGame.obstacle1HP -= 1;
+                        else if (i == 1) // pictureBox8
+                            playGame.obstacle2HP -= 1;
+                        else if (i == 2) // pictureBox9
+                            playGame.obstacle3HP -= 1;
 
-                        // If HP reaches 0, remove the obstacle
-                        if (int.Parse(obstacle.Tag.ToString()) <= 0)
+                        // Check if the obstacle's HP has reached 0
+                        if (i == 0 && playGame.obstacle1HP <= 0)
                         {
-                            this.Parent.Controls.Remove(obstacle); // Remove obstacle
-                            obstacle.Dispose(); // Dispose of the obstacle to free resources
+                            // Remove the obstacle from the parent controls
+                            this.Parent.Controls.Remove(obstacles[i]);
+                            obstacles[i].Dispose(); // Dispose of the obstacle to free resources
+                            obstacles[i] = null; // Clear reference to prevent future issues
+                            playGame.CreateExplosionObstacle(obstacles[i], Form1.boom);
                         }
 
+
+                        else if (i == 1 && playGame.obstacle2HP <= 0)
+                        {
+                            // Remove the obstacle from the parent controls
+                            this.Parent.Controls.Remove(obstacles[i]);
+                            obstacles[i].Dispose(); // Dispose of the obstacle to free resources
+                            obstacles[i] = null; // Clear reference to prevent future issues
+                            playGame.CreateExplosionObstacle(obstacles[i], Form1.boom);
+                        }
+
+                        else if (i == 2 && playGame.obstacle3HP <= 0)
+                        {
+                            // Remove the obstacle from the parent controls
+                            this.Parent.Controls.Remove(obstacles[i]);
+                            obstacles[i].Dispose(); // Dispose of the obstacle to free resources
+                            obstacles[i] = null; // Clear reference to prevent future issues
+                            playGame.CreateExplosionObstacle(obstacles[i], Form1.boom);
+                        }
+
+                        // Stop the missile and clean up
                         missileTimer.Stop();
-                        missile.Dispose();
                         this.Parent.Controls.Remove(missile);
-                        return; // Exit to avoid further processing
+                        missile.Dispose();
+                        canShoot = true; // Allow the enemy to shoot again
+                        return; // Exit the method
                     }
                 }
-
             };
             missileTimer.Start();
         }
 
-        //remove/kill enemy 
+
+
+
+        /// <summary>
+        /// Handles actions taken when the enemy is hit and removed.
+        /// </summary>
         public void Hit()
         {
             // Remove the enemy from the parent control

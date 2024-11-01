@@ -1,4 +1,39 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
+﻿/******************************************************************************************************
+** PROGRAMME  PlayGame.cs                                                                           **
+**                                                                                                    **
+** Lieu      : ETML - section informatique                                                          **
+** Auteur    : Yosef Nademo                                                                         **
+** Date      : 01.11.2024                                                                           **
+**                                                                                                    **
+** Modifications                                                                                    **
+**   Auteur  :                                                                                      **
+**   Version :                                                                                      **
+**   Date    :                                                                                     **
+**   Raisons :                                                                                     **
+**                                                                                                    **
+******************************************************************************************************/
+
+/******************************************************************************************************
+** DESCRIPTION                                                                                       ** 
+** La classe PlayGame représente le cœur du jeu, où le joueur contrôle un vaisseau spatial et       **
+** interagit avec divers éléments du jeu, tels que les ennemis, les obstacles, et les missiles.      **
+** Cette classe gère la logique de jeu, y compris le mouvement du vaisseau, le tir de missiles, et   **
+** les collisions avec les ennemis et les obstacles.                                               **
+**                                                                                                    **
+** Les principales fonctionnalités de la classe PlayGame comprennent :                             **
+** - Initialisation des éléments de jeu, tels que les ennemis, les obstacles et les missiles.       **
+** - Gestion des entrées utilisateur pour le mouvement et le tir.                                   **
+** - Suivi des scores et des niveaux de vie du joueur.                                              **
+** - Détection des collisions et traitement des événements associés, comme la destruction d'ennemis.**
+** - Gestion de la pause et de la reprise du jeu.                                                   **
+** - Affichage des informations de score et de vie en temps réel.                                   **
+**                                                                                                    **
+** Cette classe est essentielle pour créer une expérience de jeu dynamique et interactive, où le    **
+** joueur peut s'engager pleinement dans l'action tout en faisant face à des défis variés.          **
+******************************************************************************************************/
+
+
+using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

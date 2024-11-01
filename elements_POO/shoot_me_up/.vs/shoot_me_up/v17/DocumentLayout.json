@@ -3,64 +3,88 @@
   "WorkspaceRootPath": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\elements_poo\\shoot_me_up\\shoot_me_up\\playgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\playgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\enemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\game_end.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\game_end.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\elements_poo\\shoot_me_up\\shoot_me_up\\playgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\playgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{5BFD7985-7537-4DF2-B589-E5ACE0624350}|shoot_me_upTests\\shoot_me_upTests.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\elements_poo\\shoot_me_up\\shoot_me_uptests\\enemytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{5BFD7985-7537-4DF2-B589-E5ACE0624350}|shoot_me_upTests\\shoot_me_upTests.csproj|solutionrelative:shoot_me_uptests\\enemytests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\skins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\skins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\shoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\shoot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playgame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\playgame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\elements_poo\\shoot_me_up\\shoot_me_up\\victory].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\victory].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\elements_poo\\shoot_me_up\\shoot_me_up\\victory].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\victory].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\skins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\skins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A5FD40C7-1D98-44B7-9D02-E4BF37E5BF11}|shoot_me_upTests1\\shoot_me_upTests1.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\elements_poo\\shoot_me_up\\shoot_me_uptests1\\playgametests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A5FD40C7-1D98-44B7-9D02-E4BF37E5BF11}|shoot_me_upTests1\\shoot_me_upTests1.csproj|solutionrelative:shoot_me_uptests1\\playgametests.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\playgame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\pause.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\pause.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\pause.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|c:\\users\\pn25kdv\\documents\\github\\shoot-me-up-\\elements_poo\\shoot_me_up\\shoot_me_up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\game_end.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\game_end.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\victory].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\victory].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\victory].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\victory].cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\skins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\skins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\missile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\mars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\mars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playgamecy-27.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\playgamecy-27.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\mars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\mars.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\skins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\skins.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playgame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\playgame.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|solutionrelative:shoot_me_up\\score.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{E500C3E7-046A-44A9-8D6F-8FB4ED8F5B82}|shoot_me_up\\shoot_me_up.csproj|C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playgamecy-27.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -74,17 +98,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 14,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Enemy.cs",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Enemy.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\Enemy.cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Enemy.cs",
               "RelativeToolTip": "shoot_me_up\\Enemy.cs",
-              "ViewState": "AQIAAFQAAAAAAAAAAAD4v2cAAAAMAAAA",
+              "ViewState": "AQIAAMwAAAAAAAAAAAAiwNoAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-28T09:26:33.96Z",
               "IsPinned": true,
@@ -92,20 +116,136 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "playGame.cs",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.cs",
+              "RelativeDocumentMoniker": "shoot_me_up\\playGame.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.cs",
+              "RelativeToolTip": "shoot_me_up\\playGame.cs",
+              "ViewState": "AQIAACoAAAAAAAAAAAAAAEQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T08:22:24.517Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "playGame.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.cs",
+              "RelativeDocumentMoniker": "shoot_me_up\\playGame.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.cs [Conception]",
+              "RelativeToolTip": "shoot_me_up\\playGame.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T08:22:14.41Z",
+              "IsPinned": true,
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Form1.cs",
+              "RelativeDocumentMoniker": "shoot_me_up\\Form1.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Form1.cs",
+              "RelativeToolTip": "shoot_me_up\\Form1.cs",
+              "ViewState": "AQIAAEIAAAAAAAAAAAAAAB8AAABoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-07T08:31:04.309Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "playGameTests.cs",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_upTests1\\playGameTests.cs",
+              "RelativeDocumentMoniker": "shoot_me_upTests1\\playGameTests.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_upTests1\\playGameTests.cs",
+              "RelativeToolTip": "shoot_me_upTests1\\playGameTests.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAQwH8AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T15:15:49.194Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 8,
+              "Title": "Form1.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Form1.cs",
+              "RelativeDocumentMoniker": "shoot_me_up\\Form1.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Form1.cs [Conception]",
+              "RelativeToolTip": "shoot_me_up\\Form1.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T15:12:36.43Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "EnemyTests.cs",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_upTests\\EnemyTests.cs",
+              "RelativeDocumentMoniker": "shoot_me_upTests\\EnemyTests.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_upTests\\EnemyTests.cs",
+              "RelativeToolTip": "shoot_me_upTests\\EnemyTests.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T15:04:57.016Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Mars.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Mars.cs",
+              "RelativeDocumentMoniker": "shoot_me_up\\Mars.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Mars.cs [Conception]",
+              "RelativeToolTip": "shoot_me_up\\Mars.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T11:02:29.899Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Pause.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Pause.Designer.cs",
+              "RelativeDocumentMoniker": "shoot_me_up\\Pause.Designer.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Pause.Designer.cs",
+              "RelativeToolTip": "shoot_me_up\\Pause.Designer.cs",
+              "ViewState": "AQIAABcAAAAAAAAAAAAAACQAAAALAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T08:41:45.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Pause.cs [Conception]",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Pause.cs",
+              "RelativeDocumentMoniker": "shoot_me_up\\Pause.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Pause.cs [Conception]",
+              "RelativeToolTip": "shoot_me_up\\Pause.cs [Conception]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-01T08:41:36.987Z",
+              "EditorCaption": " [Conception]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "victory].cs",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\victory].cs",
               "RelativeDocumentMoniker": "shoot_me_up\\victory].cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\victory].cs",
               "RelativeToolTip": "shoot_me_up\\victory].cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA4AAAAZAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-28T13:37:50.154Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "victory].cs [Conception]",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\victory].cs",
               "RelativeDocumentMoniker": "shoot_me_up\\victory].cs",
@@ -117,46 +257,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 19,
               "Title": "playGame.Designer.cs",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.Designer.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\playGame.Designer.cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.Designer.cs",
               "RelativeToolTip": "shoot_me_up\\playGame.Designer.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABYAAAAIAAAA",
+              "ViewState": "AQIAAPAAAAAAAAAAAAAgwAwBAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-28T10:20:41.033Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Shoot.cs",
-              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Shoot.cs",
-              "RelativeDocumentMoniker": "shoot_me_up\\Shoot.cs",
-              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Shoot.cs",
-              "RelativeToolTip": "shoot_me_up\\Shoot.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-28T09:36:29.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 12,
               "Title": "Skins.cs",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Skins.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\Skins.cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Skins.cs",
               "RelativeToolTip": "shoot_me_up\\Skins.cs",
-              "ViewState": "AQIAABkAAAAAAAAAAAAgwDUAAAAAAAAA",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAAA8AAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-08T08:36:00.455Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 18,
               "Title": "Skins.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Skins.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\Skins.cs",
@@ -168,20 +295,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 13,
               "Title": "Score.cs",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Score.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\Score.cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Score.cs",
               "RelativeToolTip": "shoot_me_up\\Score.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAB0AAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAABoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-08T08:35:50.176Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 20,
               "Title": "Score.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Score.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\Score.cs",
@@ -193,87 +320,64 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 9,
               "Title": "game_End.cs",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\game_End.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\game_End.cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\game_End.cs",
               "RelativeToolTip": "shoot_me_up\\game_End.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAACwAAAANAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAABnAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T09:25:44.78Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Form1.cs",
-              "RelativeDocumentMoniker": "shoot_me_up\\Form1.cs",
-              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Form1.cs",
-              "RelativeToolTip": "shoot_me_up\\Form1.cs",
-              "ViewState": "AQIAADkAAAAAAAAAAAAkwEIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:31:04.309Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "playGameCy-27.cs",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGameCy-27.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\playGameCy-27.cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGameCy-27.cs",
               "RelativeToolTip": "shoot_me_up\\playGameCy-27.cs",
-              "ViewState": "AQIAAPQAAAAAAAAAAAAUwAYBAAA/AAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABcAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:24:18.352Z"
+              "WhenOpened": "2024-10-07T08:24:18.352Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 21,
               "Title": "playGameCy-27.cs [Conception]",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGameCy-27.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\playGameCy-27.cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGameCy-27.cs [Conception]",
               "RelativeToolTip": "shoot_me_up\\playGameCy-27.cs [Conception]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:24:13.531Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "playGame.cs [Conception]",
-              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.cs",
-              "RelativeDocumentMoniker": "shoot_me_up\\playGame.cs",
-              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.cs [Conception]",
-              "RelativeToolTip": "shoot_me_up\\playGame.cs [Conception]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:22:14.41Z",
+              "WhenOpened": "2024-10-07T08:24:13.531Z",
               "EditorCaption": " [Conception]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "playGame.cs",
-              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.cs",
-              "RelativeDocumentMoniker": "shoot_me_up\\playGame.cs",
-              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\playGame.cs",
-              "RelativeToolTip": "shoot_me_up\\playGame.cs",
-              "ViewState": "AQIAAHcAAAAAAAAAAAAmwHwAAAANAAAA",
+              "DocumentIndex": 15,
+              "Title": "Mars.cs",
+              "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Mars.cs",
+              "RelativeDocumentMoniker": "shoot_me_up\\Mars.cs",
+              "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Mars.cs",
+              "RelativeToolTip": "shoot_me_up\\Mars.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAABjAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-07T08:22:24.517Z",
+              "WhenOpened": "2024-11-01T11:02:33.085Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "Missile.cs",
               "DocumentMoniker": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Missile.cs",
               "RelativeDocumentMoniker": "shoot_me_up\\Missile.cs",
               "ToolTip": "C:\\Users\\pn25kdv\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\Missile.cs",
               "RelativeToolTip": "shoot_me_up\\Missile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAABMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-07T09:14:49.656Z",
               "EditorCaption": ""

@@ -54,15 +54,18 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = Color.IndianRed;
+            pictureBox2.BackgroundImage = (Image)resources.GetObject("pictureBox2.BackgroundImage");
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
             pictureBox2.Location = new Point(513, 398);
             pictureBox2.Name = "pictureBox2";
-            pictureBox2.Size = new Size(112, 249);
+            pictureBox2.Size = new Size(113, 249);
             pictureBox2.TabIndex = 1;
             pictureBox2.TabStop = false;
+            pictureBox2.Click += pictureBox2_Click_1;
             // 
             // pictureBox3
             // 
+            pictureBox3.BackgroundImage = (Image)resources.GetObject("pictureBox3.BackgroundImage");
             pictureBox3.Location = new Point(1017, 398);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(112, 249);

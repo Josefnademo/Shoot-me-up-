@@ -1,7 +1,82 @@
-﻿//Author: Yosef Nademo
-//Date   : 30.09.2024
-//Place  : ETML
-//Descr. : Main menu of game "SHOOT ME UP!", with buttons:Optioins,Play,Score and logo of game. 
+﻿/******************************************************************************
+** PROGRAMME  shoot_me_up.cs                                                **
+**                                                                           **
+** Lieu      : ETML - section informatique                                   **
+** Auteur    : Yosef Nademo                                                  **
+** Date      : 01.11.2024                                                    **
+**                                                                           **
+** Modifications                                                             **
+**   Auteur  :                                                               **
+**   Version :                                                               **
+**   Date    :                                                               **
+**   Raisons :                                                               **
+**                                                                           **
+**                                                                           **
+******************************************************************************/
+
+/******************************************************************************************************
+** DESCRIPTION                                                                                       ** 
+** Ce programme est un jeu de type Space Invaders en 2D où le joueur contrôle un vaisseau spatial    ** 
+** qui doit tirer sur des déchets spatiaux avec des missiles. L'objectif du jeu est de               ** 
+** détruire le plus de déchets possible tout en évitant de se faire toucher par ceux-ci.             ** 
+** Le joueur doit naviguer sur l'écran, tirer des missiles, et gérer ses ressources                  ** 
+** pour maximiser son score.                                                                         ** 
+**                                                                                                   ** 
+** Le jeu propose plusieurs niveaux, chacun présentant des défis uniques, tels que                   ** 
+** des types de déchets différents et des schémas de mouvement variés. De plus,                      ** 
+** des éléments de power-up sont disponibles pour améliorer les capacités du vaisseau,               ** 
+** comme la vitesse de tir et la résistance.                                                         ** 
+**                                                                                                   ** 
+** Le programme utilise une interface graphique conviviale, permettant au joueur                     ** 
+** de naviguer facilement entre les menus, d'accéder aux options, de consulter le                    ** 
+** classement et de sélectionner des skins pour personnaliser son vaisseau.                          ** 
+** Les effets sonores et la musique de fond ajoutent une dimension immersive au jeu,                 ** 
+** rendant l'expérience de jeu plus engageante.                                                      ** 
+**                                                                                                   ** 
+** Les principales fonctionnalités comprennent :                                                     ** 
+** - Tirer des missiles pour détruire des déchets.                                                   ** 
+** - Différents niveaux de difficulté avec des défis croissants.                                     ** 
+** - Système de score pour suivre les performances du joueur.                                        ** 
+** - Options de personnalisation pour le vaisseau.                                                   ** 
+** - Musique et effets sonores immersifs.                                                            ** 
+**                                                                                                   ** 
+** Ce programme vise à offrir une expérience de jeu amusante et captivante, tout en                  ** 
+** sensibilisant aux problèmes de pollution spatiale.                                                ** 
+******************************************************************************************************/
+
+
+
+/******************************************************************************************************
+** PROGRAMME  Form1.cs                                                                               **
+**                                                                                                    **
+** Lieu      : ETML - section informatique                                                          **
+** Auteur    : Yosef Nademo                                                                         **
+** Date      : 01.11.2024                                                                           **
+**                                                                                                    **
+** Modifications                                                                                    **
+**   Auteur  :                                                                                      **
+**   Version :                                                                                      **
+**   Date    :                                                                                     **
+**   Raisons :                                                                                     **
+**                                                                                                    **
+******************************************************************************************************/
+
+/******************************************************************************************************
+** DESCRIPTION                                                                                       ** 
+** La classe Form1 représente l'écran principal du jeu, agissant comme le point de départ de l'expérience de jeu.**
+** Elle permet aux joueurs d'accéder à différentes fonctionnalités et options disponibles dans le jeu.  **
+**                                                                                                    **
+** Les principales fonctionnalités de la classe Form1 comprennent :                                 **
+** - Chargement et lecture de la musique de fond, améliorant l'ambiance du jeu.                      **
+** - Navigation vers les autres écrans du jeu, y compris le jeu principal, les options, les skins, et le classement.**
+** - Gestion des événements utilisateur à travers des clics sur les éléments de l'interface graphique.   **
+** - Affichage de messages d'erreur en cas de fichiers manquants ou d'autres problèmes liés à la musique.**
+**                                                                                                    **
+** Form1 est essentielle pour l'interaction initiale du joueur avec le jeu, fournissant une interface  **
+** utilisateur conviviale pour commencer l'aventure de tir spatial.                                   **
+******************************************************************************************************/
+
+
 
 using System.Media;
 using System.Windows.Forms;
@@ -15,6 +90,7 @@ namespace shoot_me_up
         public static string basePath = AppDomain.CurrentDomain.BaseDirectory;                                   //get the Path of current program
         public static string boom = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\images\boom.png")); //game over boom png
         public static string musicPath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\music"));   //combine the Path of current program and music folder and give it as full path
+        public static string scorePath = Path.GetFullPath(Path.Combine(basePath, @"..\..\..\..\..\..\score"));   //score fullpath
         public static bool musicPlaying = true;                                                                  //variable wich will track the state of music.
         public static SoundPlayer player;                                                                        //Player declaration, *static* pour que player puisse utiliser par tout
         public static string[] musicList =                                                                       //arrey of all music
@@ -26,6 +102,10 @@ namespace shoot_me_up
             Path.Combine(musicPath,"Oy-Marichka-Chicheri.wav")
         };
 
+
+        /// <summary>
+        /// Initializes the main menu form, sets up music playback, and manages resource paths.
+        /// </summary>
         public Form1()
         {
             InitializeComponent();
@@ -46,6 +126,13 @@ namespace shoot_me_up
                 }
             }
         }
+
+        /// <summary>
+        /// Handles the click event for the "Play Game" button, stopping the current music 
+        /// and opening the playGame form while hiding the main menu.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         //PlayGame form opener 
         private void pictureBox2_Click(object sender, EventArgs e)
         {
@@ -61,6 +148,14 @@ namespace shoot_me_up
             // Close the first form (optional, if new)
             this.Hide();
         }
+
+
+        /// <summary>
+        /// Handles the click event for the "Skins" button, opening the Skins form 
+        /// and hiding the main menu.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         // Skins form opener
         private void pictureBox4_Click(object sender, EventArgs e)
         {
@@ -68,6 +163,13 @@ namespace shoot_me_up
             Skins1.Show();
             this.Hide();
         }
+
+        /// <summary>
+        /// Handles the click event for the "Score" button, opening the Score form 
+        /// and hiding the main menu.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         // Score form opener
         private void pictureBox3_Click(object sender, EventArgs e)
         {
@@ -75,6 +177,14 @@ namespace shoot_me_up
             Score.Show();
             this.Hide();
         }
+
+
+        /// <summary>
+        /// Handles the click event for the "Options" button, opening the Options form 
+        /// and hiding the main menu.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         // Optioons form opener
         private void pictureBox5_Click(object sender, EventArgs e)
         {
@@ -82,7 +192,12 @@ namespace shoot_me_up
             Options.Show();
             this.Hide();
         }
-
+        
+        /// <summary>
+        /// Handles the click event for the "Exit" button, closing the application.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data.</param>
         //button to Stop/Exit program
         private void pictureBox1_Click(object sender, EventArgs e)
         {

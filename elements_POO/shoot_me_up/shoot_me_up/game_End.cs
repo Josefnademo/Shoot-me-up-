@@ -1,4 +1,35 @@
-﻿using System;
+﻿/******************************************************************************************************
+** PROGRAMME  game_End.cs                                                                           **
+**                                                                                                    **
+** Lieu      : ETML - section informatique                                                          **
+** Auteur    : Yosef Nademo                                                                         **
+** Date      : 01.11.2024                                                                           **
+**                                                                                                    **
+** Modifications                                                                                    **
+**   Auteur  :                                                                                      **
+**   Version :                                                                                      **
+**   Date    :                                                                                     **
+**   Raisons :                                                                                     **
+**                                                                                                    **
+******************************************************************************************************/
+
+/******************************************************************************************************
+** DESCRIPTION                                                                                       ** 
+** La classe game_End gère la fin du jeu, affichant un écran de résultats et permettant au joueur de   **
+** consulter ses performances après avoir terminé une partie.                                       **
+**                                                                                                    **
+** Les principales fonctionnalités de la classe game_End comprennent :                              **
+** - Affichage des scores finaux, des statistiques de performance et des messages de félicitations,   **
+**   offrant au joueur un retour sur son expérience de jeu.                                          **
+** - Options pour redémarrer le jeu ou retourner au menu principal, permettant une navigation facile.  **
+** - Gestion des événements de fermeture du jeu, assurant que les ressources sont libérées correctement.**
+**                                                                                                    **
+** Cette classe est essentielle pour conclure l'expérience de jeu, en fournissant une interface       **
+** conviviale pour que les joueurs puissent voir leurs réalisations et choisir leurs prochaines étapes.**
+******************************************************************************************************/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
@@ -20,7 +51,7 @@ namespace shoot_me_up
             boomPath = Form1.boom;                       //path of boom picture 
 
             //make an explosion if hp of ship is 0
-            if (playGame.ShipHp == 0)
+            if (playGame.ShipHp <= 0)
             {
 
                 PictureBox boom1 = new PictureBox

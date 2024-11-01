@@ -1,4 +1,38 @@
-﻿namespace shoot_me_up
+﻿/******************************************************************************************************
+** PROGRAMME  Pause.cs                                                                              **
+**                                                                                                    **
+** Lieu      : ETML - section informatique                                                          **
+** Auteur    : Yosef Nademo                                                                         **
+** Date      : 01.11.2024                                                                           **
+**                                                                                                    **
+** Modifications                                                                                    **
+**   Auteur  :                                                                                      **
+**   Version :                                                                                      **
+**   Date    :                                                                                     **
+**   Raisons :                                                                                     **
+**                                                                                                    **
+******************************************************************************************************/
+
+/******************************************************************************************************
+** DESCRIPTION                                                                                       ** 
+** La classe Pause gère l'état du jeu lorsque le joueur choisit de mettre le jeu en pause. Elle      **
+** permet au joueur d'interrompre le jeu en cours, offrant une interface pour reprendre ou quitter    **
+** le jeu.                                                                                           **
+**                                                                                                    **
+** Les principales fonctionnalités de la classe Pause comprennent :                                 **
+** - Affichage d'un menu de pause avec des options pour reprendre le jeu ou retourner au menu        **
+**   principal.                                                                                      **
+** - Gestion des événements d'entrée utilisateur pour permettre au joueur de naviguer facilement     **
+**   dans les options de pause.                                                                       **
+** - Réinitialisation des états nécessaires pour garantir que le jeu reprenne sans problèmes        **
+**   lorsque le joueur choisit de continuer.                                                        **
+**                                                                                                    **
+** Cette classe vise à améliorer l'expérience utilisateur en offrant au joueur la possibilité de     **
+** contrôler le rythme du jeu et de prendre des pauses à tout moment, ce qui est essentiel pour      **
+** une expérience de jeu fluide et agréable.                                                        **
+******************************************************************************************************/
+
+namespace shoot_me_up
 {
     partial class Pause
     {

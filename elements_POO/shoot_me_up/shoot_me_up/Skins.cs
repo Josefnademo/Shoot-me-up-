@@ -1,4 +1,36 @@
-﻿using System;
+﻿/******************************************************************************************************
+** PROGRAMME  Skins.cs                                                                               **
+**                                                                                                    **
+** Lieu      : ETML - section informatique                                                          **
+** Auteur    : Yosef Nademo                                                                         **
+** Date      : 01.11.2024                                                                           **
+**                                                                                                    **
+** Modifications                                                                                    **
+**   Auteur  :                                                                                      **
+**   Version :                                                                                      **
+**   Date    :                                                                                     **
+**   Raisons :                                                                                     **
+**                                                                                                    **
+******************************************************************************************************/
+
+/******************************************************************************************************
+** DESCRIPTION                                                                                       ** 
+** La classe Skins gère l'interface de personnalisation des vaisseaux spatiaux dans le jeu. Elle     **
+** permet aux joueurs de sélectionner différents skins pour leur vaisseau, offrant ainsi une        **
+** expérience de jeu plus personnalisée et attrayante.                                             **
+**                                                                                                    **
+** Les principales fonctionnalités de la classe Skins comprennent :                                 **
+** - Affichage d'une galerie de skins disponibles, avec des aperçus visuels pour chaque option.     **
+** - Gestion des sélections de skins par le joueur, permettant de sauvegarder les préférences.      **
+** - Intégration des skins sélectionnés dans le jeu, modifiant l'apparence du vaisseau.             **
+**                                                                                                    **
+** La classe contribue à l'immersion et à l'engagement des joueurs, en leur offrant la possibilité   **
+** de personnaliser leur expérience de jeu et de se démarquer grâce à des visuels uniques.          **
+******************************************************************************************************/
+
+
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -49,22 +81,46 @@ namespace shoot_me_up
 
         }
 
+        //1 level spaceX
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
-        }
-        //Cy-27 level
-        private void pictureBox4_Click(object sender, EventArgs e)
-        {
             // Create an instance of the second form
-            playGameCy_27 level_Cy27 = new playGameCy_27();
+            playGame playGame = new playGame();
 
             // Show the second form
-            level_Cy27.Show();
+            playGame.Show();
 
             // Close the first form (optional, if new)
             this.Close();
         }
+
+        //2 level Mars 
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+            // Create an instance of the second form
+            Mars mars = new Mars();
+
+            // Show the second form
+            mars.Show();
+
+            // Close the first form (optional, if new)
+            this.Close();
+        }
+
+        //3 level Cy-27 
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+            // Create an instance of the second form
+            Mars mars = new Mars();
+
+            // Show the second form
+            mars.Show();
+
+            // Close the first form (optional, if new)
+            this.Close();
+        }
+
+
         //back button
         private void pictureBox5_Click_1(object sender, EventArgs e)
         {
@@ -82,5 +138,7 @@ namespace shoot_me_up
         {
 
         }
+      
     }
-}
+    }
+

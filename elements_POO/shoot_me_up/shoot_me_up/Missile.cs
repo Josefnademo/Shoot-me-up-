@@ -1,4 +1,38 @@
-﻿using System;
+﻿/******************************************************************************************************
+** PROGRAMME  Missile.cs                                                                             **
+**                                                                                                    **
+** Lieu      : ETML - section informatique                                                          **
+** Auteur    : Yosef Nademo                                                                         **
+** Date      : 01.11.2024                                                                           **
+**                                                                                                    **
+** Modifications                                                                                    **
+**   Auteur  :                                                                                      **
+**   Version :                                                                                      **
+**   Date    :                                                                                     **
+**   Raisons :                                                                                     **
+**                                                                                                    **
+******************************************************************************************************/
+
+/******************************************************************************************************
+** DESCRIPTION                                                                                       ** 
+** La classe Missile gère la création, le mouvement et la collision des missiles tirés par le vaisseau.**
+** Elle permet de simuler les projectiles dans le jeu et d'interagir avec les ennemis.                 **
+**                                                                                                    **
+** Les principales fonctionnalités de la classe Missile comprennent :                                 **
+** - Création de missiles avec une image et une position initiale spécifiées, permettant d'utiliser  **
+**   différents types de projectiles.                                                                 **
+** - Déplacement des missiles vers le haut de l'écran, avec une gestion de la vitesse et de la       **
+**   suppression des missiles hors écran pour économiser les ressources.                              **
+** - Vérification des collisions entre les missiles et les ennemis, permettant de déclencher des     **
+**   événements lorsque les missiles touchent une cible, comme détruire l'ennemi et supprimer le      **
+**   missile.                                                                                        **
+**                                                                                                    **
+** La classe Missile joue un rôle crucial dans le gameplay, car elle permet aux joueurs de défendre    **
+** leur vaisseau contre les déchets spatiaux et d'engager des combats contre les ennemis.            **
+******************************************************************************************************/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -21,8 +55,15 @@ namespace shoot_me_up
             Path.Combine(bulletPath, "neptun.png") 
             };
 
-            // Create and position a missile given a unique image
-            public static PictureBox CreateMissile(int xPosition, int yPosition, string missileImagePath)
+
+        /// <summary>
+        /// Creates a missile PictureBox with a specified position and image.
+        /// </summary>
+        /// <param name="xPosition">The X coordinate for the missile's position.</param>
+        /// <param name="yPosition">The Y coordinate for the missile's position.</param>
+        /// <param name="missileImagePath">The file path of the missile image to be used.</param>
+        // Create and position a missile given a unique image
+        public static PictureBox CreateMissile(int xPosition, int yPosition, string missileImagePath)
             {
                 PictureBox missile = new PictureBox
                 {
@@ -41,8 +82,13 @@ namespace shoot_me_up
                 return missile;
             }
 
-            // Method to move the missile upwards
-            public static void MoveMissile(PictureBox missile)
+
+        /// <summary>
+        /// Moves the missile upwards on the screen.
+        /// </summary>
+        /// <param name="missile">The missile PictureBox to move.</param>
+        // Method to move the missile upwards
+        public static void MoveMissile(PictureBox missile)
             {
                 if (missile.Top > 0) // Ensure it doesn't move off the screen
                 {
@@ -56,6 +102,12 @@ namespace shoot_me_up
                 }
             }
 
+
+        /// <summary>
+        /// Checks for a collision between the missile and an enemy.
+        /// </summary>
+        /// <param name="missile">The missile PictureBox.</param>
+        /// <param name="enemy">The enemy control to check for collision with.</param>
         // Method to check collision with an enemy
         public static void CheckCollisionWithEnemy(PictureBox missile, Control enemy)
         {
@@ -68,6 +120,7 @@ namespace shoot_me_up
                 // Call the Hit method on the enemy
                 if (enemy is Enemy enemyObj)
                 {
+
                     enemyObj.Hit(); // Call the Hit method to remove the enemy
                 }
             }
