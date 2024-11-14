@@ -53,6 +53,7 @@ namespace shoot_me_up
     public class Enemy : PictureBox
     {    
         public static string enemyImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\imgonline-com-ua-Resize-zScTrh8xmY-Photoroom.png")); //enemy image
+         public static string enemyBulletImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\bullets\enemy_bullet.png")); //enemy's bullet image
         private playGame gameForm;                          //instance of playGame form
         private Mars gameFormMars;                          //instance of Mars form
 
@@ -107,7 +108,7 @@ namespace shoot_me_up
         /// <param name="missile"></param>
         private void LoadBulletImage(PictureBox missile)
         {
-            using (Image bulletImage = Image.FromFile(@"C:\Users\pn25kdv\Documents\GitHub\Shoot-me-up-\images\programing_img\bullets\enemy_bullet.png"))
+            using (Image bulletImage = Image.FromFile(enemyBulletImagePath))
             {
                 missile.Image = new Bitmap(bulletImage);
                 missile.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust to fit
