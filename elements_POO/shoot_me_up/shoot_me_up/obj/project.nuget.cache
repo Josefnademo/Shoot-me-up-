@@ -1,24 +1,28 @@
 {
   "version": 2,
-  "dgSpecHash": "nY/tCW+YwVFMNdXo2TaEMTLx23j4j8Og/FyYY8ldi7CkbPJJsxbIwVQWyjX2dI4MCNxk8GDBWsuor3V0xcMs5Q==",
+  "dgSpecHash": "ZTWkaJnC6bY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\yosnademo\\Documents\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\shoot_me_up.csproj",
+  "projectFilePath": "C:\\Users\\hdjdj\\OneDrive\\Документи\\GitHub\\Shoot-me-up-\\elements_POO\\shoot_me_up\\shoot_me_up\\shoot_me_up.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\yosnademo\\.nuget\\packages\\audioswitcher.audioapi\\3.0.0\\audioswitcher.audioapi.3.0.0.nupkg.sha512",
-    "C:\\Users\\yosnademo\\.nuget\\packages\\audioswitcher.audioapi.coreaudio\\3.0.3\\audioswitcher.audioapi.coreaudio.3.0.3.nupkg.sha512",
-    "C:\\Users\\yosnademo\\.nuget\\packages\\libvlcsharp\\3.9.0\\libvlcsharp.3.9.0.nupkg.sha512",
-    "C:\\Users\\yosnademo\\.nuget\\packages\\libvlcsharp.forms\\3.9.0\\libvlcsharp.forms.3.9.0.nupkg.sha512",
-    "C:\\Users\\yosnademo\\.nuget\\packages\\vlc.dotnet.core\\3.1.0\\vlc.dotnet.core.3.1.0.nupkg.sha512",
-    "C:\\Users\\yosnademo\\.nuget\\packages\\vlc.dotnet.core.interops\\3.1.0\\vlc.dotnet.core.interops.3.1.0.nupkg.sha512",
-    "C:\\Users\\yosnademo\\.nuget\\packages\\vlc.dotnet.forms\\3.1.0\\vlc.dotnet.forms.3.1.0.nupkg.sha512",
-    "C:\\Users\\yosnademo\\.nuget\\packages\\xamarin.forms\\3.2.0.871581\\xamarin.forms.3.2.0.871581.nupkg.sha512"
+    "C:\\Users\\hdjdj\\.nuget\\packages\\audioswitcher.audioapi\\3.0.0\\audioswitcher.audioapi.3.0.0.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\audioswitcher.audioapi.coreaudio\\3.0.3\\audioswitcher.audioapi.coreaudio.3.0.3.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\libvlcsharp\\3.9.0\\libvlcsharp.3.9.0.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\libvlcsharp.forms\\3.9.0\\libvlcsharp.forms.3.9.0.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\vlc.dotnet.core\\3.1.0\\vlc.dotnet.core.3.1.0.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\vlc.dotnet.core.interops\\3.1.0\\vlc.dotnet.core.interops.3.1.0.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\vlc.dotnet.forms\\3.1.0\\vlc.dotnet.forms.3.1.0.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\xamarin.forms\\3.2.0.871581\\xamarin.forms.3.2.0.871581.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.36\\microsoft.windowsdesktop.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.36\\microsoft.netcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.36\\microsoft.aspnetcore.app.ref.6.0.36.nupkg.sha512",
+    "C:\\Users\\hdjdj\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.36\\microsoft.netcore.app.host.win-x64.6.0.36.nupkg.sha512"
   ],
   "logs": [
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Le package 'AudioSwitcher.AudioApi 3.0.0' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "message": "Package 'AudioSwitcher.AudioApi 3.0.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "AudioSwitcher.AudioApi",
       "targetGraphs": [
         "net6.0-windows7.0"
@@ -28,7 +32,7 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Le package 'AudioSwitcher.AudioApi.CoreAudio 3.0.3' a été restauré en utilisant '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' au lieu du framework cible du projet 'net6.0-windows7.0'. Ce package n'est peut-être pas totalement compatible avec votre projet.",
+      "message": "Package 'AudioSwitcher.AudioApi.CoreAudio 3.0.3' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows7.0'. This package may not be fully compatible with your project.",
       "libraryId": "AudioSwitcher.AudioApi.CoreAudio",
       "targetGraphs": [
         "net6.0-windows7.0"

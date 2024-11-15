@@ -72,6 +72,7 @@ namespace shoot_me_up
         //choose your next level
         private void label2_Click(object sender, EventArgs e)
         {
+           
             Skins Skins1 = new Skins();
             Skins1.Show();
             this.Hide();

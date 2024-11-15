@@ -82,7 +82,7 @@ namespace shoot_me_up
         }
 
         //1 level spaceX
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             // Create an instance of the second form
             playGame playGame = new playGame();
@@ -95,7 +95,7 @@ namespace shoot_me_up
         }
 
         //2 level Mars 
-        private void pictureBox2_Click_1(object sender, EventArgs e)
+        private void pictureBox2_Click_2(object sender, EventArgs e)
         {
             // Create an instance of the second form
             Mars mars = new Mars();
@@ -122,7 +122,7 @@ namespace shoot_me_up
 
 
         //back button
-        private void pictureBox5_Click_1(object sender, EventArgs e)
+        private void pictureBox5_Click(object sender, EventArgs e)
         {
             // Create an instance of the second form
             Form1 Menu = new Form1();
@@ -139,7 +139,11 @@ namespace shoot_me_up
 
         }
 
-      
+        private void pictureBox3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
     }
-    }
+}
 

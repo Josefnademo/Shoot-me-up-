@@ -100,7 +100,7 @@ namespace shoot_me_up
             this.DoubleBuffered = true; // Enable double buffering. This helps avoid flickering and improves graphics performance.
 
             //Start the music of game round when button PLAY is pressed and play it in the loop
-            Form1.player = new SoundPlayer(Form1.musicList[2]);
+            Form1.player = new SoundPlayer(Form1.musicList[4]);
             Form1.player.PlayLooping();
 
             // Defines the form to handle keystrokes
@@ -166,7 +166,7 @@ namespace shoot_me_up
             int startX = 150; // Initial X position for the first enemy
             int yPosition = 50; // Y position for the enemies
 
-            for (int i = 0; i < 10; i++) // Spawn 3 enemies
+            for (int i = 0; i < 8; i++) // Spawn 3 enemies
             {
                 Enemy2 enemy = new Enemy2();
                 enemy.Location = new Point(startX + (i * EnemySpacing), yPosition);
@@ -224,7 +224,7 @@ namespace shoot_me_up
             if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") < 25) // max 25 missiles
             {
                 // Create the missile PictureBox
-                PictureBox missile = Missile.CreateMissile(missileX, missileY, Missile.missileImage[0]);
+                PictureBox missile = Missile.CreateMissile(missileX, missileY, Missile.missileImage[2]);
                 missile.Tag = "missile"; // Set the tag for identification
                 this.Controls.Add(missile); // Add missile to the control
 
@@ -247,7 +247,7 @@ namespace shoot_me_up
         {
             if (enemies.Count <= 0 && !isVictoryShown)
             {
-
+                this.Close();
                 victory_ victoryForm = new victory_();
                 victoryForm.Show();
                 this.Enabled = false;     //make playGame form not availble (stops it)
@@ -608,7 +608,7 @@ namespace shoot_me_up
         //
 
         //pause form ACTIVATOR
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void pictureBox4_Click_2(object sender, EventArgs e)
         {
             if (PauseMenu == null)
             {
@@ -659,5 +659,6 @@ namespace shoot_me_up
         {
 
         }
+
     }
 }

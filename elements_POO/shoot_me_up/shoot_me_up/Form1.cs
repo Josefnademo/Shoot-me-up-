@@ -114,7 +114,7 @@ namespace shoot_me_up
             if (musicPlaying == true)
             {
                 // Check if the file exists **to don't stop the program
-                if (File.Exists(musicList[1])) 
+                if (File.Exists(musicList[1]))
                 {
                     player = new SoundPlayer(Form1.musicList[1]);
                     player.PlayLooping();
@@ -134,7 +134,7 @@ namespace shoot_me_up
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The event data.</param>
         //PlayGame form opener 
-        private void pictureBox2_Click(object sender, EventArgs e)
+        private void pictureBox2_Click_1(object sender, EventArgs e)
         {
             //stop music of menu
             player.Stop();
@@ -157,7 +157,7 @@ namespace shoot_me_up
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The event data.</param>
         // Skins form opener
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void pictureBox4_Click_1(object sender, EventArgs e)
         {
             Skins Skins1 = new Skins();
             Skins1.Show();
@@ -171,7 +171,7 @@ namespace shoot_me_up
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The event data.</param>
         // Score form opener
-        private void pictureBox3_Click(object sender, EventArgs e)
+        private void pictureBox3_Click_1(object sender, EventArgs e)
         {
             Score Score = new Score();
             Score.Show();
@@ -186,20 +186,20 @@ namespace shoot_me_up
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The event data.</param>
         // Optioons form opener
-        private void pictureBox5_Click(object sender, EventArgs e)
+        private void pictureBox5_Click_1(object sender, EventArgs e)
         {
             Options Options = new Options();
             Options.Show();
             this.Hide();
         }
-        
+
         /// <summary>
         /// Handles the click event for the "Exit" button, closing the application.
         /// </summary>
         /// <param name="sender">The source of the event.</param>
         /// <param name="e">The event data.</param>
         //button to Stop/Exit program
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void pictureBox1_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }
@@ -213,6 +213,8 @@ namespace shoot_me_up
         {
 
         }
+
+  
     }
 }
 

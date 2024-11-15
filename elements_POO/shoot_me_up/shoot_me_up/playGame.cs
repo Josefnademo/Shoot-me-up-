@@ -331,7 +331,7 @@ namespace shoot_me_up
         {
             if (enemies.Count <= 0 && !isVictoryShown)
             {
-
+                this.Close();
                 victory_ victoryForm = new victory_();
                 victoryForm.Show();
                 this.Enabled = false;     //make playGame form not availble (stops it)
@@ -427,7 +427,7 @@ namespace shoot_me_up
         /// disabling the playGame form to prevent interaction. If the pause menu is already displayed,
         /// it closes the menu and re-enables the playGame form, allowing gameplay to resume.
         /// </summary>
-        private void pictureBox4_Click_1(object sender, EventArgs e)
+        private void pictureBox4_1_Click(object sender, EventArgs e)
         {
             if (PauseMenu == null)
             {
@@ -677,5 +677,7 @@ namespace shoot_me_up
         {
 
         }
+
+    
     }
 }

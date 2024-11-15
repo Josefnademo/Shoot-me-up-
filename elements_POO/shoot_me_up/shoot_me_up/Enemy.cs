@@ -191,13 +191,21 @@ namespace shoot_me_up
                 BackColor = Color.Transparent // Make background transparent for image visibility
             };
 
-            if (missile != null) // Assurez-vous que l'objet missile a été correctement initialisé avant de charger l'image
+            try
             {
-                LoadBulletImage(missile);
-
-                if (missile.Image != null)     //just to be sure that this issue won't happen again
+                if (missile != null) // Assurez-vous que l'objet missile a été correctement initialisé avant de charger l'image
                 {
-                    this.Parent.Controls.Add(missile);
+                    LoadBulletImage(missile);
+
+                    if (missile.Image != null) // just to be sure that this issue won't happen again
+                    {
+                        this.Parent.Controls.Add(missile);
+                    }
+                    else
+                    {
+                        // Handle the case when the image of the missile is null
+                        Console.WriteLine("Missile image is null.");
+                    }
                 }
                 else
                 {
@@ -205,6 +213,12 @@ namespace shoot_me_up
                     Console.WriteLine("Missile is null.");
                 }
             }
+            catch (Exception ex)
+            {
+                // Log the exception to understand what went wrong
+                Console.WriteLine($"An error occurred: {ex.Message}");
+            }
+
 
             canShoot = false; // Set the flag to false, indicating the enemy cannot shoot
 

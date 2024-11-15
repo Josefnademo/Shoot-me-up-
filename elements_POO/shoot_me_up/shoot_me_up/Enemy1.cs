@@ -142,7 +142,7 @@ namespace shoot_me_up
         {
             shootingTimer = new System.Windows.Forms.Timer
             {
-                Interval = 400 // Shoot every 4 seconds
+                Interval = 5000 // Shoot every 5 seconds
             };
             shootingTimer.Tick += (s, e) => Shoot();
             shootingTimer.Start();
