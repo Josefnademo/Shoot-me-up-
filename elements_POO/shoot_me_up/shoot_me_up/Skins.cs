@@ -107,11 +107,12 @@ namespace shoot_me_up
             this.Close();
         }
 
+
         //3 level Cy-27 
-        private void pictureBox4_Click(object sender, EventArgs e)
+        private void pictureBox4_Click_1(object sender, EventArgs e)
         {
             // Create an instance of the second form
-            Mars mars = new Mars();
+            playGameCy_27 mars = new playGameCy_27();
 
             // Show the second form
             mars.Show();
@@ -119,7 +120,6 @@ namespace shoot_me_up
             // Close the first form (optional, if new)
             this.Close();
         }
-
 
         //back button
         private void pictureBox5_Click_1(object sender, EventArgs e)
@@ -138,7 +138,7 @@ namespace shoot_me_up
         {
 
         }
-      
+   
     }
     }
 

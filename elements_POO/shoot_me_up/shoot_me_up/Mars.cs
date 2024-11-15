@@ -424,9 +424,9 @@ namespace shoot_me_up
             timer1.Stop();
         }
 
-    
 
-      
+
+
         /// <summary>
         /// Creates an explosion effect at a specified position.
         /// This method initializes a PictureBox for the explosion, loads the explosion image,
