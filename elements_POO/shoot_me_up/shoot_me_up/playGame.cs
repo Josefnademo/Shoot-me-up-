@@ -76,7 +76,7 @@ namespace shoot_me_up
         /// <state of game- info>
         bool GameOver;                                                                // game over bool
         private bool isVictoryShown = false;                                          // victory state    
-     
+
 
         /// <Player>
         private bool moveLeft, moveRight;                                             // variables to verify the state of left and right movement
@@ -89,16 +89,16 @@ namespace shoot_me_up
         public static int obstacle3HP = 3;                                            // obstacle 3 hp amount
 
         private int score = 0;                                                        // Variable to hold the current score
-        private string scoreFilePath = Path.Combine(Form1.scorePath, "score.txt");    // Path for score file
+        private string scoreFilePath = Path.Combine(Form1.scorePath, "score-1Level-Galaxy.txt");    // Path for score file
         private Label scoreLabel;                                                     // Label to display score on the screen
-      
+
 
         public static int Score { get; set; } = 0; // Property to keep track of score
 
         /// <Enemy>
         private List<Enemy> enemies;                                                  // List to hold enemies
         private const int EnemySpacing = 100;                                         // Space between enemies
-       
+
         /// <Timer>
         private System.Windows.Forms.Timer movementTimer;                             // timer for movement
 
@@ -194,8 +194,8 @@ namespace shoot_me_up
         {
             if (File.Exists(scoreFilePath)) // verify existing of file
             {
-                string scoreText = File.ReadAllText(scoreFilePath); 
-                if (int.TryParse(scoreText, out int loadedScore)) 
+                string scoreText = File.ReadAllText(scoreFilePath);
+                if (int.TryParse(scoreText, out int loadedScore))
                 {
                     score = loadedScore;
                 }
@@ -217,7 +217,7 @@ namespace shoot_me_up
         /// </summary>
         private void DisplayScore()
         {
-            label1.Text = "Score: " + score; 
+            label1.Text = "Score: " + score;
             SaveScore(); // save score
         }
 
@@ -364,7 +364,7 @@ namespace shoot_me_up
                             //  add 100 to score
                             score += 100; // +100 score
                             DisplayScore(); // update score
-                            
+
                             break; // Exit the loop after removing enemy
                         }
                     }
@@ -443,7 +443,7 @@ namespace shoot_me_up
         /// <param name="boomPath">The file path to the explosion image.</param>
         public static void CreateExplosionObstacle(PictureBox pictureBoxShip, string boomPath)
         {
-            
+
 
             // Define the explosion positions for each obstacle
             var explosionPositions = new Dictionary<Point, Func<bool>>
@@ -557,27 +557,13 @@ namespace shoot_me_up
             string boomPath = Form1.boom;                // Path of the explosion image
 
             // Check if the ship's HP is 0
-            if (playGame.ShipHp <= 0)
+            if (ShipHp <= 0)
             {
                 // Create an explosion effect at the ship's location
-                PictureBox boom1 = new PictureBox
-                {
-                    SizeMode = PictureBoxSizeMode.AutoSize, // Adjust the size of the image
-                    Tag = "boom",                           // Set the tag for identification
-                    Left = xPosition,                       // X position
-                    Top = yPosition                         // Y position     
-                };
+                CreateExplosion(new Point(xPosition, yPosition), boomPath);
 
-                // Load the explosion image
-                using (Image img = Image.FromFile(boomPath)) // Load explosion image
-                {
-                    boom1.Image = new Bitmap(img); // Create a new bitmap and load the image
-                }
-
-                this.Controls.Add(boom1); // Add the explosion to the form controls
-
-                // Wait a second before showing the game over message
-                Task.Delay(1000).ContinueWith(_ => EndGame()); // Delay to show explosion before ending the game
+                // Delay before ending the game
+                Task.Delay(1000).ContinueWith(_ => EndGame());
                 return; // Exit to prevent further execution in this method
             }
 
@@ -588,11 +574,9 @@ namespace shoot_me_up
                 {
                     this.Parent.Controls.Remove(enemy); // Remove the enemy from the form
                     enemy.Dispose(); // Dispose of the enemy to free resources
-                   
                     EndGame(); // End the game
                 }
             }
-
         }
 
 
@@ -645,6 +629,11 @@ namespace shoot_me_up
         private void playGame_Load(object sender, EventArgs e) { }
 
         private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playGame_Load_2(object sender, EventArgs e)
         {
 
         }

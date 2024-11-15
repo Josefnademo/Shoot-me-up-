@@ -4,6 +4,9 @@
     <Compile Update="Enemy.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Update="Enemy1.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Update="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

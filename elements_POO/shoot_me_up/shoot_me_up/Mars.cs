@@ -52,7 +52,7 @@ namespace shoot_me_up
     {
 
         private game_End game_End;                                                    // game_end instance
-        private Enemy enemy;                                                          // Enemy instance
+        private Enemy1 enemy;                                                         // Enemy instance
         private Pause PauseMenu;                                                      // Pause instance
         private System.Windows.Forms.Timer missileTimer;                              // missile timer
 
@@ -67,19 +67,16 @@ namespace shoot_me_up
         public static int ShipHp = 3;                                                 // ship's hp amount
         bool shooting;                                                                // variable to verify shooting process(fire missile method) 
 
-        public static int obstacle1HP = 3;                                            // obstacle 1 hp amount
-        public static int obstacle2HP = 3;                                            // obstacle 2 hp amount
-        public static int obstacle3HP = 3;                                            // obstacle 3 hp amount
 
         private int score = 0;                                                        // Variable to hold the current score
-        private string scoreFilePath = Path.Combine(Form1.scorePath, "score.txt");    // Path for score file
+        private string scoreFilePath = Path.Combine(Form1.scorePath, "score-2Level-Mars.txt");    // Path for score file
         private Label scoreLabel;                                                     // Label to display score on the screen
 
 
         public static int Score { get; set; } = 0; // Property to keep track of score
 
         /// <Enemy>
-        private List<Enemy> enemies;                                                  // List to hold enemies
+        private List<Enemy1> enemies;                                                  // List to hold enemies
         private const int EnemySpacing = 100;                                         // Space between enemies
 
         /// <Timer>
@@ -120,7 +117,7 @@ namespace shoot_me_up
             missileTimer.Tick += new EventHandler(MoveMissiles);
 
             // Add enemies to the game
-            enemies = new List<Enemy>();
+            enemies = new List<Enemy1>();
             SpawnEnemies(); // Call the method to spawn enemies
 
             score = 0; // Initialisez le score à zéro
@@ -162,7 +159,7 @@ namespace shoot_me_up
 
             for (int i = 0; i < 5; i++) // Spawn 3 enemies
             {
-                Enemy enemy = new Enemy();
+                Enemy1 enemy = new Enemy1();
                 enemy.Location = new Point(startX + (i * EnemySpacing), yPosition);
                 this.Controls.Add(enemy); // Add enemy to the form
                 enemies.Add(enemy); // Store reference to the enemy
@@ -417,28 +414,7 @@ namespace shoot_me_up
             timer1.Stop();
         }
 
-        /// <summary>
-        /// Creates an explosion effect at specified positions when an obstacle is destroyed.
-        /// The explosion positions are predefined for each obstacle, and this method checks
-        /// the health points (HP) of the obstacles to determine when to create an explosion.
-        /// </summary>
-        /// <param name="pictureBoxShip">The PictureBox representing the player's ship.</param>
-        /// <param name="boomPath">The file path to the explosion image.</param>
-        public static void CreateExplosionObstacle(PictureBox pictureBoxShip, string boomPath)
-        {
-
-
-            // Define the explosion positions for each obstacle
-            var explosionPositions = new Dictionary<Point, Func<bool>>
-    {
-        { new Point(355, 554), () => obstacle1HP <= 0 }, // Position for obstacle 1
-        { new Point(614, 554), () => obstacle2HP <= 0 }, // Position for obstacle 2
-        { new Point(889, 554), () => obstacle3HP <= 0 }  // Position for obstacle 3
-    };
-
-
-        }
-
+    
 
       
         /// <summary>
@@ -576,6 +552,12 @@ namespace shoot_me_up
                 this.Enabled = true;     //make playGame form  availble (run it)
             }
         }
+
+        private void Mars_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
         // hide label "Esc to pause"
         private void label2_Click(object sender, EventArgs e)
         {
