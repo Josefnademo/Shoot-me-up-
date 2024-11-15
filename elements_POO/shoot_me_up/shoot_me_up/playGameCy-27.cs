@@ -52,33 +52,48 @@ namespace shoot_me_up
     public partial class playGameCy_27 : Form
     {
         private game_End game_End;                              // game_end instance
-        private Enemy enemy;                                    // Enemy instance
+        private Enemy2 enemy;                                    // Enemy instance
         private Pause PauseMenu;                                //Pause instance
         private System.Windows.Forms.Timer missileTimer;        //missile timer
 
-        /// </Gameover window>
-        bool GameOver;
-
-        /// </Player>
-        private bool moveLeft, moveRight, moveDown, moveUp;     //variables to verify the state of left and right movement
-        int shipSpeed = 70;                   //speed of ship
-        public int hp = 5;                    //ship's hp amount
-        bool shooting;                        //variable to verify shooting process(fire missile method) 
-                                              //
-        public static int obstacle1 = 3;         // obstacle 1 hp amount
-        public static int obstacle2 = 3;         // obstacle 2 hp amount
-        public static int obstacle3 = 3;         // obstacle 3 hp amount
+        /// <state of game- info>
+        bool GameOver;                                                                // game over bool
+        private bool isVictoryShown = false;                                          // victory state    
 
 
-        /// </Enemy>
-        private List<Enemy> enemies; // List to hold enemies
-        private const int EnemySpacing = 100; // Space between enemies
+        /// <Player>
+        private bool moveLeft, moveRight, moveDown, moveUp;                                             // variables to verify the state of left and right movement
+        public int shipSpeed = 70;                                                    // speed of ship
+        public static int ShipHp = 3;                                                 // ship's hp amount
+        bool shooting;                                                                // variable to verify shooting process(fire missile method) 
 
 
-        /// </Timer>
-        private System.Windows.Forms.Timer movementTimer;
+        public static int obstacle1HP = 3;                                            // obstacle 1 hp amount
+        public static int obstacle2HP = 3;                                            // obstacle 2 hp amount
+        public static int obstacle3HP = 3;                                            // obstacle 3 hp amount
+
+        private int score = 0;                                                        // Variable to hold the current score
+        private string scoreFilePath = Path.Combine(Form1.scorePath, "score-1Level-Galaxy.txt");    // Path for score file
+        private Label scoreLabel;                                                     // Label to display score on the screen
 
 
+        public static int Score { get; set; } = 0; // Property to keep track of score
+
+        /// <Enemy>
+        private List<Enemy2> enemies;                                                  // List to hold enemies
+        private const int EnemySpacing = 100;                                         // Space between enemies
+
+        /// <Timer>
+        private System.Windows.Forms.Timer movementTimer;                             // timer for movement
+
+
+
+        /// <summary>
+        /// Initializes a new instance of the playGameCy_27 form.
+        /// This constructor sets up the game environment, including graphics settings,
+        /// sound playback, keyboard input handling, timers for movement and missile firing,
+        /// and initializes game elements such as enemies and the score.
+        /// </summary>
         public playGameCy_27()
         {
             InitializeComponent();
@@ -103,10 +118,17 @@ namespace shoot_me_up
 
             // Initialize the timer for missile movement
             missileTimer = new System.Windows.Forms.Timer(); // Specify the correct timer class
-            missileTimer.Interval = 20; // Adjust interval as needed
+            missileTimer.Interval = 10; // Adjust interval as needed
             missileTimer.Tick += new EventHandler(MoveMissiles);
 
+            // Add enemies to the game
+            enemies = new List<Enemy2>();
+            SpawnEnemies(); // Call the method to spawn enemies
 
+            score = 0; // Initialisez le score à zéro
+            DisplayScore(); // Affichez le score au démarrage
+            LoadScore(); // Ajoutez cette ligne
+            DisplayScore(); // Affichez le score chargé
         }
         // Traitement du mouvement du navire vers la gauche et la droite
         protected void SpaceshipTimer_Tick(object sender, EventArgs e)
@@ -135,40 +157,137 @@ namespace shoot_me_up
 
         }
         //
+        /// <summary>
+        /// Spawns a specified number of enemies at predetermined positions in the game.
+        /// Initializes each enemy instance and adds it to the form and the enemy list.
+        /// </summary>
+        private void SpawnEnemies()
+        {
+            int startX = 150; // Initial X position for the first enemy
+            int yPosition = 50; // Y position for the enemies
 
-        //movement of rocket
+            for (int i = 0; i < 10; i++) // Spawn 3 enemies
+            {
+                Enemy2 enemy = new Enemy2();
+                enemy.Location = new Point(startX + (i * EnemySpacing), yPosition);
+                this.Controls.Add(enemy); // Add enemy to the form
+                enemies.Add(enemy); // Store reference to the enemy
+            }
+        }
+
+        /// <summary>
+        /// Loads the player's score from a file if it exists.
+        /// Updates the score variable with the loaded value.
+        /// </summary>
+        private void LoadScore()
+        {
+            if (File.Exists(scoreFilePath)) // verify existing of file
+            {
+                string scoreText = File.ReadAllText(scoreFilePath);
+                if (int.TryParse(scoreText, out int loadedScore))
+                {
+                    score = loadedScore;
+                }
+            }
+        }
+
+
+        /// <summary>
+        /// Saves the current player's score to a file.
+        /// </summary>
+        private void SaveScore()
+        {
+            File.WriteAllText(scoreFilePath, score.ToString()); // path creation on file
+        }
+
+        /// <summary>
+        /// Displays the current score on the form's label and saves the score to a file.
+        /// Updates the label text to reflect the current score.
+        /// </summary>
+        private void DisplayScore()
+        {
+            label1.Text = "Score: " + score;
+            SaveScore(); // save score
+        }
+
+
+
+        /// <summary>
+        /// Fires a missile from the spaceship's position.
+        /// </summary>
         protected void FireMissile()
         {
             int missileY = pictureBoxShip.Location.Y - 20; // Spawn above the spaceship
             int missileX = pictureBoxShip.Location.X + (pictureBoxShip.Width / 2); // Center the missile on the ship
 
-
-            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") < 25) //max 25 racket,   m -amount of pictureboxes,  ?.  -(null-conditional operator) 
+            // Check for the maximum number of missiles
+            if (this.Controls.OfType<PictureBox>().Count(m => m.Tag?.ToString() == "missile") < 25) // max 25 missiles
             {
-                //create object with 3 variables and data  assigned to them
+                // Create the missile PictureBox
                 PictureBox missile = Missile.CreateMissile(missileX, missileY, Missile.missileImage[0]);
+                missile.Tag = "missile"; // Set the tag for identification
+                this.Controls.Add(missile); // Add missile to the control
 
-                missile.Tag = "missile";    // Set the tag for identification
-                this.Controls.Add(missile); //add missile
-            }
+                // Bring the missile to the front to ensure it appears above other controls
+                missile.BringToFront();
 
-            // Start the missile timer if it's not already running
-            if (!missileTimer.Enabled)
-            {
-                missileTimer.Start();//start timer
+                // Start the missile timer if it's not already running
+                if (!missileTimer.Enabled)
+                {
+                    missileTimer.Start(); // Start the timer
+                }
             }
         }
-        //
 
-        //deplacement missile
+
+        /// <summary>
+        /// Checks for victory conditions in the game, displaying the victory form if conditions are met.
+        /// </summary>
+        private void Victory()
+        {
+            if (enemies.Count <= 0 && !isVictoryShown)
+            {
+
+                victory_ victoryForm = new victory_();
+                victoryForm.Show();
+                this.Enabled = false;     //make playGame form not availble (stops it)
+            }
+        }
+
+
+
+        /// <summary>
+        /// Moves missiles upwards and checks for collisions with enemies and the screen bounds.
+        /// </summary>
+        /// <param name="sender">The source of the event.</param>
+        /// <param name="e">The event data associated with the timer tick.</param>
         private void MoveMissiles(object sender, EventArgs e)
         {
             foreach (Control control in this.Controls)
             {
-                if (control is PictureBox missile && missile.Tag?.ToString() == "missile") //The ?. operator (null-conditional operator) is used to safely access the ToString() method.
-                                                                                           //If Tag is null, it won’t throw an exception, and the expression will evaluate to null
+                if (control is PictureBox missile && missile.Tag?.ToString() == "missile") // Check if control is a missile
                 {
                     missile.Top -= 10; // Move the missile upwards
+
+                    // Check for collision with enemies
+                    foreach (var enemy in enemies)
+                    {
+                        if (enemy.Bounds.IntersectsWith(missile.Bounds)) // Collision detection
+                        {
+
+                            // Remove missile and enemy on collision
+                            this.Controls.Remove(missile);
+                            missile.Dispose();
+                            this.Controls.Remove(enemy);
+                            enemies.Remove(enemy);
+
+                            //  add 100 to score
+                            score += 100; // +100 score
+                            DisplayScore(); // update score
+
+                            break; // Exit the loop after removing enemy
+                        }
+                    }
 
                     // Remove the missile if it goes off-screen
                     if (missile.Top < 0)
@@ -178,8 +297,225 @@ namespace shoot_me_up
                     }
                 }
             }
+
+            // Check for victory condition after processing all missiles and enemies
+            if (enemies.Count == 0 && !isVictoryShown)
+            {
+                Victory();
+                isVictoryShown = true;   //change state of flag
+            }
         }
-        //
+
+        /// <summary>
+        /// Removes a specified PictureBox control from the form, disposing of its resources.
+        /// </summary>
+        /// <param name="pb">The PictureBox control to remove.</param>
+        public void RemovePictureBox(PictureBox pb)
+        {
+            if (pb != null && this.Controls.Contains(pb))
+            {
+                this.Controls.Remove(pb);
+                pb.Dispose(); // Free up resources
+            }
+
+            if (ShipHp == 2)
+            {
+                this.Controls.Remove(HP1);
+                this.HP1.Dispose();
+            }
+            if (ShipHp == 1)
+            {
+                this.Controls.Remove(HP2);
+                this.HP2.Dispose();
+            }
+            if (ShipHp == 0)
+            {
+                this.Controls.Remove(HP3);
+                this.HP3.Dispose();
+
+                Game_over();
+            }
+        }
+
+
+        /// <summary>
+        /// Handles the click event for the pause button (pictureBox4).
+        /// Toggles the pause menu visibility and the state of the game.
+        /// If the pause menu is not currently displayed, it creates and shows the PauseMenu,
+        /// disabling the playGame form to prevent interaction. If the pause menu is already displayed,
+        /// it closes the menu and re-enables the playGame form, allowing gameplay to resume.
+        /// </summary>
+        private void pictureBox4_Click_1(object sender, EventArgs e)
+        {
+            if (PauseMenu == null)
+            {
+                PauseMenu = new Pause();
+                PauseMenu.FormClosed += (s, args) => PauseMenu = null;
+                PauseMenu.Show();
+                this.Enabled = false;     //make playGame form not availble (stops it)
+            }
+            else
+            {
+                PauseMenu.Close();
+                this.Enabled = true;     //make playGame form  availble (run it)
+            }
+        }
+
+        /// <summary>
+        /// Hides the "Esc to pause" label after a timer tick.
+        /// This method is called periodically to manage the visibility of the label,
+        /// ensuring it only appears temporarily during gameplay.
+        /// </summary>
+        private void timer1_Tick_1(object sender, EventArgs e)
+        {
+            label2.Hide();
+            timer1.Stop();
+        }
+
+        /// <summary>
+        /// Creates an explosion effect at specified positions when an obstacle is destroyed.
+        /// The explosion positions are predefined for each obstacle, and this method checks
+        /// the health points (HP) of the obstacles to determine when to create an explosion.
+        /// </summary>
+        /// <param name="pictureBoxShip">The PictureBox representing the player's ship.</param>
+        /// <param name="boomPath">The file path to the explosion image.</param>
+        public static void CreateExplosionObstacle(PictureBox pictureBoxShip, string boomPath)
+        {
+
+
+            // Define the explosion positions for each obstacle
+            var explosionPositions = new Dictionary<Point, Func<bool>>
+    {
+        { new Point(355, 554), () => obstacle1HP <= 0 }, // Position for obstacle 1
+        { new Point(614, 554), () => obstacle2HP <= 0 }, // Position for obstacle 2
+        { new Point(889, 554), () => obstacle3HP <= 0 }  // Position for obstacle 3
+    };
+
+
+        }
+
+
+        /// <summary>
+        /// Checks if obstacles were hit by a missile and handles their health points accordingly.
+        /// If an obstacle is hit and its HP drops to zero, it removes the obstacle from the game.
+        /// This method is called whenever a missile collides with an obstacle.
+        /// </summary>
+        /// <param name="obstacle">The PictureBox representing the obstacle that was hit.</param>
+        protected void HandleObstacleHit(PictureBox obstacle)
+        {
+            if (obstacle == pictureBox2 && obstacle1HP > 0)
+            {
+                obstacle1HP--;
+                CreateExplosionObstacle(pictureBox7, Form1.boom);
+            }
+            else if (obstacle == pictureBox3 && obstacle2HP > 0)
+            {
+                obstacle2HP--;
+                CreateExplosionObstacle(pictureBox8, Form1.boom);
+            }
+            else if (obstacle == pictureBox8 && obstacle3HP > 0)
+            {
+                obstacle3HP--;
+                CreateExplosionObstacle(pictureBox8, Form1.boom);
+            }
+
+            // Remove the obstacle if HP reaches zero
+            if (obstacle1HP == 0) this.Controls.Remove(pictureBox2);
+            if (obstacle2HP == 0) this.Controls.Remove(pictureBox3);
+            if (obstacle3HP == 0) this.Controls.Remove(pictureBox8);
+        }
+
+        /// <summary>
+        /// Creates an explosion effect at a specified position.
+        /// This method initializes a PictureBox for the explosion, loads the explosion image,
+        /// and adds it to the form. It also sets up a delay to remove the explosion after a short duration.
+        /// </summary>
+        /// <param name="position">The position where the explosion should occur.</param>
+        /// <param name="boomPath">The file path to the explosion image.</param>
+        public void CreateExplosion(Point position, string boomPath)
+        {
+            PictureBox boom = new PictureBox
+            {
+                SizeMode = PictureBoxSizeMode.AutoSize,
+                Location = position, // Set the location to the given position
+                Tag = "explosion"
+            };
+
+            // Load explosion image
+            using (Image img = Image.FromFile(boomPath))
+            {
+                boom.Image = new Bitmap(img); // Create a new bitmap from the loaded image
+            }
+
+            // Add the explosion to the parent controls
+            this.Parent.Controls.Add(boom);
+
+            // Optional: Set a timer to remove the explosion after a short duration
+            Task.Delay(1000).ContinueWith(_ =>
+            {
+                if (boom.InvokeRequired)
+                {
+                    boom.Invoke((MethodInvoker)(() => this.Parent.Controls.Remove(boom)));
+                }
+                else
+                {
+                    this.Parent.Controls.Remove(boom);
+                }
+                boom.Dispose(); // Dispose of the explosion effect to free resources
+            });
+        }
+
+
+        /// <summary>
+        /// Handles actions to be taken at the end of the game.
+        /// This includes stopping movement and missile timers, displaying the game over message,
+        /// and managing cleanup of game resources.
+        /// </summary>
+        private void EndGame()
+        {
+            movementTimer.Stop();
+            missileTimer.Stop();
+            Game_over(); // Call Game_over to handle explosions and game over logic
+            MessageBox.Show("Game Over!");
+            this.Enabled = false;
+        }
+
+
+        /// <summary>
+        /// Handles the logic for the game over scenario.
+        /// It checks the player's ship health and determines if an explosion effect should be created.
+        /// If the ship's HP is zero, it creates an explosion at the ship's location.
+        /// It also checks for enemy conditions and handles their removal from the game.
+        /// </summary>
+        private void Game_over()
+        {
+            // Get the X and Y location of the player's ship
+            int xPosition = pictureBoxShip.Location.X;
+            int yPosition = pictureBoxShip.Location.Y;
+            string boomPath = Form1.boom;                // Path of the explosion image
+
+            // Check if the ship's HP is 0
+            if (ShipHp <= 0)
+            {
+                // Create an explosion effect at the ship's location
+                CreateExplosion(new Point(xPosition, yPosition), boomPath);
+
+                // Delay before ending the game
+                Task.Delay(1000).ContinueWith(_ => EndGame());
+                return; // Exit to prevent further execution in this method
+            }
+
+            // Ship is not dead, no explosion; check for enemy conditions
+            foreach (var enemy in this.Controls.OfType<Enemy2>()) // Assuming Enemy is a class for your enemies
+            {
+                if (enemy.Top >= this.Parent.ClientSize.Height)
+                {
+                    this.Parent.Controls.Remove(enemy); // Remove the enemy from the form
+                    enemy.Dispose(); // Dispose of the enemy to free resources
+                    EndGame(); // End the game
+                }
+            }
+        }
 
         // The method that will be called when some key is pressed
         private void playGame_KeyDown(object sender, KeyEventArgs e)
@@ -300,6 +636,11 @@ namespace shoot_me_up
         }
 
         private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playGameCy_27_Load_1(object sender, EventArgs e)
         {
 
         }

@@ -222,6 +222,6 @@
         public PictureBox pictureBox9;
         public PictureBox HP3;
         public PictureBox HP2;
-        internal PictureBox HP1;
+        public PictureBox HP1;
     }
 }
