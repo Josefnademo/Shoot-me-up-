@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Mars));
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.HP = new System.Windows.Forms.PictureBox();
+            this.HP1 = new System.Windows.Forms.PictureBox();
+            this.HP2 = new System.Windows.Forms.PictureBox();
+            this.HP3 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -41,9 +41,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HP)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HP1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HP2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HP3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -51,35 +51,38 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4_1)).BeginInit();
             this.SuspendLayout();
             // 
-            // pictureBox2
+            // HP1
             // 
-            this.pictureBox2.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(110, 1);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(61, 80);
-            this.pictureBox2.TabIndex = 14;
-            this.pictureBox2.TabStop = false;
+            this.HP1.BackColor = System.Drawing.Color.Transparent;
+            this.HP1.Image = ((System.Drawing.Image)(resources.GetObject("HP1.Image")));
+            this.HP1.Location = new System.Drawing.Point(110, 1);
+            this.HP1.Name = "HP1";
+            this.HP1.Size = new System.Drawing.Size(61, 80);
+            this.HP1.TabIndex = 14;
+            this.HP1.TabStop = false;
+            this.HP1.Click += new System.EventHandler(this.HP1_Click);
             // 
-            // pictureBox1
+            // HP2
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(54, 1);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(61, 80);
-            this.pictureBox1.TabIndex = 13;
-            this.pictureBox1.TabStop = false;
+            this.HP2.BackColor = System.Drawing.Color.Transparent;
+            this.HP2.Image = ((System.Drawing.Image)(resources.GetObject("HP2.Image")));
+            this.HP2.Location = new System.Drawing.Point(54, 1);
+            this.HP2.Name = "HP2";
+            this.HP2.Size = new System.Drawing.Size(61, 80);
+            this.HP2.TabIndex = 13;
+            this.HP2.TabStop = false;
+            this.HP2.Click += new System.EventHandler(this.HP2_Click);
             // 
-            // HP
+            // HP3
             // 
-            this.HP.BackColor = System.Drawing.Color.Transparent;
-            this.HP.Image = ((System.Drawing.Image)(resources.GetObject("HP.Image")));
-            this.HP.Location = new System.Drawing.Point(-1, 1);
-            this.HP.Name = "HP";
-            this.HP.Size = new System.Drawing.Size(61, 80);
-            this.HP.TabIndex = 12;
-            this.HP.TabStop = false;
+            this.HP3.BackColor = System.Drawing.Color.Transparent;
+            this.HP3.Image = ((System.Drawing.Image)(resources.GetObject("HP3.Image")));
+            this.HP3.Location = new System.Drawing.Point(-1, 1);
+            this.HP3.Name = "HP3";
+            this.HP3.Size = new System.Drawing.Size(61, 80);
+            this.HP3.TabIndex = 12;
+            this.HP3.TabStop = false;
+            this.HP3.Click += new System.EventHandler(this.HP3_Click);
             // 
             // pictureBox6
             // 
@@ -120,6 +123,7 @@
             this.pictureBoxShip.Size = new System.Drawing.Size(52, 117);
             this.pictureBoxShip.TabIndex = 18;
             this.pictureBoxShip.TabStop = false;
+            this.pictureBoxShip.Click += new System.EventHandler(this.pictureBoxShip_Click);
             // 
             // pictureBox4_1
             // 
@@ -170,18 +174,18 @@
             this.Controls.Add(this.pictureBox4_1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.pictureBoxShip);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.HP);
+            this.Controls.Add(this.HP1);
+            this.Controls.Add(this.HP2);
+            this.Controls.Add(this.HP3);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox3);
             this.Name = "Mars";
             this.Text = "Mars";
             this.Load += new System.EventHandler(this.Mars_Load_1);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.HP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HP1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HP2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HP3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -194,16 +198,16 @@
 
         #endregion
 
-        private PictureBox pictureBox2;
-        private PictureBox pictureBox1;
-        private PictureBox HP;
+        private PictureBox HP1;
+        private PictureBox HP2;
+        private PictureBox HP3;
         private PictureBox pictureBox6;
         private PictureBox pictureBox5;
         private PictureBox pictureBox3;
-        private PictureBox pictureBoxShip;
         private PictureBox pictureBox4_1;
         private Label label1;
         private Label label2;
         private System.Windows.Forms.Timer timer1;
+        public PictureBox pictureBoxShip;
     }
 }

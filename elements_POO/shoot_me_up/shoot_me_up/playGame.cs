@@ -84,6 +84,7 @@ namespace shoot_me_up
         public static int ShipHp = 3;                                                 // ship's hp amount
         bool shooting;                                                                // variable to verify shooting process(fire missile method) 
 
+
         public static int obstacle1HP = 3;                                            // obstacle 1 hp amount
         public static int obstacle2HP = 3;                                            // obstacle 2 hp amount
         public static int obstacle3HP = 3;                                            // obstacle 3 hp amount
@@ -330,6 +331,7 @@ namespace shoot_me_up
         {
             if (enemies.Count <= 0 && !isVictoryShown)
             {
+
                 victory_ victoryForm = new victory_();
                 victoryForm.Show();
                 this.Enabled = false;     //make playGame form not availble (stops it)
@@ -396,6 +398,24 @@ namespace shoot_me_up
             {
                 this.Controls.Remove(pb);
                 pb.Dispose(); // Free up resources
+            }
+
+            if (ShipHp == 2)
+            {
+                this.Controls.Remove(HP1);
+                this.HP1.Dispose();
+            }
+            if (ShipHp == 1)
+            {
+                this.Controls.Remove(HP2);
+                this.HP2.Dispose();
+            }
+            if (ShipHp == 0)
+            {
+                this.Controls.Remove(HP3);
+                this.HP3.Dispose();
+
+                Game_over();
             }
         }
 
@@ -634,6 +654,21 @@ namespace shoot_me_up
         }
 
         private void playGame_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HP1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HP2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HP3_Click(object sender, EventArgs e)
         {
 
         }

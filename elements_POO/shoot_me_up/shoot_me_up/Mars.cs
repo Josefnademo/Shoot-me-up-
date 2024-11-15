@@ -126,10 +126,6 @@ namespace shoot_me_up
             DisplayScore(); // Affichez le score chargé
         }
 
-
-
-
-
         /// <summary>
         /// Handles the timer tick event for spaceship movement.
         /// Moves the spaceship left or right based on player input while ensuring it stays within the form's boundaries.
@@ -157,7 +153,7 @@ namespace shoot_me_up
             int startX = 150; // Initial X position for the first enemy
             int yPosition = 50; // Y position for the enemies
 
-            for (int i = 0; i < 5; i++) // Spawn 3 enemies
+            for (int i = 0; i < 8; i++) // Spawn 3 enemies
             {
                 Enemy1 enemy = new Enemy1();
                 enemy.Location = new Point(startX + (i * EnemySpacing), yPosition);
@@ -200,10 +196,6 @@ namespace shoot_me_up
             label1.Text = "Score: " + score;
             SaveScore(); // save score
         }
-
-
-
-
 
 
         /// <summary>
@@ -376,6 +368,24 @@ namespace shoot_me_up
             {
                 this.Controls.Remove(pb);
                 pb.Dispose(); // Free up resources
+            }
+
+            if (ShipHp == 2)
+            {
+                this.Controls.Remove(HP1);
+                this.HP1.Dispose();
+            }
+            if (ShipHp == 1)
+            {
+                this.Controls.Remove(HP2);
+                this.HP2.Dispose();
+            }
+            if (ShipHp == 0)
+            {
+                this.Controls.Remove(HP3);
+                this.HP3.Dispose();
+
+                Game_over();
             }
         }
 
@@ -554,6 +564,26 @@ namespace shoot_me_up
         }
 
         private void Mars_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HP1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HP2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HP3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        public void pictureBoxShip_Click(object sender, EventArgs e)
         {
 
         }

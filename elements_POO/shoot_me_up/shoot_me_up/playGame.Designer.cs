@@ -40,9 +40,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.pictureBox4_1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
@@ -51,9 +48,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.HP1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4_1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -63,31 +57,34 @@
             // 
             this.HP3.BackColor = System.Drawing.Color.Transparent;
             this.HP3.Image = ((System.Drawing.Image)(resources.GetObject("HP3.Image")));
-            this.HP3.Location = new System.Drawing.Point(1, 2);
+            this.HP3.Location = new System.Drawing.Point(0, -1);
             this.HP3.Name = "HP3";
             this.HP3.Size = new System.Drawing.Size(61, 80);
             this.HP3.TabIndex = 0;
             this.HP3.TabStop = false;
+            this.HP3.Click += new System.EventHandler(this.HP3_Click);
             // 
             // HP2
             // 
             this.HP2.BackColor = System.Drawing.Color.Transparent;
             this.HP2.Image = ((System.Drawing.Image)(resources.GetObject("HP2.Image")));
-            this.HP2.Location = new System.Drawing.Point(56, 2);
+            this.HP2.Location = new System.Drawing.Point(62, -1);
             this.HP2.Name = "HP2";
             this.HP2.Size = new System.Drawing.Size(61, 80);
             this.HP2.TabIndex = 1;
             this.HP2.TabStop = false;
+            this.HP2.Click += new System.EventHandler(this.HP2_Click);
             // 
             // HP1
             // 
             this.HP1.BackColor = System.Drawing.Color.Transparent;
             this.HP1.Image = ((System.Drawing.Image)(resources.GetObject("HP1.Image")));
-            this.HP1.Location = new System.Drawing.Point(112, 2);
+            this.HP1.Location = new System.Drawing.Point(118, -1);
             this.HP1.Name = "HP1";
             this.HP1.Size = new System.Drawing.Size(61, 80);
             this.HP1.TabIndex = 2;
             this.HP1.TabStop = false;
+            this.HP1.Click += new System.EventHandler(this.HP1_Click);
             // 
             // pictureBoxShip
             // 
@@ -149,36 +146,6 @@
             this.pictureBox4_1.TabIndex = 8;
             this.pictureBox4_1.TabStop = false;
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox3.BackgroundImage")));
-            this.pictureBox3.Location = new System.Drawing.Point(117, 2);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(56, 80);
-            this.pictureBox3.TabIndex = 9;
-            this.pictureBox3.TabStop = false;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox5.BackgroundImage")));
-            this.pictureBox5.Location = new System.Drawing.Point(61, 2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(56, 80);
-            this.pictureBox5.TabIndex = 10;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox6.BackgroundImage")));
-            this.pictureBox6.Location = new System.Drawing.Point(6, 2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(56, 80);
-            this.pictureBox6.TabIndex = 11;
-            this.pictureBox6.TabStop = false;
-            // 
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Transparent;
@@ -218,9 +185,6 @@
             this.Controls.Add(this.HP1);
             this.Controls.Add(this.HP2);
             this.Controls.Add(this.HP3);
-            this.Controls.Add(this.pictureBox6);
-            this.Controls.Add(this.pictureBox5);
-            this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox4_1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -237,9 +201,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.HP1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxShip)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4_1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -256,9 +217,6 @@
         private PictureBox pictureBox4_1;
         public System.Windows.Forms.Timer timer1;
         public PictureBox pictureBoxShip;
-        private PictureBox pictureBox3;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
         public PictureBox pictureBox7;
         public PictureBox pictureBox8;
         public PictureBox pictureBox9;

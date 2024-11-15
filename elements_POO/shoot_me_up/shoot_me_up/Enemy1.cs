@@ -54,9 +54,8 @@ namespace shoot_me_up
     internal class Enemy1 : PictureBox
     {
         public static string enemyImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\imgonline-com-ua-Resize-zScTrh8xmY-Photoroom.png")); //enemy image
+        public static string HeartImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\HEART_EMPTY-Photoroom-Photoroom.png")); //empty heart image
         public static string enemyBulletImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\bullets\enemy_bullet.png")); //enemy's bullet image
-
-
 
         private Mars gameFormMars;                          //instance of Mars form
 
@@ -66,10 +65,10 @@ namespace shoot_me_up
         private bool canShoot;                              //state of enemies blasters
 
         private int direction = 1;                          // 1 for right, -1 for left
-        private int speed = 10;                             // Horizontal speed
-        private int verticalSpeed = 200;                    // Vertical speed for downward movement
-        private int moveDownDistance = 70;                  // Distance to move down after hitting screen edge
-
+        private int speed = 20;                             // Horizontal speed
+        private int verticalSpeed = 300;                    // Vertical speed for downward movement
+        private int moveDownDistance = 85;                  // Distance to move down after hitting screen edge
+       
 
         /// <summary>
         /// Initializes a new instance of the Enemy class. 
@@ -79,7 +78,7 @@ namespace shoot_me_up
         /// </summary>
         public Enemy1()
         {
-
+            this.gameFormMars = gameFormMars;
             this.Tag = "enemy";
             this.Size = new Size(83, 84); // Set the size to match your enemy image
             this.BackColor = Color.Transparent; // Make background transparent for image visibility
@@ -230,8 +229,82 @@ namespace shoot_me_up
                     canShoot = true; // Allow the enemy to shoot again
                     return; // Exit the method
                 }
+                
 
-              
+                // Check for collision with the player ship
+                if (missile.Bounds.IntersectsWith(((Mars)this.Parent).pictureBoxShip.Bounds))
+                {
+                    playGame.ShipHp -= 1; // Decrease player health
+                    missileTimer.Stop(); // Stop the missile timer
+                    this.Parent.Controls.Remove(missile); // Remove the missile from the form
+                    missile.Dispose(); // Dispose of the missile
+
+                    if (Mars.ShipHp == 2)
+                    {
+
+                        // Create a new PictureBox
+                        PictureBox newPictureBox = new PictureBox();
+
+                        // Set the properties of the PictureBox
+                        newPictureBox.Location = new Point(112, 2);  // Specify the location on the form
+                        newPictureBox.Size = new Size(61, 80);        // Specify the size of the PictureBox
+                        newPictureBox.BackColor = Color.Transparent;   // Optional: set background to transparent
+
+                        // Set an image for the PictureBox (ensure the path to the image is correct)
+                        newPictureBox.Image = Image.FromFile(HeartImagePath);
+
+                        // Set the image size mode (stretch, zoom, etc.)
+                        newPictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust as needed
+                        missile.BringToFront();
+                        // Add the PictureBox to the playGame form's controls
+                        this.Parent.Controls.Add(newPictureBox);
+                    }
+                    if (Mars.ShipHp == 1)
+                    {
+
+                        // Create a new PictureBox
+                        PictureBox newPictureBox = new PictureBox();
+
+                        // Set the properties of the PictureBox
+                        newPictureBox.Location = new Point(56, 2);  // Specify the location on the form
+                        newPictureBox.Size = new Size(61, 80);        // Specify the size of the PictureBox
+                        newPictureBox.BackColor = Color.Transparent;   // Optional: set background to transparent
+
+                        // Set an image for the PictureBox (ensure the path to the image is correct)
+                        newPictureBox.Image = Image.FromFile(HeartImagePath);
+
+                        // Set the image size mode (stretch, zoom, etc.)
+                        newPictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust as needed
+                        missile.BringToFront();
+                        // Add the PictureBox to the playGame form's controls
+                        this.Parent.Controls.Add(newPictureBox);
+                    }
+                    if (Mars.ShipHp == 0)
+                    {
+
+                        // Create a new PictureBox
+                        PictureBox newPictureBox = new PictureBox();
+
+                        // Set the properties of the PictureBox
+                        newPictureBox.Location = new Point(1, 2);  // Specify the location on the form
+                        newPictureBox.Size = new Size(61, 80);        // Specify the size of the PictureBox
+                        newPictureBox.BackColor = Color.Transparent;   // Optional: set background to transparent
+
+                        // Set an image for the PictureBox (ensure the path to the image is correct)
+                        newPictureBox.Image = Image.FromFile(HeartImagePath);
+
+                        // Set the image size mode (stretch, zoom, etc.)
+                        newPictureBox.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust as needed
+                        missile.BringToFront();
+                        // Add the PictureBox to the playGame form's controls
+                        this.Parent.Controls.Add(newPictureBox);
+                    }
+
+                    canShoot = true; // Allow the enemy to shoot again
+                    return; // Exit the method
+
+                }
+
             };
             missileTimer.Start();
         }
