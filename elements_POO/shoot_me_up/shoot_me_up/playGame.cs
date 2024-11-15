@@ -557,27 +557,13 @@ namespace shoot_me_up
             string boomPath = Form1.boom;                // Path of the explosion image
 
             // Check if the ship's HP is 0
-            if (playGame.ShipHp <= 0)
+            if (ShipHp <= 0)
             {
                 // Create an explosion effect at the ship's location
-                PictureBox boom1 = new PictureBox
-                {
-                    SizeMode = PictureBoxSizeMode.AutoSize, // Adjust the size of the image
-                    Tag = "boom",                           // Set the tag for identification
-                    Left = xPosition,                       // X position
-                    Top = yPosition                         // Y position     
-                };
+                CreateExplosion(new Point(xPosition, yPosition), boomPath);
 
-                // Load the explosion image
-                using (Image img = Image.FromFile(boomPath)) // Load explosion image
-                {
-                    boom1.Image = new Bitmap(img); // Create a new bitmap and load the image
-                }
-
-                this.Controls.Add(boom1); // Add the explosion to the form controls
-
-                // Wait a second before showing the game over message
-                Task.Delay(1000).ContinueWith(_ => EndGame()); // Delay to show explosion before ending the game
+                // Delay before ending the game
+                Task.Delay(1000).ContinueWith(_ => EndGame());
                 return; // Exit to prevent further execution in this method
             }
 
@@ -588,11 +574,9 @@ namespace shoot_me_up
                 {
                     this.Parent.Controls.Remove(enemy); // Remove the enemy from the form
                     enemy.Dispose(); // Dispose of the enemy to free resources
-                   
                     EndGame(); // End the game
                 }
             }
-
         }
 
 
@@ -649,6 +633,39 @@ namespace shoot_me_up
 
         }
 
+        private void pictureBox2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void playGame_Load_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HP_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        public PictureBox GetHP1()
+        {
+            return HP1;
+        }
+
+        public PictureBox GetHP2()
+        {
+            return HP2;
+        }
+        public PictureBox GetHP3()
+        {
+            return HP3;
+        }
         private void playGame_Load_1(object sender, EventArgs e)
         {
 

@@ -47,7 +47,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace shoot_me_up
-{
+{ 
     public partial class Mars : Form
     {
 
@@ -576,6 +576,12 @@ namespace shoot_me_up
                 this.Enabled = true;     //make playGame form  availble (run it)
             }
         }
+
+        private void Mars_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
         // hide label "Esc to pause"
         private void label2_Click(object sender, EventArgs e)
         {

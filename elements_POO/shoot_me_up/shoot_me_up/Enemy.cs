@@ -51,10 +51,12 @@ using System.Windows.Forms;
 namespace shoot_me_up
 {
     public class Enemy : PictureBox
-    {    
+    {
         public static string enemyImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\imgonline-com-ua-Resize-zScTrh8xmY-Photoroom.png")); //enemy image
-         public static string enemyBulletImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\bullets\enemy_bullet.png")); //enemy's bullet image
-        private playGame gameForm;                          //instance of playGame form
+        public static string enemyBulletImagePath = Path.GetFullPath(Path.Combine(Form1.basePath, @"..\..\..\..\..\..\images\programing_img\bullets\enemy_bullet.png")); //enemy's bullet image
+        private playGame gameForm;                         //instance of playGame form
+
+
         private Mars gameFormMars;                          //instance of Mars form
 
 
@@ -76,7 +78,7 @@ namespace shoot_me_up
         /// </summary>
         public Enemy()
         {
-            
+          
             this.Tag = "enemy";
             this.Size = new Size(83, 84); // Set the size to match your enemy image
             this.BackColor = Color.Transparent; // Make background transparent for image visibility
@@ -87,7 +89,7 @@ namespace shoot_me_up
             InitializeShootingTimer();
 
             canShoot = true; // Initially, the enemy can shoot
-
+          
         }
 
         /// <summary>
@@ -110,7 +112,7 @@ namespace shoot_me_up
         {
             using (Image bulletImage = Image.FromFile(enemyBulletImagePath))
             {
-                missile.Image = new Bitmap(bulletImage);
+                missile.Image = new Bitmap(enemyBulletImagePath);
                 missile.SizeMode = PictureBoxSizeMode.StretchImage; // Adjust to fit
             }
         }
@@ -189,16 +191,19 @@ namespace shoot_me_up
                 BackColor = Color.Transparent // Make background transparent for image visibility
             };
 
-            LoadBulletImage(missile);
+            if (missile != null) // Assurez-vous que l'objet missile a été correctement initialisé avant de charger l'image
+            {
+                LoadBulletImage(missile);
 
-            if (missile != null)     //just to be sure that this issue won't happen again
-            {
-                this.Parent.Controls.Add(missile);
-            }
-            else
-            {
-                // Handle the case when missile is null
-                Console.WriteLine("Missile is null.");
+                if (missile.Image != null)     //just to be sure that this issue won't happen again
+                {
+                    this.Parent.Controls.Add(missile);
+                }
+                else
+                {
+                    // Handle the case when missile is null
+                    Console.WriteLine("Missile is null.");
+                }
             }
 
             canShoot = false; // Set the flag to false, indicating the enemy cannot shoot
@@ -228,16 +233,19 @@ namespace shoot_me_up
                 // Check for collision with the player ship
                 if (missile.Bounds.IntersectsWith(((playGame)this.Parent).pictureBoxShip.Bounds))
                 {
+                
+                    playGame gameForm1 = new playGame();// Remove pictureBox2 (heart)
+                    gameForm1.Controls.Remove(gameForm1.HP1);
+                    gameForm1.HP1.Dispose(); 
+                    
+
                     playGame.ShipHp -= 1; // Decrease player health
                     missileTimer.Stop(); // Stop the missile timer
                     this.Parent.Controls.Remove(missile); // Remove the missile from the form
                     missile.Dispose(); // Dispose of the missile
 
-                   // Remove pictureBox2 (heart)
-                   
-                        this.Controls.Remove(gameForm.pictureBox2);
-                        gameForm.pictureBox2.Dispose();
-                   
+
+                    //MessageBox.Show(playGame.ShipHp.ToString());
 
                     canShoot = true; // Allow the enemy to shoot again
                     return; // Exit the method
